@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Monarca Game Jam"
 run/main_scene="uid://bx3jfb3b0hg8"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/show_image=false
 
 [input]
