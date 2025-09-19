@@ -49,9 +49,8 @@ func update_animations(direction: float) -> void:
 		animated_sprite.play(\"Default\")
 "
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2m0td"]
-radius = 16.0
-height = 42.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_07xq5"]
+size = Vector2(19, 37)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5ye7p"]
 atlas = ExtResource("1_r7sid")
@@ -222,13 +221,15 @@ animations = [{
 script = SubResource("GDScript_07xq5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(5, -18)
-shape = SubResource("CapsuleShape2D_2m0td")
+position = Vector2(-3.5, 89.5)
+shape = SubResource("RectangleShape2D_07xq5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(9, -40)
+position = Vector2(2, 68)
 sprite_frames = SubResource("SpriteFrames_dv2mc")
-animation = &"Saltar"
+animation = &"Default"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-2, 31)
+zoom = Vector2(2.5, 2.5)
