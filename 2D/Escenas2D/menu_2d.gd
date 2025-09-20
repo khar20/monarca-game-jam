@@ -9,14 +9,17 @@ func _on_jugar_pressed() -> void:
 	get_tree().change_scene_to_file("res://2D/Escenas2D/game_2d.tscn")
 
 func _on_configuracion_pressed() -> void:
-	# Ocultar el botón y mostrar la imagen rota superpuesta
+	#Ocultar el botón y mostrar la imagen
 	configuracion_button.visible = false
 	configuracion_rota.visible = true
 	
 
 func _on_salir_pressed() -> void:
-	# Ocultar el botón y mostrar la imagen rota superpuesta
+	#Ocultar el botón y mostrar la imagen
 	salir_button.visible = false
 	salir_roto.visible = true
+	
+	#Invertir la imagen
+	salir_roto.flip_h = true
 	
 	
