@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo semi-transparente -->
+  <rect width="400" height="300" fill="#000000" opacity="0.8"/>
+  
+  <!-- Convertir texto a paths para mejor compatibilidad -->
+  <!-- "CORRE" -->
+  <g fill="#ffffff" stroke="#cccccc" stroke-width="0.5">
+    <path d="M50 60 Q45 50 55 50 L75 50 Q85 50 80 60 L80 80 Q85 90 75 90 L55 90 Q45 90 50 80 Z"/>
+    <path d="M90 50 L90 90 L110 90 Q120 90 115 80 L115 60 Q120 50 110 50 Z"/>
+    <path d="M130 50 L130 90 L150 90 Q160 90 155 80 L155 70 L145 70 L145 60 Q150 50 140 50 Z"/>
+    <path d="M170 50 L170 90 L190 90 Q200 90 195 80 L195 60 Q200 50 190 50 Z"/>
+    <path d="M210 50 L210 90 M210 50 L230 50 M210 70 L225 70 M210 90 L230 90"/>
+  </g>
+  
+  <!-- "NO LO HAGAS" -->
+  <g fill="#ffffff" opacity="0.9" transform="translate(20, 100)">
+    <path d="M0 20 L0 60 M0 20 L20 60 M20 20 L20 60" stroke="#ffffff" stroke-width="2" fill="none"/>
+    <path d="M30 20 Q25 15 35 15 L45 15 Q55 15 50 25 L50 55 Q55 65 45 65 L35 65 Q25 65 30 55 Z"/>
+    
+    <path d="M80 20 L80 60 M80 60 L100 60" stroke="#ffffff" stroke-width="2" fill="none"/>
+    <path d="M110 20 Q105 15 115 15 L125 15 Q135 15 130 25 L130 55 Q135 65 125 65 L115 65 Q105 65 110 55 Z"/>
+    
+    <path d="M160 20 L160 60 M160 20 L180 20 M160 40 L175 40 M160 60 L180 60" stroke="#ffffff" stroke-width="2" fill="none"/>
+    <path d="M190 20 L190 60 L210 60 Q220 60 215 50 L215 30 Q220 20 210 20 Z"/>
+    <path d="M230 20 L230 60 L250 60 Q260 60 255 50 L255 40 L245 40 L245 30 Q250 20 240 20 Z"/>
+    <path d="M270 20 L270 60 M270 20 L285 35 L300 20 M300 60 L285 45 L270 60" stroke="#ffffff" stroke-width="2" fill="none"/>
+    <path d="M310 20 L310 60 M310 20 L325 35 L340 20 M310 40 L340 40" stroke="#ffffff" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- "HUYE" -->
+  <g fill="#ffffff" transform="translate(50, 180)">
+    <path d="M0 20 L0 60 M20 20 L20 60 M0 40 L20 40" stroke="#ffffff" stroke-width="2" fill="none"/>
+    <path d="M30 20 L30 45 L35 60 L45 60 L50 45 L50 20" stroke="#ffffff" stroke-width="2" fill="none"/>
+    <path d="M60 20 L60 60 M60 20 L75 35 L90 20" stroke="#ffffff" stroke-width="2" fill="none"/>
+    <path d="M100 20 L100 60 M100 60 L120 60 M100 40 L115 40 M100 20 L120 20" stroke="#ffffff" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- Texto adicional más pequeño -->
+  <text x="200" y="120" font-family="Arial" font-size="14" fill="#cccccc" opacity="0.7" transform="rotate(2)">Te observan</text>
+  <text x="280" y="200" font-family="Arial" font-size="12" fill="#cccccc" opacity="0.6" transform="rotate(-1)">No es seguro</text>
+  <text x="30" y="250" font-family="Arial" font-size="13" fill="#cccccc" opacity="0.7" transform="rotate(1)">Están aquí</text>
+  
+  <!-- Efectos de polvo -->
+  <circle cx="100" cy="80" r="1" fill="#ffffff" opacity="0.3"/>
+  <circle cx="200" cy="150" r="0.8" fill="#cccccc" opacity="0.3"/>
+  <circle cx="300" cy="100" r="1.2" fill="#ffffff" opacity="0.2"/>
+  <circle cx="150" cy="220" r="0.6" fill="#cccccc" opacity="0.4"/>
+</svg>

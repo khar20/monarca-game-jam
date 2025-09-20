@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://7qq3vuoceatc"]
+[gd_scene load_steps=9 format=3 uid="uid://7qq3vuoceatc"]
 
 [ext_resource type="Script" uid="uid://sfbkxtp4qypv" path="res://2D/Escenas2D/menu_2d.gd" id="1_twqau"]
 [ext_resource type="Texture2D" uid="uid://cfjtby2urmvx1" path="res://2D/Imagenes/boton_roto.svg" id="2_boton_roto"]
+[ext_resource type="Texture2D" uid="uid://bmni8bom4gscy" path="res://2D/Imagenes/texto_terror_tiza.svg" id="4_terror"]
 
 [sub_resource type="Gradient" id="Gradient_uhp2f"]
 colors = PackedColorArray(0, 0, 0, 1, 0.0840567, 0.0142973, 0.0131769, 1)
@@ -190,6 +191,15 @@ theme_override_font_sizes/font_size = 16
 text = "Made by SquareOne"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TerrorSVG" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 300.0
+texture = ExtResource("4_terror")
+expand_mode = 1
+stretch_mode = 5
 
 [connection signal="pressed" from="VBoxContainer/Jugar" to="." method="_on_jugar_pressed"]
 [connection signal="pressed" from="VBoxContainer/ConfiguracionContainer/Configuracion" to="." method="_on_configuracion_pressed"]
