@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bx3jfb3b0hg8"]
+[gd_scene load_steps=10 format=3 uid="uid://bx3jfb3b0hg8"]
 
 [ext_resource type="PackedScene" uid="uid://cyavf44qh6q81" path="res://3d/player/player.tscn" id="1_6iw8k"]
 [ext_resource type="Script" uid="uid://b11uunq5f2not" path="res://3d/main_scene/main_scene.gd" id="1_cib75"]
@@ -9,8 +9,12 @@
 resource_local_to_scene = true
 size = Vector3(60, 2, 60)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_frvd2"]
+albedo_color = Color(0.2, 0, 0, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_w2twt"]
 resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_frvd2")
 size = Vector3(60, 2, 60)
 
 [sub_resource type="BoxMesh" id="BoxMesh_7ykc4"]
