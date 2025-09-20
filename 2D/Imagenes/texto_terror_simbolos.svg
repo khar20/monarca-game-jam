@@ -1,0 +1,174 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Filtro para efecto de sombra y distorsión -->
+    <filter id="glitch" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur"/>
+      <feOffset in="blur" dx="2" dy="2" result="offset"/>
+      <feMerge>
+        <feMergeNode in="offset"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Filtro para efecto de sangrado -->
+    <filter id="drip" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="0.5"/>
+    </filter>
+  </defs>
+  
+  <!-- Calavera izquierda -->
+  <path d="M120 40 L140 50 L135 65 L125 70 L115 65 L110 50 Z M118 52 L122 52 M128 52 L132 52 M120 58 L130 58" 
+        fill="white" stroke="white" stroke-width="2" opacity="0.8"/>
+  
+  <!-- ENTER THE VOID - Convertido a paths -->
+  <g filter="url(#glitch)">
+    <!-- E -->
+    <path d="M180 45 L180 85 M180 45 L200 45 M180 62 L195 62 M180 85 L200 85" 
+          fill="none" stroke="white" stroke-width="4" stroke-linecap="round"/>
+    <!-- N -->
+    <path d="M210 45 L210 85 M210 45 L235 85 M235 45 L235 85" 
+          fill="none" stroke="white" stroke-width="4" stroke-linecap="round"/>
+    <!-- T -->
+    <path d="M245 45 L270 45 M257.5 45 L257.5 85" 
+          fill="none" stroke="white" stroke-width="4" stroke-linecap="round"/>
+    <!-- E -->
+    <path d="M280 45 L280 85 M280 45 L300 45 M280 62 L295 62 M280 85 L300 85" 
+          fill="none" stroke="white" stroke-width="4" stroke-linecap="round"/>
+    <!-- R -->
+    <path d="M310 45 L310 85 M310 45 L325 45 L330 50 L330 60 L325 65 L310 65 M325 65 L335 85" 
+          fill="none" stroke="white" stroke-width="4" stroke-linecap="round"/>
+    
+    <!-- THE -->
+    <path d="M360 55 L385 55 M372.5 55 L372.5 75 M395 55 L395 75 M395 55 L410 55 M395 62 L405 62 M395 75 L410 75 M420 55 L420 75 M420 55 L435 75 M435 55 L435 75" 
+          fill="none" stroke="white" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- VOID -->
+    <path d="M460 45 L470 85 M480 45 L470 85 M490 45 L490 85 L510 85 L515 80 L515 50 L510 45 L490 45 M525 45 L525 85 M525 45 L540 45 L545 50 L545 80 L540 85 L525 85 M555 45 L555 85 M555 45 L570 45 L575 50 L575 80 L570 85 L555 85" 
+          fill="none" stroke="white" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Calavera derecha -->
+  <path d="M680 40 L700 50 L695 65 L685 70 L675 65 L670 50 Z M678 52 L682 52 M688 52 L692 52 M680 58 L690 58" 
+        fill="white" stroke="white" stroke-width="2" opacity="0.8"/>
+  
+  <!-- Rayos laterales -->
+  <path d="M90 140 L110 130 L95 150 L115 145 L100 165 L120 160 L105 180" 
+        fill="white" opacity="0.8"/>
+  <path d="M710 140 L690 130 L705 150 L685 145 L700 165 L680 160 L695 180" 
+        fill="white" opacity="0.8"/>
+  
+  <!-- Símbolos diamante -->
+  <g opacity="0.9">
+    <path d="M320 150 L330 160 L320 170 L310 160 Z" fill="white"/>
+    <circle cx="340" cy="160" r="2" fill="white"/>
+    <path d="M350 150 L360 160 L350 170 L340 160 Z" fill="white"/>
+    <circle cx="370" cy="160" r="2" fill="white"/>
+    <path d="M380 150 L390 160 L380 170 L370 160 Z" fill="white"/>
+    <circle cx="400" cy="160" r="2" fill="white"/>
+    <path d="M410 150 L420 160 L410 170 L400 160 Z" fill="white"/>
+    <circle cx="430" cy="160" r="2" fill="white"/>
+    <path d="M440 150 L450 160 L440 170 L430 160 Z" fill="white"/>
+    <circle cx="460" cy="160" r="2" fill="white"/>
+    <path d="M470 150 L480 160 L470 170 L460 160 Z" fill="white"/>
+  </g>
+  
+  <!-- BEWARE THE SHADOWS -->
+  <g filter="url(#drip)">
+    <!-- Símbolo psi -->
+    <path d="M180 200 L180 230 M170 210 L190 210 L185 220 L175 220" 
+          fill="none" stroke="white" stroke-width="3"/>
+    
+    <!-- BEWARE -->
+    <path d="M210 200 L210 230 M210 200 L225 200 L230 205 L230 215 L225 220 L210 220 M225 220 L235 230 M245 200 L245 230 M245 200 L260 200 M245 210 L255 210 M245 230 L260 230 M270 200 L285 230 M295 200 L280 230 M305 200 L320 200 L325 205 L325 225 L320 230 L305 230 M335 200 L335 230 M335 200 L350 200 L355 205 L355 215 L350 220 L335 220 M365 200 L365 230 M365 200 L380 200 M365 210 L375 210 M365 230 L380 230" 
+          fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+    
+    <!-- THE -->
+    <path d="M400 205 L425 205 M412.5 205 L412.5 225 M435 205 L435 225 M435 205 L450 205 M435 212 L445 212 M435 225 L450 225 M460 205 L460 225 M460 205 L475 225 M475 205 L475 225" 
+          fill="none" stroke="white" stroke-width="2" stroke-linecap="round"/>
+    
+    <!-- SHADOWS -->
+    <path d="M495 200 L495 210 L510 210 L510 220 L495 220 L495 230 L510 230 M520 200 L520 230 M520 200 L535 230 M535 200 L535 230 M545 200 L560 200 L565 205 L565 225 L560 230 L545 230 M575 200 L575 230 M575 200 L590 200 L595 205 L595 225 L590 230 L575 230 M605 200 L620 230 M630 200 L615 230 M640 200 L640 210 L655 210 L655 220 L640 220 L640 230 L655 230" 
+          fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+    
+    <!-- Símbolo psi derecho -->
+    <path d="M670 200 L670 230 M660 210 L680 210 L675 220 L665 220" 
+          fill="none" stroke="white" stroke-width="3"/>
+  </g>
+  
+  <!-- Símbolos alquímicos -->
+  <path d="M190 270 L210 270 M200 260 L200 280 M195 275 L205 275" 
+        fill="none" stroke="white" stroke-width="2" opacity="0.7"/>
+  <path d="M590 270 L610 270 M600 260 L600 280 M590 275 L610 275 M595 265 L605 265" 
+        fill="none" stroke="white" stroke-width="2" opacity="0.7"/>
+  
+  <!-- Lunas y círculos -->
+  <g opacity="0.8">
+    <path d="M320 290 C315 285 315 295 320 290 C325 285 325 295 320 290" fill="white"/>
+    <circle cx="340" cy="290" r="5" fill="white"/>
+    <path d="M360 290 C365 285 365 295 360 290 C355 285 355 295 360 290" fill="white"/>
+    <circle cx="380" cy="290" r="5" fill="white"/>
+    <path d="M400 290 C395 285 395 295 400 290 C405 285 405 295 400 290" fill="white"/>
+    <circle cx="420" cy="290" r="5" fill="white"/>
+    <path d="M440 290 C445 285 445 295 440 290 C435 285 435 295 440 290" fill="white"/>
+    <circle cx="460" cy="290" r="5" fill="white"/>
+    <path d="M480 290 C475 285 475 295 480 290 C485 285 485 295 480 290" fill="white"/>
+  </g>
+  
+  <!-- NO ESCAPE -->
+  <g filter="url(#glitch)">
+    <!-- Símbolo extraño izquierdo -->
+    <path d="M280 340 L290 330 L300 340 L290 350 Z M285 335 L295 345" 
+          fill="none" stroke="white" stroke-width="2"/>
+    
+    <!-- NO -->
+    <path d="M320 330 L320 360 M320 330 L340 360 M340 330 L340 360 M360 330 L360 360 L380 360 L385 355 L385 335 L380 330 L360 330" 
+          fill="none" stroke="white" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- ESCAPE -->
+    <path d="M410 330 L410 360 M410 330 L430 330 M410 342 L425 342 M410 360 L430 360 M440 330 L440 360 L460 360 L465 355 L465 345 L460 340 L440 340 M475 330 L475 360 L495 360 L500 355 L500 345 L495 340 L475 340 M510 330 L530 330 L535 335 L535 355 L530 360 L510 360 M545 330 L545 360 M545 330 L560 330 L565 335 L565 345 L560 350 L545 350 M575 330 L575 360 M575 330 L590 330 M575 342 L585 342 M575 360 L590 360" 
+          fill="none" stroke="white" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- Símbolo extraño derecho -->
+    <path d="M610 340 L620 330 L630 340 L620 350 Z M615 335 L625 345" 
+          fill="none" stroke="white" stroke-width="2"/>
+  </g>
+  
+  <!-- Símbolos en las esquinas -->
+  <path d="M40 40 L60 40 L60 50 L50 50 L50 60 L40 60 Z M45 45 L55 45" 
+        fill="white" opacity="0.6"/>
+  <path d="M740 40 C745 35 755 35 760 40 C755 45 745 45 740 40 M750 45 L750 55" 
+        fill="white" opacity="0.6"/>
+  <path d="M40 370 L50 360 L60 370 L50 380 L40 370 M45 365 L55 375" 
+        fill="white" opacity="0.6"/>
+  <path d="M740 370 L760 370 L755 380 L745 380 Z M750 375 L750 385" 
+        fill="white" opacity="0.6"/>
+  
+  <!-- Pentagramas -->
+  <path d="M140 190 L150 200 L145 210 L135 210 L130 200 Z M140 195 L145 205 M150 200 L135 205 M130 200 L145 195" 
+        fill="none" stroke="white" stroke-width="1.5" opacity="0.5"/>
+  <path d="M660 190 L670 200 L665 210 L655 210 L650 200 Z M660 195 L665 205 M670 200 L655 205 M650 200 L665 195" 
+        fill="none" stroke="white" stroke-width="1.5" opacity="0.5"/>
+  
+  <!-- Rayos adicionales -->
+  <path d="M290 110 L300 100 L295 120 L305 115 L300 135" 
+        fill="white" opacity="0.6"/>
+  <path d="M510 110 L500 100 L505 120 L495 115 L500 135" 
+        fill="white" opacity="0.6"/>
+  
+  <!-- Runas -->
+  <path d="M90 310 L90 330 M90 310 L100 320 M90 325 L100 325" 
+        fill="none" stroke="white" stroke-width="2" opacity="0.7"/>
+  <path d="M710 310 L710 330 M700 315 L710 315 L710 325 L720 325" 
+        fill="none" stroke="white" stroke-width="2" opacity="0.7"/>
+  
+  <!-- Símbolos finales -->
+  <g opacity="0.5">
+    <path d="M240 370 L250 370 L245 380 Z" fill="white"/>
+    <path d="M260 370 L270 370 L275 380 L265 380 Z" fill="white"/>
+    <path d="M280 370 L290 370 L285 380 Z" fill="white"/>
+    
+    <circle cx="560" cy="375" r="4" fill="white"/>
+    <path d="M575 370 C580 370 580 380 575 380 C570 380 570 370 575 370" fill="white"/>
+    <path d="M590 370 C595 370 595 380 590 380 C585 380 585 370 590 370 M587 373 L593 377" fill="white"/>
+  </g>
+</svg>

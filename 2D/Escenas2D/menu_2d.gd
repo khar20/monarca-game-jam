@@ -43,12 +43,18 @@ func show_terror_svg():
 	# Posicionar el SVG en la esquina seleccionada
 	terror_svg.position = random_position
 	
+	# Añadir rotación inclinada aleatoria (entre -25 y 25 grados)
+	var random_rotation = randf_range(-25.0, 25.0)
+	terror_svg.rotation_degrees = random_rotation
+	
 	# Hacer visible el SVG
 	terror_svg.visible = true
 	
-	# Opcional: añadir un efecto de aparición gradual
+	# Opcional: añadir un efecto de aparición gradual con rotación
 	terror_svg.modulate.a = 0.0
 	var tween = create_tween()
-	tween.tween_property(terror_svg, "modulate:a", 1.0, 0.5)
+	tween.parallel().tween_property(terror_svg, "modulate:a", 1.0, 0.5)
+	# Añadir un ligero efecto de rotación durante la aparición
+	tween.parallel().tween_property(terror_svg, "rotation_degrees", random_rotation + randf_range(-5.0, 5.0), 0.5)
 	
 	
