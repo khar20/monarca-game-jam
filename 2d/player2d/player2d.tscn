@@ -1,0 +1,230 @@
+[gd_scene load_steps=28 format=3 uid="uid://c3o0b833m36eh"]
+
+[ext_resource type="Texture2D" uid="uid://dd6xwya4jcoaq" path="res://assets/player2d/NoOutline/120x80_PNGSheets/_Run.png" id="1_ourca"]
+[ext_resource type="Texture2D" uid="uid://ycmuofakbrny" path="res://assets/player2d/NoOutline/120x80_PNGSheets/_Idle.png" id="2_l22jq"]
+[ext_resource type="Texture2D" uid="uid://c4lwl0bbomybm" path="res://assets/player2d/NoOutline/120x80_PNGSheets/_JumpFallInbetween.png" id="3_lp0nb"]
+
+[sub_resource type="GDScript" id="GDScript_07xq5"]
+script/source = "extends CharacterBody2D
+
+const SPEED = 300.0
+const JUMP_VELOCITY = -400.0
+
+@onready var animated_sprite = $AnimatedSprite2D
+
+func _physics_process(delta: float) -> void:
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
+	# Handle jump.
+	if Input.is_action_just_pressed(\"ui_accept\") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+
+	# Get the input direction and handle the movement/deceleration.
+	var direction := Input.get_axis(\"ui_left\", \"ui_right\")
+	if direction:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+
+	move_and_slide()
+	
+	# Handle animations
+	update_animations(direction)
+
+func update_animations(direction: float) -> void:
+	# Manejar el flip del sprite según la dirección (siempre que haya movimiento)
+	if direction != 0:
+		animated_sprite.flip_h = direction < 0
+	
+	# Si está en el aire (saltando o cayendo)
+	if not is_on_floor():
+		animated_sprite.play(\"Saltar\")
+	# Si se está moviendo horizontalmente
+	elif direction != 0:
+		animated_sprite.play(\"Correr\")
+	# Si está quieto
+	else:
+		animated_sprite.play(\"Default\")
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_07xq5"]
+size = Vector2(19, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ye7p"]
+atlas = ExtResource("1_ourca")
+region = Rect2(0, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5x42"]
+atlas = ExtResource("1_ourca")
+region = Rect2(120, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8abr"]
+atlas = ExtResource("1_ourca")
+region = Rect2(240, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5knd"]
+atlas = ExtResource("1_ourca")
+region = Rect2(360, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p54sg"]
+atlas = ExtResource("1_ourca")
+region = Rect2(480, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_luxf3"]
+atlas = ExtResource("1_ourca")
+region = Rect2(600, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7bds"]
+atlas = ExtResource("1_ourca")
+region = Rect2(720, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wslnn"]
+atlas = ExtResource("1_ourca")
+region = Rect2(840, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hgt5"]
+atlas = ExtResource("1_ourca")
+region = Rect2(960, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijcuo"]
+atlas = ExtResource("1_ourca")
+region = Rect2(1080, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wn0na"]
+atlas = ExtResource("2_l22jq")
+region = Rect2(120, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54y2l"]
+atlas = ExtResource("2_l22jq")
+region = Rect2(240, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8680r"]
+atlas = ExtResource("2_l22jq")
+region = Rect2(360, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bk4nh"]
+atlas = ExtResource("2_l22jq")
+region = Rect2(480, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvioi"]
+atlas = ExtResource("2_l22jq")
+region = Rect2(600, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cocgi"]
+atlas = ExtResource("2_l22jq")
+region = Rect2(720, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_deekc"]
+atlas = ExtResource("2_l22jq")
+region = Rect2(840, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ei88n"]
+atlas = ExtResource("2_l22jq")
+region = Rect2(960, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s530t"]
+atlas = ExtResource("2_l22jq")
+region = Rect2(1080, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_an0mn"]
+atlas = ExtResource("2_l22jq")
+region = Rect2(0, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jefng"]
+atlas = ExtResource("3_lp0nb")
+region = Rect2(120, 0, 120, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dv2mc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ye7p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5x42")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8abr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l5knd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p54sg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_luxf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7bds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wslnn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hgt5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijcuo")
+}],
+"loop": true,
+"name": &"Correr",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wn0na")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54y2l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8680r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk4nh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvioi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cocgi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_deekc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ei88n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s530t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_an0mn")
+}],
+"loop": true,
+"name": &"Default",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jefng")
+}],
+"loop": true,
+"name": &"Saltar",
+"speed": 5.0
+}]
+
+[node name="Player2D" type="CharacterBody2D"]
+script = SubResource("GDScript_07xq5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_07xq5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(6, -21)
+sprite_frames = SubResource("SpriteFrames_dv2mc")
+animation = &"Default"

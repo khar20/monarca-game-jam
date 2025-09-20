@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddkpfpjcnfnt5"]
+
+[ext_resource type="Texture2D" uid="uid://csa0ssuf53ffs" path="res://assets/TerrenoFondos/suelo_pasto.svg" id="1_6sxuj"]
+[ext_resource type="Script" uid="uid://c27uxxycdwjgb" path="res://2d/main_scene/main_scene.gd" id="1_t5jq1"]
+[ext_resource type="PackedScene" uid="uid://c3o0b833m36eh" path="res://2d/player2d/player2d.tscn" id="3_t5jq1"]
+[ext_resource type="Script" uid="uid://dbunvkoi4ubdc" path="res://2d/player2d/player_2d.gd" id="4_7j4i0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7im3n"]
+size = Vector2(1150, 32)
+
+[node name="Game2D" type="Node2D"]
+script = ExtResource("1_t5jq1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="StaticBody2D"]
+texture_filter = 1
+offset_left = -606.0
+offset_top = 225.0
+offset_right = 544.0
+offset_bottom = 289.0
+texture = ExtResource("1_6sxuj")
+stretch_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+modulate = Color(0.337255, 0.0588235, 0.717647, 1)
+position = Vector2(-31, 252)
+shape = SubResource("RectangleShape2D_7im3n")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Player2D" parent="." instance=ExtResource("3_t5jq1")]
+script = ExtResource("4_7j4i0")
