@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://bewigwogcy4nt"]
+
+[sub_resource type="Gradient" id="Gradient_wwtib"]
+offsets = PackedFloat32Array(0, 0.48387095, 1)
+colors = PackedColorArray(1, 0.98039216, 0.6666667, 1, 0.81373143, 0.18326414, 0, 1, 0.474797, 8.4830447e-07, 2.4065375e-07, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_hbwlm"]
+gradient = SubResource("Gradient_wwtib")
+
+[sub_resource type="Curve" id="Curve_4jxor"]
+_data = [Vector2(0.0066666603, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_6q115"]
+curve = SubResource("Curve_4jxor")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gishc"]
+emission_shape = 1
+emission_sphere_radius = 0.2
+angle_min = 1.0728835e-05
+angle_max = 360.00003
+initial_velocity_min = 1.0
+initial_velocity_max = 1.5
+gravity = Vector3(0, 3, 0)
+scale_curve = SubResource("CurveTexture_6q115")
+color_ramp = SubResource("GradientTexture1D_hbwlm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rq2oo"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_25vm1"]
+material = SubResource("StandardMaterial3D_rq2oo")
+
+[node name="FireEffect" type="Node3D"]
+
+[node name="Flames" type="GPUParticles3D" parent="."]
+amount = 200
+lifetime = 0.5
+randomness = 1.0
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_gishc")
+draw_pass_1 = SubResource("QuadMesh_25vm1")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19)
