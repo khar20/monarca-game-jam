@@ -106,9 +106,17 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_1")
 text = "JUGAR"
 
-[node name="Configuracion" type="Button" parent="VBoxContainer"]
+[node name="ConfiguracionContainer" type="Control" parent="VBoxContainer"]
 custom_minimum_size = Vector2(350, 60)
 layout_mode = 2
+
+[node name="Configuracion" type="Button" parent="VBoxContainer/ConfiguracionContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_hover_color = Color(1, 0.9, 0.9, 1)
 theme_override_colors/font_color = Color(0.9, 0.8, 0.8, 1)
 theme_override_colors/font_pressed_color = Color(0.7, 0.6, 0.6, 1)
@@ -118,9 +126,30 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_1")
 text = "OPCIONES"
 
-[node name="Salir" type="Button" parent="VBoxContainer"]
+[node name="ConfiguracionRota" type="TextureRect" parent="VBoxContainer/ConfiguracionContainer"]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_boton_roto")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SalirContainer" type="Control" parent="VBoxContainer"]
 custom_minimum_size = Vector2(350, 60)
 layout_mode = 2
+
+[node name="Salir" type="Button" parent="VBoxContainer/SalirContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_hover_color = Color(1, 0.9, 0.9, 1)
 theme_override_colors/font_color = Color(0.9, 0.8, 0.8, 1)
 theme_override_colors/font_pressed_color = Color(0.7, 0.6, 0.6, 1)
@@ -130,20 +159,15 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_1")
 text = "SALIR"
 
-[node name="ConfiguracionRota" type="TextureRect" parent="VBoxContainer"]
+[node name="SalirRoto" type="TextureRect" parent="VBoxContainer/SalirContainer"]
 visible = false
 texture_filter = 1
-custom_minimum_size = Vector2(350, 60)
-layout_mode = 2
-texture = ExtResource("2_boton_roto")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="SalirRoto" type="TextureRect" parent="VBoxContainer"]
-visible = false
-texture_filter = 1
-custom_minimum_size = Vector2(350, 60)
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_boton_roto")
 expand_mode = 1
 stretch_mode = 5
@@ -168,5 +192,5 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/Jugar" to="." method="_on_jugar_pressed"]
-[connection signal="pressed" from="VBoxContainer/Configuracion" to="." method="_on_configuracion_pressed"]
-[connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="VBoxContainer/ConfiguracionContainer/Configuracion" to="." method="_on_configuracion_pressed"]
+[connection signal="pressed" from="VBoxContainer/SalirContainer/Salir" to="." method="_on_salir_pressed"]
