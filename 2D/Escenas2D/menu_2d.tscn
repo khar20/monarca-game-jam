@@ -1,0 +1,112 @@
+[gd_scene load_steps=4 format=3 uid="uid://7qq3vuoceatc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2"]
+bg_color = Color(0.15, 0.03, 0.03, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.7, 0.1, 0.1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0.8, 0.2, 0.2, 0.8)
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3"]
+bg_color = Color(0.05, 0.01, 0.01, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.3, 0.03, 0.03, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0.4, 0.05, 0.05, 0.4)
+shadow_size = 4
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1"]
+bg_color = Color(0.08, 0.02, 0.02, 0.95)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.4, 0.05, 0.05, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0.6, 0.1, 0.1, 0.6)
+shadow_size = 8
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.02, 0.01, 0.03, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -150.0
+offset_right = 200.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Jugar" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(350, 60)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0.9, 0.9, 1)
+theme_override_colors/font_color = Color(0.9, 0.8, 0.8, 1)
+theme_override_colors/font_pressed_color = Color(0.7, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1")
+text = "JUGAR"
+
+[node name="Configuracion" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(350, 60)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0.9, 0.9, 1)
+theme_override_colors/font_color = Color(0.9, 0.8, 0.8, 1)
+theme_override_colors/font_pressed_color = Color(0.7, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1")
+text = "OPCIONES"
+
+[node name="Salir" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(350, 60)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0.9, 0.9, 1)
+theme_override_colors/font_color = Color(0.9, 0.8, 0.8, 1)
+theme_override_colors/font_pressed_color = Color(0.7, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1")
+text = "SALIR"
