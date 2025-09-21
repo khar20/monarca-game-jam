@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://ddkpfpjcnfnt5"]
 
-[ext_resource type="Texture2D" uid="uid://csa0ssuf53ffs" path="res://assets/TerrenoFondos/suelo_pasto.svg" id="1_6sxuj"]
+[ext_resource type="Texture2D" uid="uid://csa0ssuf53ffs" path="res://assets/2d/TerrenoFondos/suelo_pasto.svg" id="1_6sxuj"]
 [ext_resource type="Script" uid="uid://c27uxxycdwjgb" path="res://2d/main_scene/main_scene.gd" id="1_t5jq1"]
 [ext_resource type="Shader" uid="uid://dkm5yab2l76qp" path="res://shaders/crt_shader.gdshader" id="2_d4px6"]
 [ext_resource type="PackedScene" uid="uid://c3o0b833m36eh" path="res://2d/player2d/player2d.tscn" id="3_t5jq1"]
