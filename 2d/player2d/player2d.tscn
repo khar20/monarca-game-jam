@@ -182,3 +182,5 @@ texture_filter = 1
 position = Vector2(6, -21)
 sprite_frames = SubResource("SpriteFrames_dv2mc")
 animation = &"Default"
+frame = 8
+frame_progress = 0.694925
