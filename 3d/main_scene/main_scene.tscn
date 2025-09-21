@@ -1,9 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bx3jfb3b0hg8"]
+[gd_scene load_steps=11 format=3 uid="uid://bx3jfb3b0hg8"]
 
 [ext_resource type="PackedScene" uid="uid://cyavf44qh6q81" path="res://3d/player/player.tscn" id="1_6iw8k"]
 [ext_resource type="Script" uid="uid://b11uunq5f2not" path="res://3d/main_scene/main_scene.gd" id="1_cib75"]
 [ext_resource type="PackedScene" uid="uid://cjdj4tno4in3b" path="res://assets/room.fbx" id="2_symxd"]
-[ext_resource type="PackedScene" uid="uid://bewigwogcy4nt" path="res://3d/effects/fire_effect.tscn" id="4_frvd2"]
+[ext_resource type="PackedScene" uid="uid://ddkpfpjcnfnt5" path="res://2d/main_scene/main_scene.tscn" id="4_frvd2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_und3l"]
 resource_local_to_scene = true
@@ -17,14 +17,16 @@ resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_frvd2")
 size = Vector3(60, 2, 60)
 
-[sub_resource type="BoxMesh" id="BoxMesh_7ykc4"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_he7i5"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_mdw2q"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5cml7"]
 resource_local_to_scene = true
-size = Vector3(10, 10, 10)
+albedo_texture = SubResource("ViewportTexture_mdw2q")
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ag62x"]
-data = PackedVector3Array(-5, 5, 5, 5, 5, 5, -5, -5, 5, 5, 5, 5, 5, -5, 5, -5, -5, 5, 5, 5, -5, -5, 5, -5, 5, -5, -5, -5, 5, -5, -5, -5, -5, 5, -5, -5, 5, 5, 5, 5, 5, -5, 5, -5, 5, 5, 5, -5, 5, -5, -5, 5, -5, 5, -5, 5, -5, -5, 5, 5, -5, -5, -5, -5, 5, 5, -5, -5, 5, -5, -5, -5, 5, 5, 5, -5, 5, 5, 5, 5, -5, -5, 5, 5, -5, 5, -5, 5, 5, -5, -5, -5, 5, 5, -5, 5, -5, -5, -5, 5, -5, 5, 5, -5, -5, -5, -5, -5)
-
-[node name="Node" type="Node"]
+[node name="Node" type="Node3D"]
 script = ExtResource("1_cib75")
 
 [node name="Floor" type="StaticBody3D" parent="."]
@@ -36,17 +38,6 @@ shape = SubResource("BoxShape3D_und3l")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 mesh = SubResource("BoxMesh_w2twt")
 
-[node name="Wall" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 6, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-mesh = SubResource("BoxMesh_7ykc4")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-shape = SubResource("ConcavePolygonShape3D_ag62x")
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 9, 0)
 
@@ -56,14 +47,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 [node name="room" parent="." instance=ExtResource("2_symxd")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 1, 0)
 
-[node name="FireEffect" parent="." instance=ExtResource("4_frvd2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 10)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.239432, -0.901819, -0.359716, 0, 0.370493, -0.928835, 0.970913, 0.222393, 0.0887077, 5.43986, 1.78471, 0.852553)
+mesh = SubResource("PlaneMesh_he7i5")
+surface_material_override/0 = SubResource("StandardMaterial3D_5cml7")
 
-[node name="FireEffect2" parent="." instance=ExtResource("4_frvd2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1728523, 0, 10)
+[node name="SubViewport" type="SubViewport" parent="."]
 
-[node name="FireEffect3" parent="." instance=ExtResource("4_frvd2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6718566, 0, 10)
-
-[node name="FireEffect4" parent="." instance=ExtResource("4_frvd2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4210906, 0, 10)
+[node name="Game2D" parent="SubViewport" instance=ExtResource("4_frvd2")]

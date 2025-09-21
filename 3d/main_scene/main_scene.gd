@@ -1,11 +1,20 @@
-extends Node
+extends Node3D
 
+@onready var sub_viewport = $SubViewport
+@onready var player = $Player
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+var is_playing_2d_game = false
 
+func _process(_delta):
+	if Input.is_action_just_pressed("interact"):
+		is_playing_2d_game = !is_playing_2d_game
+		
+		if is_playing_2d_game:
+			player.set_state(player.States.PLAYING)
+		else:
+			player.set_state(player.States.MOVE)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _input(event):
+	if is_playing_2d_game:
+		sub_viewport.push_input(event)
+		get_viewport().set_input_as_handled()
