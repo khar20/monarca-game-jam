@@ -73,6 +73,43 @@ disabled = true
 position = Vector2(1535.75, 497.5)
 shape = SubResource("RectangleShape2D_vx1rf")
 
+[node name="DialogueBalloon" type="Control" parent="SenalAviso1"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1450.0
+offset_top = 420.0
+offset_right = 1620.0
+offset_bottom = 470.0
+
+[node name="BalloonBackground" type="NinePatchRect" parent="SenalAviso1/DialogueBalloon"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DialogueText" type="Label" parent="SenalAviso1/DialogueBalloon"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = -34.0
+offset_right = -6.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Sigue bajo tu responsabilidad"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="BalloonTail" type="Polygon2D" parent="SenalAviso1/DialogueBalloon"]
+position = Vector2(86, 20)
+color = Color(1, 1, 1, 0.95)
+polygon = PackedVector2Array(0, 0, -10, 15, 10, 15)
+
 [node name="Player2D" parent="." instance=ExtResource("3_t5jq1")]
 position = Vector2(34, 511)
 script = ExtResource("4_7j4i0")

@@ -25,14 +25,10 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 directories/dch_directory={
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }
-directories/dtl_directory={
-"bienvenida": "res://2d/Dialogos/bienvenida.dtl",
-"cartel_aviso": "res://2d/Dialogos/cartel_aviso.dtl",
-"timeline": "res://2d/Dialogos/timeline.dtl"
-}
+directories/dtl_directory={}
 glossary/default_case_sensitive=true
 layout/style_list=[]
-layout/default_style="Default"
+layout/default_style=""
 variables={}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
