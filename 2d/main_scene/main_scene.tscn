@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://ddkpfpjcnfnt5"]
+[gd_scene load_steps=9 format=3 uid="uid://ddkpfpjcnfnt5"]
 
 [ext_resource type="Texture2D" uid="uid://csa0ssuf53ffs" path="res://assets/2d/TerrenoFondos/suelo_pasto.svg" id="1_6sxuj"]
 [ext_resource type="Script" uid="uid://c27uxxycdwjgb" path="res://2d/main_scene/main_scene.gd" id="1_t5jq1"]
 [ext_resource type="Shader" uid="uid://dkm5yab2l76qp" path="res://shaders/crt_shader.gdshader" id="2_d4px6"]
 [ext_resource type="PackedScene" uid="uid://c3o0b833m36eh" path="res://2d/player2d/player2d.tscn" id="3_t5jq1"]
 [ext_resource type="Script" uid="uid://dbunvkoi4ubdc" path="res://2d/player2d/player_2d.gd" id="4_7j4i0"]
-[ext_resource type="Texture2D" uid="uid://df165pcuf5t5i" path="res://assets/2d/Imagenes/cementerio_derecha.svg" id="6_cementerio"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7im3n"]
 size = Vector2(1583, 32)
@@ -18,9 +17,6 @@ shader_parameter/noise_intensity = 0.02
 shader_parameter/distortion_intensity = 0.003
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_d4px6"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_derecha"]
-size = Vector2(210, 593)
 
 [node name="Game2D" type="Node2D"]
 script = ExtResource("1_t5jq1")
@@ -43,15 +39,13 @@ modulate = Color(0.337255, 0.0588235, 0.717647, 1)
 position = Vector2(192, 273)
 shape = SubResource("RectangleShape2D_7im3n")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(577, 324)
-
 [node name="Player2D" parent="." instance=ExtResource("3_t5jq1")]
-position = Vector2(577, 455)
+position = Vector2(34, 511)
 script = ExtResource("4_7j4i0")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2
+visible = false
 follow_viewport_enabled = true
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
@@ -60,40 +54,3 @@ offset_right = 1158.0
 offset_bottom = 648.0
 size_flags_horizontal = 3
 texture = SubResource("PlaceholderTexture2D_d4px6")
-
-[node name="ColisionDerecha" type="StaticBody2D" parent="."]
-position = Vector2(1292, 324)
-
-[node name="TextureRect" type="TextureRect" parent="ColisionDerecha"]
-texture_filter = 1
-offset_left = -379.0
-offset_top = -327.0
-offset_right = 26.0
-offset_bottom = 296.0
-texture = ExtResource("6_cementerio")
-expand_mode = 1
-stretch_mode = 5
-metadata/_edit_use_anchors_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColisionDerecha"]
-position = Vector2(-183, -25.5)
-shape = SubResource("RectangleShape2D_derecha")
-
-[node name="ColisionIzquierda" type="StaticBody2D" parent="."]
-position = Vector2(206, 324)
-
-[node name="TextureRect" type="TextureRect" parent="ColisionIzquierda"]
-texture_filter = 1
-offset_left = -379.0
-offset_top = -327.0
-offset_right = 26.0
-offset_bottom = 296.0
-texture = ExtResource("6_cementerio")
-expand_mode = 1
-stretch_mode = 5
-flip_h = true
-metadata/_edit_use_anchors_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColisionIzquierda"]
-position = Vector2(-177, -25.5)
-shape = SubResource("RectangleShape2D_derecha")
