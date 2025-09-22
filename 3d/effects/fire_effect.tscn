@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bewigwogcy4nt"]
+[gd_scene load_steps=18 format=3 uid="uid://bewigwogcy4nt"]
 
 [ext_resource type="Shader" uid="uid://ia5504df63el" path="res://3d/effects/fire_effect.tres" id="1_hbwlm"]
 [ext_resource type="Texture2D" uid="uid://dg1drex0lnb1p" path="res://assets/vfx/fire/Flame01.png" id="2_4jxor"]
@@ -14,9 +14,18 @@ shader_parameter/DissolveDirection = Vector2(0, 0.5)
 shader_parameter/DissolveTexture = ExtResource("2_6q115")
 shader_parameter/DissolveAmount = 0.5
 
+[sub_resource type="Gradient" id="Gradient_rq2oo"]
+offsets = PackedFloat32Array(0, 0.8, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_25vm1"]
+gradient = SubResource("Gradient_rq2oo")
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6q115"]
 gravity = Vector3(0, 0, 0)
 color = Color(4, 1.25, 0.6, 0.8)
+color_ramp = SubResource("GradientTexture1D_25vm1")
 
 [sub_resource type="QuadMesh" id="QuadMesh_gishc"]
 
@@ -30,7 +39,7 @@ shader_parameter/DissolveTexture = ExtResource("2_6q115")
 shader_parameter/DissolveAmount = 0.5
 
 [sub_resource type="Curve" id="Curve_25vm1"]
-_data = [Vector2(0, 0), 0.0, 8.05213, 0, 0, Vector2(0.277108, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -1.98799, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 8.0, 0, 0, Vector2(0.25, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_t3odx"]
@@ -84,12 +93,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 6.88538)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00273347, 0.203388, -4.52995e-06)
 material_override = SubResource("ShaderMaterial_4jxor")
 amount = 1
-preprocess = 1.0
+lifetime = 4.0
 transform_align = 1
 process_material = SubResource("ParticleProcessMaterial_6q115")
 draw_pass_1 = SubResource("QuadMesh_gishc")
 
 [node name="Flames" type="GPUParticles3D" parent="."]
+sorting_offset = -1.0
 material_override = SubResource("ShaderMaterial_rq2oo")
 amount = 20
 process_material = SubResource("ParticleProcessMaterial_3kgsr")
