@@ -19,6 +19,7 @@ boot_splash/show_image=false
 
 WwiseRuntimeManager="*res://addons/Wwise/runtime/wwise_runtime_manager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+PearlManager="*res://2d/main_scene/pearl_manager.gd"
 
 [debug]
 
