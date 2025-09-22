@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Perla Moneda Pixel Art con Animación -->
+  
+  <!-- Sombra de la perla -->
+  <ellipse cx="17" cy="25" rx="10" ry="3" fill="#000000" opacity="0.3"/>
+  
+  <!-- Grupo principal con animación de rotación -->
+  <g transform-origin="16 16">
+    <animateTransform
+      attributeName="transform"
+      attributeType="XML"
+      type="scale"
+      values="1,1; 0.3,1; 1,1; 0.3,1; 1,1"
+      dur="2s"
+      repeatCount="indefinite"/>
+    
+    <!-- Base de la perla -->
+    <ellipse cx="16" cy="16" rx="12" ry="10" fill="#F0F8FF" stroke="#E6E6FA" stroke-width="1"/>
+    
+    <!-- Capa intermedia para dar volumen -->
+    <ellipse cx="16" cy="16" rx="10" ry="8" fill="#FFFFFF"/>
+    
+    <!-- Núcleo brillante -->
+    <ellipse cx="16" cy="16" rx="8" ry="6" fill="#FFFAFA"/>
+    
+    <!-- Reflejos principales con animación -->
+    <g>
+      <animateTransform
+        attributeName="transform"
+        attributeType="XML"
+        type="scale"
+        values="1,1; -1,1; 1,1; -1,1; 1,1"
+        dur="2s"
+        repeatCount="indefinite"/>
+      <ellipse cx="13" cy="12" rx="3" ry="2" fill="#FFFFFF" opacity="0.8"/>
+      <ellipse cx="12" cy="11" rx="1.5" ry="1" fill="#FFFFFF"/>
+    </g>
+    
+    <!-- Reflejos secundarios -->
+    <ellipse cx="19" cy="18" rx="2" ry="1.5" fill="#F8F8FF" opacity="0.6">
+      <animate attributeName="opacity" values="0.6; 0.2; 0.6; 0.2; 0.6" dur="2s" repeatCount="indefinite"/>
+    </ellipse>
+    <circle cx="20" cy="13" r="1" fill="#FFFFFF" opacity="0.7">
+      <animate attributeName="opacity" values="0.7; 0.3; 0.7; 0.3; 0.7" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Brillo intenso -->
+    <ellipse cx="11" cy="10" rx="1" ry="0.5" fill="#FFFFFF">
+      <animate attributeName="opacity" values="1; 0.3; 1; 0.3; 1" dur="2s" repeatCount="indefinite"/>
+    </ellipse>
+    
+    <!-- Detalles de textura pixel -->
+    <rect x="8" y="14" width="1" height="1" fill="#F5F5F5"/>
+    <rect x="22" y="16" width="1" height="1" fill="#F5F5F5"/>
+    <rect x="14" y="22" width="1" height="1" fill="#F0F0F0"/>
+    <rect x="18" y="10" width="1" height="1" fill="#F8F8FF"/>
+    
+    <!-- Contorno para definir la forma pixel -->
+    <ellipse cx="16" cy="16" rx="12" ry="10" fill="none" stroke="#D3D3D3" stroke-width="0.5"/>
+    
+    <!-- Brillo superior característico de las perlas -->
+    <path d="M 8 12 Q 16 8 24 12 Q 20 10 16 10 Q 12 10 8 12" fill="#FFFFFF" opacity="0.4">
+      <animate attributeName="opacity" values="0.4; 0.1; 0.4; 0.1; 0.4" dur="2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Destellos adicionales que aparecen durante la rotación -->
+  <g>
+    <circle cx="8" cy="16" r="1" fill="#FFFFFF">
+      <animate attributeName="opacity" values="0; 1; 0; 0; 0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="24" cy="16" r="1" fill="#FFFFFF">
+      <animate attributeName="opacity" values="0; 0; 0; 1; 0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ddkpfpjcnfnt5"]
+[gd_scene load_steps=16 format=3 uid="uid://ddkpfpjcnfnt5"]
 
 [ext_resource type="Texture2D" uid="uid://csa0ssuf53ffs" path="res://assets/2d/TerrenoFondos/suelo_pasto.svg" id="1_6sxuj"]
 [ext_resource type="Script" uid="uid://c27uxxycdwjgb" path="res://2d/main_scene/main_scene.gd" id="1_t5jq1"]
@@ -6,11 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://c3o0b833m36eh" path="res://2d/player2d/player2d.tscn" id="3_t5jq1"]
 [ext_resource type="Script" uid="uid://dbunvkoi4ubdc" path="res://2d/player2d/player_2d.gd" id="4_7j4i0"]
 [ext_resource type="Texture2D" uid="uid://diw8wem6m1kj1" path="res://assets/2d/Imagenes/cartel_exclamacion.svg" id="6_pwqk0"]
+[ext_resource type="Texture2D" uid="uid://bdwwpa8jyr522" path="res://assets/2d/Imagenes/perla_moneda_pixelart.svg" id="7_2e12n"]
 [ext_resource type="Script" uid="uid://cbfjiyspbmvfs" path="res://2d/main_scene/senal_aviso.gd" id="7_senal"]
 [ext_resource type="Texture2D" uid="uid://c434vwtj07s23" path="res://assets/2d/Imagenes/ciudad.svg" id="8_2e12n"]
+[ext_resource type="Script" uid="uid://qbvps0cjyew0" path="res://2d/main_scene/perla_animacion.gd" id="9_perla"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7im3n"]
-size = Vector2(3406, 32)
+size = Vector2(3379, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vx1rf"]
 size = Vector2(57.5, 71)
@@ -24,14 +26,17 @@ shader_parameter/distortion_intensity = 0.003
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_d4px6"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_kftdy"]
+radius = 8.53333
+
 [node name="Game2D" type="Node2D"]
 script = ExtResource("1_t5jq1")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -346.0
-offset_top = -105.0
-offset_right = 3202.0
-offset_bottom = 654.0
+offset_left = -349.0
+offset_top = -103.0
+offset_right = 3199.0
+offset_bottom = 656.0
 color = Color(0.33325, 0.446943, 0.294512, 1)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -41,15 +46,17 @@ position = Vector2(577, 277)
 texture_filter = 1
 offset_left = -937.0
 offset_top = 243.0
-offset_right = 2952.0
+offset_right = 2442.0
 offset_bottom = 307.0
 texture = ExtResource("1_6sxuj")
 stretch_mode = 1
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 modulate = Color(0.337255, 0.0588235, 0.717647, 1)
-position = Vector2(766, 273)
+position = Vector2(752.5, 273)
 shape = SubResource("RectangleShape2D_7im3n")
+metadata/_edit_group_ = true
 
 [node name="SenalAviso1" type="StaticBody2D" parent="."]
 position = Vector2(-1147, 1)
@@ -103,7 +110,7 @@ offset_right = -6.0
 offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Sigue bajo tu responsabilidad"
+text = "Las monedas te servirán después"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -115,21 +122,41 @@ polygon = PackedVector2Array(0, 0, -10, 15, 10, 15)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2
-visible = false
 follow_viewport_enabled = true
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+visible = false
 material = SubResource("ShaderMaterial_pwqk0")
-offset_right = 1158.0
-offset_bottom = 648.0
+anchors_preset = -1
+anchor_left = -0.297743
+anchor_right = 1.74045
+offset_left = 2.0
+offset_top = 5.0
+offset_right = 1160.0
+offset_bottom = 653.0
 size_flags_horizontal = 3
 texture = SubResource("PlaceholderTexture2D_d4px6")
+metadata/_edit_use_anchors_ = true
 
 [node name="Ciudad" type="Sprite2D" parent="."]
 position = Vector2(2226, 406)
 scale = Vector2(0.404297, 0.355469)
 texture = ExtResource("8_2e12n")
 
+[node name="PerlaMonedas" type="StaticBody2D" parent="."]
+
+[node name="PerlaMonedaPixelart" type="Sprite2D" parent="PerlaMonedas"]
+position = Vector2(529, 518)
+scale = Vector2(0.312499, 0.624999)
+texture = ExtResource("7_2e12n")
+script = ExtResource("9_perla")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PerlaMonedas"]
+position = Vector2(529, 518)
+scale = Vector2(0.468748, 0.999999)
+shape = SubResource("CircleShape2D_kftdy")
+disabled = true
+
 [node name="Player2D" parent="." instance=ExtResource("3_t5jq1")]
-position = Vector2(34, 511)
+position = Vector2(74, 512)
 script = ExtResource("4_7j4i0")
