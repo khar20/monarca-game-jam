@@ -27,6 +27,7 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "bienvenida": "res://2d/Dialogos/bienvenida.dtl",
+"cartel_aviso": "res://2d/Dialogos/cartel_aviso.dtl",
 "timeline": "res://2d/Dialogos/timeline.dtl"
 }
 glossary/default_case_sensitive=true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ddkpfpjcnfnt5"]
+[gd_scene load_steps=12 format=3 uid="uid://ddkpfpjcnfnt5"]
 
 [ext_resource type="Texture2D" uid="uid://csa0ssuf53ffs" path="res://assets/2d/TerrenoFondos/suelo_pasto.svg" id="1_6sxuj"]
 [ext_resource type="Script" uid="uid://c27uxxycdwjgb" path="res://2d/main_scene/main_scene.gd" id="1_t5jq1"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c3o0b833m36eh" path="res://2d/player2d/player2d.tscn" id="3_t5jq1"]
 [ext_resource type="Script" uid="uid://dbunvkoi4ubdc" path="res://2d/player2d/player_2d.gd" id="4_7j4i0"]
 [ext_resource type="Texture2D" uid="uid://diw8wem6m1kj1" path="res://assets/2d/Imagenes/cartel_exclamacion.svg" id="6_pwqk0"]
+[ext_resource type="Script" uid="uid://cbfjiyspbmvfs" path="res://2d/main_scene/senal_aviso.gd" id="7_senal"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7im3n"]
 size = Vector2(1925, 32)
@@ -49,9 +50,10 @@ modulate = Color(0.337255, 0.0588235, 0.717647, 1)
 position = Vector2(25.5, 273)
 shape = SubResource("RectangleShape2D_7im3n")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+[node name="SenalAviso1" type="StaticBody2D" parent="."]
+script = ExtResource("7_senal")
 
-[node name="TextureRect" type="TextureRect" parent="StaticBody2D2"]
+[node name="TextureRect" type="TextureRect" parent="SenalAviso1"]
 offset_left = 1507.0
 offset_top = 462.0
 offset_right = 1565.0
@@ -60,10 +62,16 @@ texture = ExtResource("6_pwqk0")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SenalAviso1"]
 position = Vector2(1535.75, 497.5)
 shape = SubResource("RectangleShape2D_vx1rf")
 disabled = true
+
+[node name="Area2D" type="Area2D" parent="SenalAviso1"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="SenalAviso1/Area2D"]
+position = Vector2(1535.75, 497.5)
+shape = SubResource("RectangleShape2D_vx1rf")
 
 [node name="Player2D" parent="." instance=ExtResource("3_t5jq1")]
 position = Vector2(34, 511)
