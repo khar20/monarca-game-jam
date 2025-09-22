@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ddkpfpjcnfnt5"]
+[gd_scene load_steps=15 format=3 uid="uid://ddkpfpjcnfnt5"]
 
 [ext_resource type="Texture2D" uid="uid://csa0ssuf53ffs" path="res://assets/2d/TerrenoFondos/suelo_pasto.svg" id="1_6sxuj"]
 [ext_resource type="Script" uid="uid://c27uxxycdwjgb" path="res://2d/main_scene/main_scene.gd" id="1_t5jq1"]
@@ -17,17 +17,15 @@ size = Vector2(3379, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vx1rf"]
 size = Vector2(57.5, 71)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_kftdy"]
+radius = 8.53333
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pwqk0"]
 shader = ExtResource("2_d4px6")
 shader_parameter/time_speed = 1.0
 shader_parameter/flicker_intensity = 0.05
 shader_parameter/noise_intensity = 0.02
 shader_parameter/distortion_intensity = 0.003
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_d4px6"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_kftdy"]
-radius = 8.53333
 
 [node name="Game2D" type="Node2D"]
 script = ExtResource("1_t5jq1")
@@ -120,24 +118,6 @@ position = Vector2(86, 20)
 color = Color(1, 1, 1, 0.95)
 polygon = PackedVector2Array(0, 0, -10, 15, 10, 15)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 2
-follow_viewport_enabled = true
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-visible = false
-material = SubResource("ShaderMaterial_pwqk0")
-anchors_preset = -1
-anchor_left = -0.297743
-anchor_right = 1.74045
-offset_left = 2.0
-offset_top = 5.0
-offset_right = 1160.0
-offset_bottom = 653.0
-size_flags_horizontal = 3
-texture = SubResource("PlaceholderTexture2D_d4px6")
-metadata/_edit_use_anchors_ = true
-
 [node name="Ciudad" type="Sprite2D" parent="."]
 position = Vector2(2226, 406)
 scale = Vector2(0.404297, 0.355469)
@@ -160,3 +140,12 @@ disabled = true
 [node name="Player2D" parent="." instance=ExtResource("3_t5jq1")]
 position = Vector2(74, 512)
 script = ExtResource("4_7j4i0")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+follow_viewport_enabled = true
+
+[node name="TextureRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+material = SubResource("ShaderMaterial_pwqk0")
+metadata/_edit_use_anchors_ = true

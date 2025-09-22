@@ -2,11 +2,11 @@
 extends CharacterBody3D
 
 # properties
-const SPEED = 3.0
-const JUMP_VELOCITY = 4.5
-const SENS = 0.001
-const ACCELERATION = 0.1
-const FRICTION = 0.5
+const SPEED: float = 3.0
+const JUMP_VELOCITY: float = 4.5
+const SENS: float = 0.001
+const ACCELERATION: float = 0.1
+const FRICTION: float = 0.5
 
 # states
 enum States { MOVE, PLAYING }
@@ -14,7 +14,7 @@ enum States { MOVE, PLAYING }
 # default initial state
 var state = States.MOVE
 
-@onready var camera = $Camera3D
+@onready var camera: Camera3D = $Camera3D
 
 func _ready() -> void:
 	# initial mouse mode
@@ -66,8 +66,8 @@ func _move_state(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 
 	# directional input
-	var input_dir = Input.get_vector("left", "right", "forward", "backward")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var input_dir: Vector2 = Input.get_vector("left", "right", "forward", "backward")
+	var direction: Vector3 = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
 	# movement
 	if direction:

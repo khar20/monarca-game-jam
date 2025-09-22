@@ -1,15 +1,15 @@
 extends Control
 
-@onready var configuracion_button = $VBoxContainer/ConfiguracionContainer/Configuracion
-@onready var salir_button = $VBoxContainer/SalirContainer/Salir
-@onready var configuracion_rota = $VBoxContainer/ConfiguracionContainer/ConfiguracionRota
-@onready var salir_roto = $VBoxContainer/SalirContainer/SalirRoto
-@onready var terror_svg = $TerrorSVG
-@onready var simbolos_svg = $SimbolosSVG
+@onready var configuracion_button: Button = $VBoxContainer/ConfiguracionContainer/Configuracion
+@onready var salir_button: Button = $VBoxContainer/SalirContainer/Salir
+@onready var configuracion_rota: TextureRect = $VBoxContainer/ConfiguracionContainer/ConfiguracionRota
+@onready var salir_roto: TextureRect = $VBoxContainer/SalirContainer/SalirRoto
+@onready var terror_svg: TextureRect = $TerrorSVG
+@onready var simbolos_svg: TextureRect = $SimbolosSVG
 
 # Posiciones específicas para cada imagen
-var terror_position = Vector2(800, 50)      # Esquina superior derecha para texto_terror_simbolos
-var simbolos_position = Vector2(50, 400)    # Esquina inferior izquierda para simbolos_menu
+var terror_position: Vector2 = Vector2(800, 50)
+var simbolos_position: Vector2 = Vector2(50, 400)
 
 func _on_jugar_pressed() -> void:
 	get_tree().change_scene_to_file("res://2d/main_scene/main_scene.tscn")
@@ -33,12 +33,12 @@ func _on_salir_pressed() -> void:
 	# Mostrar el SVG de símbolos en la esquina inferior izquierda
 	show_simbolos_svg()
 
-func show_terror_svg():
+func show_terror_svg() -> void:
 	# Posicionar el SVG en la esquina superior derecha
 	terror_svg.position = terror_position
 	
 	# Añadir rotación inclinada aleatoria (entre -25 y 25 grados)
-	var random_rotation = randf_range(-25.0, 25.0)
+	var random_rotation: float = randf_range(-25.0, 25.0)
 	terror_svg.rotation_degrees = random_rotation
 	
 	# Hacer visible el SVG
@@ -46,17 +46,17 @@ func show_terror_svg():
 	
 	# Efecto de aparición gradual con rotación
 	terror_svg.modulate.a = 0.0
-	var tween = create_tween()
+	var tween: Tween = create_tween()
 	tween.parallel().tween_property(terror_svg, "modulate:a", 1.0, 0.5)
 	# Añadir un ligero efecto de rotación durante la aparición
 	tween.parallel().tween_property(terror_svg, "rotation_degrees", random_rotation + randf_range(-5.0, 5.0), 0.5)
 
-func show_simbolos_svg():
+func show_simbolos_svg() -> void:
 	# Posicionar el SVG en la esquina inferior izquierda
 	simbolos_svg.position = simbolos_position
 	
 	# Añadir rotación inclinada aleatoria (entre -25 y 25 grados)
-	var random_rotation = randf_range(-25.0, 25.0)
+	var random_rotation: float = randf_range(-25.0, 25.0)
 	simbolos_svg.rotation_degrees = random_rotation
 	
 	# Hacer visible el SVG
@@ -64,7 +64,7 @@ func show_simbolos_svg():
 	
 	# Efecto de aparición gradual con rotación
 	simbolos_svg.modulate.a = 0.0
-	var tween = create_tween()
+	var tween: Tween = create_tween()
 	tween.parallel().tween_property(simbolos_svg, "modulate:a", 1.0, 0.5)
 	# Añadir un ligero efecto de rotación durante la aparición
 	tween.parallel().tween_property(simbolos_svg, "rotation_degrees", random_rotation + randf_range(-5.0, 5.0), 0.5)
