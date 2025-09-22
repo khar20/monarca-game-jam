@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://dbunvkoi4ubdc" path="res://2d/player2d/player_2d.gd" id="4_7j4i0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7im3n"]
-size = Vector2(1177, 32)
+size = Vector2(1583, 32)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pwqk0"]
 shader = ExtResource("2_d4px6")
@@ -22,17 +22,17 @@ position = Vector2(577, 277)
 
 [node name="TextureRect" type="TextureRect" parent="StaticBody2D"]
 texture_filter = 1
-offset_left = -604.0
-offset_top = 229.0
-offset_right = 606.0
-offset_bottom = 293.0
+offset_left = -603.0
+offset_top = 243.0
+offset_right = 988.0
+offset_bottom = 307.0
 texture = ExtResource("1_6sxuj")
 stretch_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 modulate = Color(0.337255, 0.0588235, 0.717647, 1)
-position = Vector2(0, 257)
+position = Vector2(192, 273)
 shape = SubResource("RectangleShape2D_7im3n")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -48,8 +48,7 @@ follow_viewport_enabled = true
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_pwqk0")
-offset_right = 1152.0
+offset_right = 1559.0
 offset_bottom = 648.0
 size_flags_horizontal = 3
 texture = SubResource("PlaceholderTexture2D_d4px6")
-metadata/_edit_lock_ = true
