@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3 uid="uid://broda6pesgbr2"]
+
+[ext_resource type="Shader" uid="uid://ddheel4dbfanb" path="res://shaders/horror_menu_shader.gdshader" id="1_horror_shader"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_horror"]
+shader = ExtResource("1_horror_shader")
+shader_parameter/time_speed = 1.0
+shader_parameter/distortion_strength = 0.02
+shader_parameter/flicker_intensity = 0.3
+shader_parameter/noise_intensity = 0.15
+shader_parameter/vignette_strength = 0.8
+shader_parameter/blood_tint = 0.2
+shader_parameter/darkness_pulse = 0.4
+
+[node name="MenuPrincipal" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="shaderFondo" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_horror")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1, 0.05, 0.05, 1)
+
+[node name="Botones" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -187.5
+offset_top = -107.5
+offset_right = 187.5
+offset_bottom = 107.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="JugarBoton" type="Button" parent="Botones"]
+layout_mode = 2
+text = "JUGAR"
+flat = true
+
+[node name="OpcionesBoton" type="Button" parent="Botones"]
+layout_mode = 2
+text = "OPCIONES"
+flat = true
+
+[node name="SalirBoton" type="Button" parent="Botones"]
+layout_mode = 2
+text = "SALIR"
+flat = true
