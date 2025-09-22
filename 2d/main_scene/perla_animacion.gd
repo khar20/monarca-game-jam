@@ -11,17 +11,14 @@ func _ready():
 	if area_2d:
 		area_2d.body_entered.connect(_on_body_entered)
 	
-	# Buscamos la cámara en la escena
 	camera = get_viewport().get_camera_2d()
 	
-	# Calculamos el offset relativo a la cámara
 	if camera:
 		camera_offset = global_position - camera.global_position
 	
 	start_spinning_animation()
 
 func _process(delta):
-	# Mantenemos la posición relativa a la cámara
 	if camera:
 		global_position = camera.global_position + camera_offset
 
@@ -29,8 +26,8 @@ func start_spinning_animation():
 	tween = create_tween()
 	tween.set_loops()
 	
-	tween.tween_property(self, "scale:x", -1.5, 1.0)
-	tween.tween_property(self, "scale:x", 1.5, 1.0)
+	tween.tween_property(self, "scale:x", -0.5, 1.0)
+	tween.tween_property(self, "scale:x", 0.5, 1.0)
 	
 	sparkle_tween = create_tween()
 	sparkle_tween.set_loops()

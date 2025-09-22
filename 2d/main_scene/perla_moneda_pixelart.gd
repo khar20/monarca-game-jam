@@ -3,16 +3,14 @@ extends Sprite2D
 # Variables para el movimiento
 var initial_position: Vector2
 var time_passed: float = 0.0
-var float_amplitude: float = 1.0  # Altura del movimiento flotante
-var float_speed: float = 2.0       # Velocidad del movimiento flotante
-var rotation_speed: float = 2.0    # Velocidad de rotación
+var float_amplitude: float = 1.0 
+var float_speed: float = 2.0      
+var rotation_speed: float = 2.0
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Guardamos la posición inicial de la moneda
 	initial_position = position
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	time_passed += delta
 	
