@@ -56,6 +56,10 @@ shadow_size = 8
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8l6un"]
 shader = ExtResource("4_8kone")
+shader_parameter/time_speed = 1.0
+shader_parameter/flicker_intensity = 0.05
+shader_parameter/noise_intensity = 0.02
+shader_parameter/distortion_intensity = 0.003
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_p426s"]
 
