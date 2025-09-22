@@ -56,7 +56,7 @@ follow_viewport_enabled = true
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_pwqk0")
-offset_right = 1150.0
+offset_right = 1158.0
 offset_bottom = 648.0
 size_flags_horizontal = 3
 texture = SubResource("PlaceholderTexture2D_d4px6")
