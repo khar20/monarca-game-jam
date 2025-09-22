@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df165pcuf5t5i"
-path="res://.godot/imported/cementerio_derecha.svg-3bcd4a1369190e5f8a33b04226554be0.ctex"
+uid="uid://diw8wem6m1kj1"
+path="res://.godot/imported/cartel_exclamacion.svg-1cc5fa1ff9129b346d29556db8fc8474.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/2d/Imagenes/cementerio_derecha.svg"
-dest_files=["res://.godot/imported/cementerio_derecha.svg-3bcd4a1369190e5f8a33b04226554be0.ctex"]
+source_file="res://assets/2d/Imagenes/cartel_exclamacion.svg"
+dest_files=["res://.godot/imported/cartel_exclamacion.svg-1cc5fa1ff9129b346d29556db8fc8474.ctex"]
 
 [params]
 
