@@ -27,7 +27,7 @@ shader_parameter/distortion_intensity = 0.003
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_d4px6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kftdy"]
-radius = 8.53333
+radius = 10.6666
 
 [node name="Game2D" type="Node2D"]
 script = ExtResource("1_t5jq1")
@@ -146,13 +146,13 @@ texture = ExtResource("8_2e12n")
 [node name="PerlaMonedas" type="StaticBody2D" parent="."]
 
 [node name="PerlaMonedaPixelart" type="Sprite2D" parent="PerlaMonedas"]
-position = Vector2(529, 518)
-scale = Vector2(0.312499, 0.624999)
+position = Vector2(530, 518)
+scale = Vector2(0.359374, 1.45313)
 texture = ExtResource("7_2e12n")
 script = ExtResource("9_perla")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PerlaMonedas"]
-position = Vector2(529, 518)
+position = Vector2(530, 519)
 scale = Vector2(0.468748, 0.999999)
 shape = SubResource("CircleShape2D_kftdy")
 disabled = true

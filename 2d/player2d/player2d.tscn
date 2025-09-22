@@ -1,9 +1,11 @@
-[gd_scene load_steps=28 format=3 uid="uid://c3o0b833m36eh"]
+[gd_scene load_steps=30 format=3 uid="uid://c3o0b833m36eh"]
 
 [ext_resource type="Texture2D" uid="uid://dd6xwya4jcoaq" path="res://assets/2d/player2d/NoOutline/120x80_PNGSheets/_Run.png" id="1_ourca"]
 [ext_resource type="Texture2D" uid="uid://ycmuofakbrny" path="res://assets/2d/player2d/NoOutline/120x80_PNGSheets/_Idle.png" id="2_l22jq"]
 [ext_resource type="Texture2D" uid="uid://c4lwl0bbomybm" path="res://assets/2d/player2d/NoOutline/120x80_PNGSheets/_JumpFallInbetween.png" id="3_lp0nb"]
 [ext_resource type="Script" uid="uid://dqdmpbpm43f8w" path="res://2d/player2d/camera_2d.gd" id="4_0yjep"]
+[ext_resource type="Texture2D" uid="uid://bdwwpa8jyr522" path="res://assets/2d/Imagenes/perla_moneda_pixelart.svg" id="5_wb31f"]
+[ext_resource type="Script" uid="uid://qbvps0cjyew0" path="res://2d/main_scene/perla_animacion.gd" id="6_mixty"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_07xq5"]
 size = Vector2(19, 37)
@@ -190,3 +192,9 @@ frame_progress = 0.694925
 position = Vector2(0, -100)
 zoom = Vector2(1.5, 1.5)
 script = ExtResource("4_0yjep")
+
+[node name="PerlaMonedaPixelart" type="Sprite2D" parent="."]
+position = Vector2(-360, -288)
+scale = Vector2(0.771483, 0.994141)
+texture = ExtResource("5_wb31f")
+script = ExtResource("6_mixty")
