@@ -13,36 +13,36 @@ shader_parameter/blood_tint = 0.1
 shader_parameter/darkness_pulse = 0.15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hover"]
-bg_color = Color(0.2, 0.1, 0.1, 0.9)
+bg_color = Color(0, 0, 0, 0.9)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.8, 0.3, 0.3, 1)
+border_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pressed"]
-bg_color = Color(0.3, 0.15, 0.15, 1)
+bg_color = Color(1, 1, 1, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(1, 0.4, 0.4, 1)
+border_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_normal"]
-bg_color = Color(0.1, 0.05, 0.05, 0.8)
+bg_color = Color(1, 1, 1, 0.8)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.4, 0.2, 0.2, 1)
+border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -84,7 +84,7 @@ theme_override_constants/separation = 50
 [node name="JugarBoton" type="Button" parent="Botones"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(1, 0.2, 0.2, 1)
-theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(1, 0.3, 0.3, 1)
 theme_override_colors/font_pressed_color = Color(0.8, 0.1, 0.1, 1)
 theme_override_font_sizes/font_size = 24
@@ -97,7 +97,7 @@ text = "JUGAR"
 [node name="OpcionesBoton" type="Button" parent="Botones"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(1, 0.2, 0.2, 1)
-theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(1, 0.3, 0.3, 1)
 theme_override_colors/font_pressed_color = Color(0.8, 0.1, 0.1, 1)
 theme_override_font_sizes/font_size = 24
@@ -109,7 +109,7 @@ text = "OPCIONES"
 [node name="SalirBoton" type="Button" parent="Botones"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(1, 0.2, 0.2, 1)
-theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(1, 0.3, 0.3, 1)
 theme_override_colors/font_pressed_color = Color(0.8, 0.1, 0.1, 1)
 theme_override_font_sizes/font_size = 24
@@ -128,7 +128,7 @@ offset_top = -40.0
 offset_right = 200.0
 offset_bottom = -20.0
 grow_vertical = 0
-theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 0.8)
+theme_override_colors/font_color = Color(0, 0, 0, 0.8)
 theme_override_font_sizes/font_size = 14
 text = "Made by SquareOne"
 vertical_alignment = 2
