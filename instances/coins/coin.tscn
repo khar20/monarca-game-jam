@@ -1,19 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://1r0eve8n3kdg"]
 
-[ext_resource type="Script" uid="uid://bsjwh134enyim" path="res://instances/coins/coins.gd" id="1_t4521"]
-[ext_resource type="Texture2D" uid="uid://bdwwpa8jyr522" path="res://assets/2d/Imagenes/perla_moneda_pixelart.svg" id="2_xmkq2"]
+[ext_resource type="Script" uid="uid://bsjwh134enyim" path="res://instances/coins/coin.gd" id="1_em8v3"]
+[ext_resource type="Texture2D" uid="uid://bdwwpa8jyr522" path="res://assets/2d/Imagenes/perla_moneda_pixelart.svg" id="2_lmfey"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2e12n"]
 radius = 7.0
 height = 14.0
 
 [node name="Coin" type="StaticBody2D"]
-script = ExtResource("1_t4521")
+script = ExtResource("1_em8v3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(475.5, 520)
 scale = Vector2(0.40625, 0.625)
-texture = ExtResource("2_xmkq2")
+texture = ExtResource("2_lmfey")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(475, 520)

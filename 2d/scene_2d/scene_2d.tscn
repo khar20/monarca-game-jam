@@ -1,19 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://ddkpfpjcnfnt5"]
+[gd_scene load_steps=9 format=3 uid="uid://ddkpfpjcnfnt5"]
 
 [ext_resource type="Script" uid="uid://c27uxxycdwjgb" path="res://2d/scene_2d/scene_2d.gd" id="1_vf2r8"]
 [ext_resource type="Texture2D" uid="uid://csa0ssuf53ffs" path="res://assets/2d/TerrenoFondos/suelo_pasto.svg" id="2_tjmi5"]
-[ext_resource type="Script" uid="uid://cbfjiyspbmvfs" path="res://2d/scene_2d/senal_aviso.gd" id="3_ndixj"]
-[ext_resource type="Texture2D" uid="uid://diw8wem6m1kj1" path="res://assets/2d/Imagenes/cartel_exclamacion.svg" id="4_ubg35"]
+[ext_resource type="PackedScene" uid="uid://8cmwbpgxfswb" path="res://instances/signs/sign.tscn" id="3_32rfo"]
 [ext_resource type="Texture2D" uid="uid://c434vwtj07s23" path="res://assets/2d/Imagenes/ciudad.svg" id="5_a1dv1"]
 [ext_resource type="PackedScene" uid="uid://c3o0b833m36eh" path="res://2d/player_2d/player_2d.tscn" id="6_aiw3g"]
-[ext_resource type="Script" uid="uid://dbunvkoi4ubdc" path="res://2d/player_2d/player_2d.gd" id="7_16c48"]
 [ext_resource type="Shader" uid="uid://dkm5yab2l76qp" path="res://shaders/crt_shader.gdshader" id="8_e1rd3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7im3n"]
 size = Vector2(3379, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vx1rf"]
-size = Vector2(57.5, 71)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pwqk0"]
 shader = ExtResource("8_e1rd3")
@@ -25,12 +20,9 @@ shader_parameter/distortion_intensity = 0.003
 [node name="Game2D" type="Node2D"]
 script = ExtResource("1_vf2r8")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -349.0
-offset_top = -103.0
-offset_right = 3199.0
-offset_bottom = 656.0
-color = Color(0.33325, 0.446943, 0.294512, 1)
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(577, 277)
@@ -51,78 +43,20 @@ position = Vector2(752.5, 273)
 shape = SubResource("RectangleShape2D_7im3n")
 metadata/_edit_group_ = true
 
-[node name="SenalAviso1" type="StaticBody2D" parent="."]
+[node name="SenalAviso1" parent="." instance=ExtResource("3_32rfo")]
 position = Vector2(-1147, 1)
-script = ExtResource("3_ndixj")
-metadata/_edit_group_ = true
-
-[node name="TextureRect" type="TextureRect" parent="SenalAviso1"]
-offset_left = 1507.0
-offset_top = 462.0
-offset_right = 1565.0
-offset_bottom = 533.0
-texture = ExtResource("4_ubg35")
-expand_mode = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SenalAviso1"]
-position = Vector2(1535.75, 497.5)
-shape = SubResource("RectangleShape2D_vx1rf")
-disabled = true
-
-[node name="Area2D" type="Area2D" parent="SenalAviso1"]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="SenalAviso1/Area2D"]
-position = Vector2(1535.75, 497.5)
-shape = SubResource("RectangleShape2D_vx1rf")
-
-[node name="DialogueBalloon" type="Control" parent="SenalAviso1"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 1450.0
-offset_top = 420.0
-offset_right = 1620.0
-offset_bottom = 470.0
-
-[node name="BalloonBackground" type="NinePatchRect" parent="SenalAviso1/DialogueBalloon"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="DialogueText" type="Label" parent="SenalAviso1/DialogueBalloon"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 14.0
-offset_top = -34.0
-offset_right = -6.0
-offset_bottom = -35.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Las monedas te servirán después"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="BalloonTail" type="Polygon2D" parent="SenalAviso1/DialogueBalloon"]
-position = Vector2(86, 20)
-color = Color(1, 1, 1, 0.95)
-polygon = PackedVector2Array(0, 0, -10, 15, 10, 15)
 
 [node name="Ciudad" type="Sprite2D" parent="."]
 position = Vector2(2226, 406)
 scale = Vector2(0.404297, 0.355469)
 texture = ExtResource("5_a1dv1")
 
+[node name="Signs" type="Node2D" parent="."]
+
 [node name="Coins" type="Node2D" parent="."]
 
 [node name="Player2D" parent="." instance=ExtResource("6_aiw3g")]
 position = Vector2(74, 512)
-script = ExtResource("7_16c48")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2
@@ -132,5 +66,3 @@ follow_viewport_enabled = true
 visible = false
 material = SubResource("ShaderMaterial_pwqk0")
 metadata/_edit_use_anchors_ = true
-
-[node name="Node2D" type="Node2D" parent="."]

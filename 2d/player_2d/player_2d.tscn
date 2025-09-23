@@ -1,9 +1,9 @@
 [gd_scene load_steps=28 format=3 uid="uid://c3o0b833m36eh"]
 
+[ext_resource type="Script" uid="uid://dbunvkoi4ubdc" path="res://2d/player_2d/player_2d.gd" id="1_3rvpv"]
 [ext_resource type="Texture2D" uid="uid://dd6xwya4jcoaq" path="res://assets/2d/player2d/NoOutline/120x80_PNGSheets/_Run.png" id="1_ourca"]
 [ext_resource type="Texture2D" uid="uid://ycmuofakbrny" path="res://assets/2d/player2d/NoOutline/120x80_PNGSheets/_Idle.png" id="2_l22jq"]
 [ext_resource type="Texture2D" uid="uid://c4lwl0bbomybm" path="res://assets/2d/player2d/NoOutline/120x80_PNGSheets/_JumpFallInbetween.png" id="3_lp0nb"]
-[ext_resource type="Script" uid="uid://dqdmpbpm43f8w" path="res://2d/player_2d/camera_2d.gd" id="4_0yjep"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_07xq5"]
 size = Vector2(19, 37)
@@ -174,6 +174,7 @@ animations = [{
 }]
 
 [node name="Player2D" type="CharacterBody2D"]
+script = ExtResource("1_3rvpv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_07xq5")
@@ -189,4 +190,3 @@ frame_progress = 0.694925
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -100)
 zoom = Vector2(1.5, 1.5)
-script = ExtResource("4_0yjep")
