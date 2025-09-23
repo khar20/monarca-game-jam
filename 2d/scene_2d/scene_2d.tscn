@@ -1,13 +1,16 @@
-[gd_scene load_steps=16 format=4 uid="uid://ddkpfpjcnfnt5"]
+[gd_scene load_steps=21 format=4 uid="uid://ddkpfpjcnfnt5"]
 
 [ext_resource type="Script" uid="uid://c27uxxycdwjgb" path="res://2d/scene_2d/scene_2d.gd" id="1_vf2r8"]
 [ext_resource type="Texture2D" uid="uid://cm8atwga7o5a2" path="res://assets/2d/Tiles/Transparent/tile_0271.png" id="2_5hxkn"]
+[ext_resource type="Texture2D" uid="uid://c7fv744cl2a70" path="res://assets/2d/Imagenes/negro.webp" id="2_tjmi5"]
 [ext_resource type="Texture2D" uid="uid://cx82snk2nvfjy" path="res://assets/2d/Tiles/Transparent/tile_0272.png" id="3_32rfo"]
 [ext_resource type="Texture2D" uid="uid://bs1gvhgct4pff" path="res://assets/2d/Tiles/Transparent/tile_0270.png" id="4_vf2r8"]
 [ext_resource type="Texture2D" uid="uid://dqiqdp37cnc5n" path="res://assets/2d/Tiles/Transparent/tile_0290.png" id="5_vf2r8"]
 [ext_resource type="PackedScene" uid="uid://c3o0b833m36eh" path="res://2d/player_2d/player_2d.tscn" id="6_aiw3g"]
 [ext_resource type="Texture2D" uid="uid://dg7u002kdkvrk" path="res://assets/2d/Tiles/Transparent/tile_0292.png" id="6_tjmi5"]
 [ext_resource type="Shader" uid="uid://dkm5yab2l76qp" path="res://shaders/crt_shader.gdshader" id="8_e1rd3"]
+[ext_resource type="Texture2D" uid="uid://ckic6ouyamvdr" path="res://assets/2d/Tiles/Default/tile_0008.png" id="8_ndixj"]
+[ext_resource type="Texture2D" uid="uid://bchy5ho6apkbe" path="res://assets/2d/Tiles/Default/tile_0007.png" id="9_ubg35"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tjmi5"]
 texture = ExtResource("2_5hxkn")
@@ -34,6 +37,16 @@ texture = ExtResource("6_tjmi5")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_16c48"]
+texture = ExtResource("8_ndixj")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e1rd3"]
+texture = ExtResource("9_ubg35")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
 [sub_resource type="TileSet" id="TileSet_t8d54"]
 physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_tjmi5")
@@ -41,6 +54,8 @@ sources/3 = SubResource("TileSetAtlasSource_ndixj")
 sources/4 = SubResource("TileSetAtlasSource_ubg35")
 sources/5 = SubResource("TileSetAtlasSource_a1dv1")
 sources/6 = SubResource("TileSetAtlasSource_aiw3g")
+sources/7 = SubResource("TileSetAtlasSource_16c48")
+sources/8 = SubResource("TileSetAtlasSource_e1rd3")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pwqk0"]
 shader = ExtResource("8_e1rd3")
@@ -52,8 +67,13 @@ shader_parameter/distortion_intensity = 0.003
 [node name="Game2D" type="Node2D"]
 script = ExtResource("1_vf2r8")
 
+[node name="Negro" type="Sprite2D" parent="."]
+position = Vector2(1190.5, 419.5)
+scale = Vector2(5.70364, 1.85808)
+texture = ExtResource("2_tjmi5")
+
 [node name="Frente" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAD//yIAAgAAAAAAAAAAACIAAgAAAAAAAAABACIAAgAAAAAAAAACACIAAgAAAAAAAAADACIAAgAAAAAAAAAEACIAAgAAAAAAAAAFACIAAgAAAAAAAAAGACIAAgAAAAAAAAAHACIAAgAAAAAAAAAIACIAAgAAAAAAAAAJACIAAgAAAAAAAAAKACIAAgAAAAAAAAALACIAAgAAAAAAAAAMACIAAgAAAAAAAAANACIAAgAAAAAAAAAOACIAAgAAAAAAAAAPACIAAgAAAAAAAAAQACIAAgAAAAAAAAARACIAAgAAAAAAAAASACIAAgAAAAAAAAATACIAAgAAAAAAAAAUACIAAgAAAAAAAAAVACIAAgAAAAAAAAAWACIAAgAAAAAAAAAXACIAAgAAAAAAAAAYACIAAgAAAAAAAAAZACIAAgAAAAAAAAAaACIAAgAAAAAAAAD1/yIAAgAAAAAAAAD2/yIAAgAAAAAAAAD3/yIAAgAAAAAAAAD4/yIAAgAAAAAAAAD5/yIAAgAAAAAAAAD6/yIAAgAAAAAAAAD7/yIAAgAAAAAAAAD8/yIAAgAAAAAAAAD9/yIAAgAAAAAAAAD+/yIAAgAAAAAAAAAbACIAAgAAAAAAAAAcACIAAgAAAAAAAAAdACIAAgAAAAAAAAAeACIAAgAAAAAAAAAfACIAAgAAAAAAAAAgACIAAgAAAAAAAAAhACIAAgAAAAAAAAAiACIAAgAAAAAAAAAjACIAAgAAAAAAAAAkACIAAgAAAAAAAAAlACIAAgAAAAAAAAAmACIAAgAAAAAAAAAnACIAAgAAAAAAAAAoACIAAgAAAAAAAAApACIAAgAAAAAAAAAqACIAAgAAAAAAAAArACIAAwAAAAAAAAD0/yIABAAAAAAAAAD0/yMABQAAAAAAAAD0/yQABQAAAAAAAAD0/yUABQAAAAAAAAD0/yYABQAAAAAAAAD0/ycABQAAAAAAAAD0/ygABQAAAAAAAAD0/ykABQAAAAAAAAD0/yoABQAAAAAAAAD0/ysABQAAAAAAAAD0/ywABQAAAAAAAAD0/y0ABQAAAAAAAAD0/y4ABQAAAAAAAAD0/y8ABQAAAAAAAAD0/zAABQAAAAAAAAD0/zEABQAAAAAAAAArACMABgAAAAAAAAArACQABgAAAAAAAAArACUABgAAAAAAAAArACYABgAAAAAAAAArACcABgAAAAAAAAArACgABgAAAAAAAAArACkABgAAAAAAAAArACoABgAAAAAAAAArACsABgAAAAAAAAArACwABgAAAAAAAAArAC0ABgAAAAAAAAArAC4ABgAAAAAAAAArAC8ABgAAAAAAAAArADAABgAAAAAAAAArADEABgAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD//yIAAgAAAAAAAAAAACIAAgAAAAAAAAABACIAAgAAAAAAAAACACIAAgAAAAAAAAADACIAAgAAAAAAAAAEACIAAgAAAAAAAAAFACIAAgAAAAAAAAAGACIAAgAAAAAAAAAHACIAAgAAAAAAAAAIACIAAgAAAAAAAAAJACIAAgAAAAAAAAAKACIAAgAAAAAAAAALACIAAgAAAAAAAAAMACIAAgAAAAAAAAANACIAAgAAAAAAAAAOACIAAgAAAAAAAAAPACIAAgAAAAAAAAAQACIAAgAAAAAAAAARACIAAgAAAAAAAAASACIAAgAAAAAAAAATACIAAgAAAAAAAAAUACIAAgAAAAAAAAAVACIAAgAAAAAAAAAWACIAAgAAAAAAAAAXACIAAgAAAAAAAAAYACIAAgAAAAAAAAAZACIAAgAAAAAAAAAaACIAAgAAAAAAAAD1/yIAAgAAAAAAAAD2/yIAAgAAAAAAAAD3/yIAAgAAAAAAAAD4/yIAAgAAAAAAAAD5/yIAAgAAAAAAAAD6/yIAAgAAAAAAAAD7/yIAAgAAAAAAAAD8/yIAAgAAAAAAAAD9/yIAAgAAAAAAAAD+/yIAAgAAAAAAAAAbACIAAgAAAAAAAAAcACIAAgAAAAAAAAAdACIAAgAAAAAAAAAeACIAAgAAAAAAAAAfACIAAgAAAAAAAAAgACIAAgAAAAAAAAAhACIAAgAAAAAAAAAiACIAAgAAAAAAAAAjACIAAgAAAAAAAAAkACIAAgAAAAAAAAAlACIAAgAAAAAAAAAmACIAAgAAAAAAAAAnACIAAgAAAAAAAAAoACIAAgAAAAAAAAApACIAAgAAAAAAAAArACIAAgAAAAAAAAD0/yIABAAAAAAAAAD0/yMABQAAAAAAAAD0/yQABQAAAAAAAAD0/yUABQAAAAAAAAD0/yYABQAAAAAAAAD0/ycABQAAAAAAAAD0/ygABQAAAAAAAAD0/ykABQAAAAAAAAD0/yoABQAAAAAAAAD0/ysABQAAAAAAAAD0/ywABQAAAAAAAAD0/y0ABQAAAAAAAAD0/y4ABQAAAAAAAAD0/y8ABQAAAAAAAAD0/zAABQAAAAAAAAD0/zEABQAAAAAAAAAsABwABQAAAAAAAAAsAB0ABQAAAAAAAAAsAB4ABQAAAAAAAAAsAB8ABQAAAAAAAAAsACAABQAAAAAAAAAsACEABQAAAAAAAAAsABsABAAAAAAAAAAtABsAAgAAAAAAAAAuABsAAgAAAAAAAAAvABsAAgAAAAAAAAAwABsAAgAAAAAAAAAxABsAAgAAAAAAAAAyABsAAgAAAAAAAAAzABsAAgAAAAAAAAA0ABsAAwAAAAAAAAA0ABwABgAAAAAAAAA0AB0ABgAAAAAAAAA0AB4ABgAAAAAAAAA0AB8ABgAAAAAAAAA0ACAABgAAAAAAAAA0ACEABgAAAAAAAAA0ACIABgAAAAAAAAA0ACMABgAAAAAAAAA0ACQABgAAAAAAAAA0ACUABgAAAAAAAAA0ACYABgAAAAAAAAA0ACcABgAAAAAAAAA0ACgABgAAAAAAAAA0ACkABgAAAAAAAAA0ACoABgAAAAAAAAA0ACsABgAAAAAAAAA0ACwABgAAAAAAAAA0AC0ABgAAAAAAAAA0AC4ABgAAAAAAAAA0AC8ABgAAAAAAAAA0ADAABgAAAAAAAAA0ADEABgAAAAAAAAAsACIABQAAAAAAAAAsACMABQAAAAAAAAAsACQABQAAAAAAAAAsACUABQAAAAAAAAAsACYABQAAAAAAAAAsACcABQAAAAAAAAAqACIAAgAAAAAAAAAsACgABQAAAAAAAAAsACkABQAAAAAAAAAsACoABQAAAAAAAAAsACsABQAAAAAAAAAsACwABQAAAAAAAAAsAC0ABQAAAAAAAAAsAC4ABQAAAAAAAAAsAC8ABQAAAAAAAAAsADAABQAAAAAAAAAsADEABQAAAAAAAAAmAB0ABwAAAAAAAAAmAB4ABwAAAAAAAAAnAB0ABwAAAAAAAAAnAB4ABwAAAAAAAAAEAB0ACAAAAAAAAAA=")
 tile_set = SubResource("TileSet_t8d54")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -62,8 +82,13 @@ visible = false
 follow_viewport_enabled = true
 
 [node name="TextureRect" type="ColorRect" parent="CanvasLayer"]
-visible = false
 material = SubResource("ShaderMaterial_pwqk0")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.00688597, 0.0133522, 0.0200981, 0.164706)
 metadata/_edit_use_anchors_ = true
 
 [node name="Player2D" parent="." instance=ExtResource("6_aiw3g")]
