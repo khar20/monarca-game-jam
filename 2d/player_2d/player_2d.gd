@@ -42,8 +42,7 @@ func update_animations(direction: float) -> void:
 	else:
 		animated_sprite.play("Default")
 
-@onready var player: CharacterBody2D = get_parent()
-
+# Camera follow variables
 var base_y_offset: float = -100.0
 var camera_y_position: float
 var camera_initialized: bool = false
@@ -51,12 +50,13 @@ var camera_initialized: bool = false
 func _ready() -> void:
 	camera.make_current()
 
-func _process(delta: float) -> void:
-	global_position.x = player.global_position.x
+func _process(_delta: float) -> void:
+	# Camera follows player horizontally
+	camera.global_position.x = global_position.x
 		
 	if not camera_initialized:
-		camera_y_position = player.global_position.y + base_y_offset
+		camera_y_position = global_position.y + base_y_offset
 		camera_initialized = true
 		
 	# camera keeps y axis
-	global_position.y = camera_y_position
+	camera.global_position.y = camera_y_position
