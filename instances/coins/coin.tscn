@@ -4,18 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://bdwwpa8jyr522" path="res://assets/2d/Imagenes/perla_moneda_pixelart.svg" id="2_lmfey"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2e12n"]
-radius = 7.0
+radius = 5.0
 height = 14.0
 
-[node name="Coin" type="StaticBody2D"]
+[node name="Coin" type="Area2D"]
 script = ExtResource("1_em8v3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(475.5, 520)
-scale = Vector2(0.40625, 0.625)
+scale = Vector2(0.4, 0.616)
 texture = ExtResource("2_lmfey")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(475, 520)
 shape = SubResource("CapsuleShape2D_2e12n")
-disabled = true
+debug_color = Color(0.596407, 0.51141, 0.521205, 0.42)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
