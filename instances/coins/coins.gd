@@ -1,6 +1,8 @@
-extends Sprite2D
+extends StaticBody2D
 
-# Variables para el movimiento
+@onready var sprite_2d: Sprite2D = $Sprite2D
+
+# default properties
 var initial_position: Vector2
 var time_passed: float = 0.0
 var float_amplitude: float = 1.0 

@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://bx3jfb3b0hg8"]
 
-[ext_resource type="PackedScene" uid="uid://cyavf44qh6q81" path="res://3d/player/player.tscn" id="1_6iw8k"]
-[ext_resource type="Script" uid="uid://b11uunq5f2not" path="res://3d/main_scene/main_scene.gd" id="1_cib75"]
+[ext_resource type="PackedScene" uid="uid://cyavf44qh6q81" path="res://3d/player_3d/player_3d.tscn" id="1_6iw8k"]
+[ext_resource type="Script" uid="uid://b11uunq5f2not" path="res://3d/scene_3d/main_scene_3d.gd" id="1_cib75"]
 [ext_resource type="PackedScene" uid="uid://cjdj4tno4in3b" path="res://assets/3d/room.fbx" id="2_symxd"]
-[ext_resource type="PackedScene" uid="uid://7qq3vuoceatc" path="res://2d/main_scene/menu_2d.tscn" id="4_frvd2"]
+[ext_resource type="PackedScene" uid="uid://7qq3vuoceatc" path="res://2d/main_menu_2d/menu_2d.tscn" id="4_frvd2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_und3l"]
 resource_local_to_scene = true

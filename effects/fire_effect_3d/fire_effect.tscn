@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://bewigwogcy4nt"]
 
-[ext_resource type="Shader" uid="uid://ia5504df63el" path="res://3d/effects/fire_effect.tres" id="1_hbwlm"]
+[ext_resource type="Shader" uid="uid://ia5504df63el" path="res://effects/fire_effect_3d/fire_effect.tres" id="1_hbwlm"]
 [ext_resource type="Texture2D" uid="uid://dg1drex0lnb1p" path="res://assets/vfx/fire/Flame01.png" id="2_4jxor"]
 [ext_resource type="Texture2D" uid="uid://duah8wyd0yw5a" path="res://assets/vfx/fire/Voronoi01.png" id="2_6q115"]
 [ext_resource type="Texture2D" uid="uid://vdy48pemflrd" path="res://assets/vfx/fire/Flame02.png" id="4_gishc"]
