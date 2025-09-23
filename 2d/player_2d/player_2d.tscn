@@ -5,12 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://ycmuofakbrny" path="res://assets/2d/player2d/NoOutline/120x80_PNGSheets/_Idle.png" id="2_l22jq"]
 [ext_resource type="Texture2D" uid="uid://c4lwl0bbomybm" path="res://assets/2d/player2d/NoOutline/120x80_PNGSheets/_JumpFallInbetween.png" id="3_lp0nb"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_07xq5"]
-size = Vector2(19, 37)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5ye7p"]
-atlas = ExtResource("1_ourca")
-region = Rect2(0, 0, 120, 80)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3rvpv"]
+radius = 8.0
+height = 38.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u5x42"]
 atlas = ExtResource("1_ourca")
@@ -48,9 +45,13 @@ region = Rect2(960, 0, 120, 80)
 atlas = ExtResource("1_ourca")
 region = Rect2(1080, 0, 120, 80)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wn0na"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ye7p"]
+atlas = ExtResource("1_ourca")
+region = Rect2(0, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bk4nh"]
 atlas = ExtResource("2_l22jq")
-region = Rect2(120, 0, 120, 80)
+region = Rect2(480, 0, 120, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_54y2l"]
 atlas = ExtResource("2_l22jq")
@@ -59,10 +60,6 @@ region = Rect2(240, 0, 120, 80)
 [sub_resource type="AtlasTexture" id="AtlasTexture_8680r"]
 atlas = ExtResource("2_l22jq")
 region = Rect2(360, 0, 120, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bk4nh"]
-atlas = ExtResource("2_l22jq")
-region = Rect2(480, 0, 120, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cvioi"]
 atlas = ExtResource("2_l22jq")
@@ -88,6 +85,10 @@ region = Rect2(1080, 0, 120, 80)
 atlas = ExtResource("2_l22jq")
 region = Rect2(0, 0, 120, 80)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wn0na"]
+atlas = ExtResource("2_l22jq")
+region = Rect2(120, 0, 120, 80)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_jefng"]
 atlas = ExtResource("3_lp0nb")
 region = Rect2(120, 0, 120, 80)
@@ -95,9 +96,6 @@ region = Rect2(120, 0, 120, 80)
 [sub_resource type="SpriteFrames" id="SpriteFrames_dv2mc"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5ye7p")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_u5x42")
 }, {
@@ -124,6 +122,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ijcuo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ye7p")
 }],
 "loop": true,
 "name": &"Correr",
@@ -131,16 +132,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wn0na")
+"texture": SubResource("AtlasTexture_bk4nh")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_54y2l")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8680r")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bk4nh")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cvioi")
@@ -159,6 +157,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_an0mn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wn0na")
 }],
 "loop": true,
 "name": &"Default",
@@ -177,15 +178,14 @@ animations = [{
 script = ExtResource("1_3rvpv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_07xq5")
+position = Vector2(0, 21)
+shape = SubResource("CapsuleShape2D_3rvpv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(6, -21)
 sprite_frames = SubResource("SpriteFrames_dv2mc")
-animation = &"Default"
-frame = 8
-frame_progress = 0.694925
+animation = &"Correr"
+metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -100)

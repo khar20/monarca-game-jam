@@ -92,4 +92,5 @@ color = Color(0.00688597, 0.0133522, 0.0200981, 0.164706)
 metadata/_edit_use_anchors_ = true
 
 [node name="Player2D" parent="." instance=ExtResource("6_aiw3g")]
-position = Vector2(74, 512)
+position = Vector2(69, 501)
+metadata/_edit_group_ = true
