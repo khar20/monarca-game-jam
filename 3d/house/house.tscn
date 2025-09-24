@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=4 uid="uid://7m7cvwograei"]
 
-[ext_resource type="PackedScene" uid="uid://c4t38ktrhie2f" path="res://assets/3d/Casa3D_BaseLista_2.fbx" id="1_4of5x"]
+[ext_resource type="PackedScene" uid="uid://c4t38ktrhie2f" path="res://assets/3d/house.fbx" id="1_4of5x"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vcl4o"]
 resource_name = "lambert6"
@@ -158,7 +158,7 @@ size = Vector3(9, 42, 157)
 [sub_resource type="BoxShape3D" id="BoxShape3D_pcy1j"]
 size = Vector3(9, 222, 9)
 
-[node name="Casa3D_BaseLista_2" instance=ExtResource("1_4of5x")]
+[node name="house" instance=ExtResource("1_4of5x")]
 
 [node name="Piso_Superior" parent="." index="0"]
 mesh = SubResource("ArrayMesh_eylwg")
@@ -193,6 +193,9 @@ shape = SubResource("ConcavePolygonShape3D_pgqw3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sotano_estructuras/columnas_sotano/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_03wo3")
+
+[node name="puerta_2" parent="Puertas" index="1"]
+visible = false
 
 [node name="door_knob" parent="Puertas/puerta_2" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -200.391, 105.687, 278.555)

@@ -10,6 +10,8 @@ const FRICTION: float = 0.5
 const FOOTSTEP_INTERVAL: float = 0.8
 const SLOPE_SPEED_MULTIPLIER: float = 0.7
 
+var current_fs_material
+
 # states
 enum States { MOVE, PLAYING }
 
@@ -27,7 +29,9 @@ func _ready() -> void:
 	Wwise.load_bank_id(AK.BANKS.NEW_SOUNDBANK)
 	Wwise.set_switch_id(AK.SWITCHES.FS_MATERIAL_SWITCH.GROUP, AK.SWITCHES.FS_MATERIAL_SWITCH.SWITCH.TILE, self)
 	Wwise.set_switch_id(AK.SWITCHES.ROOMTONE_SWITCH.GROUP, AK.SWITCHES.ROOMTONE_SWITCH.SWITCH.LIVING, self)
-
+	current_fs_material = AK.SWITCHES.FS_MATERIAL_SWITCH.SWITCH.TILE
+	
+	# footstep setup
 	footstep_timer.wait_time = FOOTSTEP_INTERVAL
 	footstep_timer.one_shot = false
 	footstep_timer.connect("timeout", _on_FootstepTimer_timeout)
@@ -109,3 +113,23 @@ func _playing_state(_delta: float) -> void:
 
 func _on_FootstepTimer_timeout() -> void:
 	Wwise.post_event_id(AK.EVENTS.PLAY_PLAYER_FS, self)
+
+
+func _on_wood_body_entered(body: Node3D) -> void:
+	if body is not CharacterBody3D:
+		return
+		
+	if current_fs_material != AK.SWITCHES.FS_MATERIAL_SWITCH.SWITCH.WOOD:
+		print("wood")
+		Wwise.set_switch_id(AK.SWITCHES.FS_MATERIAL_SWITCH.GROUP, AK.SWITCHES.FS_MATERIAL_SWITCH.SWITCH.WOOD, self)
+		current_fs_material = AK.SWITCHES.FS_MATERIAL_SWITCH.SWITCH.WOOD
+
+
+func _on_tile_body_entered(body: Node3D) -> void:
+	if body is not CharacterBody3D:
+		return
+	
+	if current_fs_material != AK.SWITCHES.FS_MATERIAL_SWITCH.SWITCH.TILE:
+		print("tile")
+		Wwise.set_switch_id(AK.SWITCHES.FS_MATERIAL_SWITCH.GROUP, AK.SWITCHES.FS_MATERIAL_SWITCH.SWITCH.TILE, self)
+		current_fs_material = AK.SWITCHES.FS_MATERIAL_SWITCH.SWITCH.TILE
