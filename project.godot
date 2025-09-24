@@ -19,6 +19,7 @@ boot_splash/show_image=false
 
 WwiseRuntimeManager="*res://addons/Wwise/runtime/wwise_runtime_manager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+PearlManager="*res://instances/coins/pearl_manager.gd"
 
 [debug]
 
@@ -110,3 +111,4 @@ dialogic_default_action={
 
 common_user_settings/root_output_path="res://GeneratedSoundBanks"
 project_settings/windows_platform_info="res://Wwise/resources/Windows.tres"
+project_settings/use_soundbank_names=false
