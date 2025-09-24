@@ -147,32 +147,32 @@ guid = "{2ED99B29-A030-43C2-960D-785D19F6A5A7}"
 id = 3991942870
 
 [sub_resource type="WwiseTreeObject" id="WwiseTreeObject_o7sea"]
-path = "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\MediumRoom"
-type = 1
-name = "MediumRoom"
-guid = "{467DDA76-323F-4AF6-B422-CC27C460144E}"
-id = 1245295233
-
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_lrto0"]
 path = "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Player"
 type = 2
 name = "Player"
 guid = "{86887B3E-2176-44A7-A743-7222D08BAEEA}"
 id = 1069431850
 
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_i5cxa"]
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_lrto0"]
 path = "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Bathroom"
 type = 1
 name = "Bathroom"
 guid = "{9431960C-C7F1-4513-B6FC-8DDC1B9794FB}"
 id = 1831461191
 
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_ptp8y"]
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_i5cxa"]
 path = "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Kitchen"
 type = 1
 name = "Kitchen"
 guid = "{CF2CAA2A-9DBA-4BEF-A5B9-C613F97410B9}"
 id = 1586158131
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_ptp8y"]
+path = "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\MediumRoom"
+type = 1
+name = "MediumRoom"
+guid = "{467DDA76-323F-4AF6-B422-CC27C460144E}"
+id = 1245295233
 
 [sub_resource type="WwiseTreeObject" id="WwiseTreeObject_26l8v"]
 path = "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SmallRoom"

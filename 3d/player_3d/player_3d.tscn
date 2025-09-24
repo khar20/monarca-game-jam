@@ -33,3 +33,7 @@ shape = SubResource("CylinderShape3D_ximml")
 [node name="AkListener3D" type="AkListener3D" parent="."]
 
 [node name="AkEvent3D" type="AkEvent3D" parent="."]
+
+[node name="FootstepTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="FootstepTimer" to="." method="_on_footsteps_timer_timeout"]

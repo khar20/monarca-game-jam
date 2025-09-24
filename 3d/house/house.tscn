@@ -141,7 +141,7 @@ data = PackedVector3Array(-120.05, 149.392, 30.2383, -120.05, -166.352, 30.2383,
 size = Vector3(33, 9, 128)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4of5x"]
-size = Vector3(260, 9, 128)
+size = Vector3(261, 9, 128)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xn23l"]
 size = Vector3(95, 9, 139)
@@ -200,11 +200,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -200.391, 105.687, 278.555)
 [node name="StaticBody3D" type="StaticBody3D" parent="Escaleras" index="0"]
 
 [node name="CollisionShape3D1" type="CollisionShape3D" parent="Escaleras/StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -224.5, 7, 220)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -224, 7, 220)
 shape = SubResource("BoxShape3D_pgqw3")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Escaleras/StaticBody3D" index="1"]
-transform = Transform3D(0.544639, -0.838671, 0, 0.838671, 0.544639, 0, 0, 0, 1, -308, -99.935, 220)
+transform = Transform3D(0.544639, -0.838671, 0, 0.838671, 0.544639, 0, 0, 0, 1, -307.728, -99.5157, 220)
 shape = SubResource("BoxShape3D_4of5x")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="Escaleras/StaticBody3D" index="2"]

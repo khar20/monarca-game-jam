@@ -20,11 +20,11 @@ nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
 nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true
-meshes/generate_lods=false
+meshes/generate_lods=true
 meshes/create_shadow_meshes=true
 meshes/light_baking=1
 meshes/lightmap_texel_size=0.2
-meshes/force_disable_compression=false
+meshes/force_disable_compression=true
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
@@ -39,7 +39,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/BoxDucha.res"
 },
 "Escaleras": {
@@ -47,7 +47,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/Escaleras.res"
 },
 "Piso_Sotano": {
@@ -55,7 +55,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/Piso_Sotano.res"
 },
 "Piso_Superior": {
@@ -63,7 +63,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/Piso_Superior.res"
 },
 "Switch": {
@@ -71,7 +71,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/Switch.res"
 },
 "Switch1": {
@@ -79,7 +79,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/Switch1.res"
 },
 "WallSwitch": {
@@ -87,7 +87,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/WallSwitch.res"
 },
 "WallSwitch1": {
@@ -95,7 +95,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/WallSwitch1.res"
 },
 "WallSwitch2": {
@@ -103,7 +103,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/WallSwitch2.res"
 },
 "WallSwitch3": {
@@ -111,7 +111,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/WallSwitch3.res"
 },
 "WallSwitch4": {
@@ -119,7 +119,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/WallSwitch4.res"
 },
 "borde_puerta_2": {
@@ -127,7 +127,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/borde_puerta_2.res"
 },
 "borde_puerta_22": {
@@ -135,7 +135,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/borde_puerta_22.res"
 },
 "borde_puerta_23": {
@@ -143,7 +143,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/borde_puerta_23.res"
 },
 "borde_puerta_24": {
@@ -151,7 +151,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/borde_puerta_24.res"
 },
 "borde_puerta_entrada": {
@@ -159,7 +159,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/borde_puerta_entrada.res"
 },
 "casement_frame": {
@@ -167,7 +167,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/casement_frame.res"
 },
 "casement_frame2": {
@@ -175,7 +175,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/casement_frame2.res"
 },
 "casement_frame3": {
@@ -183,7 +183,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/casement_frame3.res"
 },
 "casement_frame4": {
@@ -191,7 +191,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/casement_frame4.res"
 },
 "casement_panelL": {
@@ -199,7 +199,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/casement_panelL.res"
 },
 "casement_panelL2": {
@@ -207,7 +207,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/casement_panelL2.res"
 },
 "casement_panelL3": {
@@ -215,7 +215,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/casement_panelL3.res"
 },
 "casement_panelL4": {
@@ -223,7 +223,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/casement_panelL4.res"
 },
 "casement_panelR": {
@@ -231,7 +231,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/casement_panelR.res"
 },
 "casement_panelR2": {
@@ -239,7 +239,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/casement_panelR2.res"
 },
 "casement_panelR3": {
@@ -247,7 +247,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/casement_panelR3.res"
 },
 "casement_panelR4": {
@@ -255,7 +255,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/casement_panelR4.res"
 },
 "columnas_sotano": {
@@ -263,7 +263,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/columnas_sotano.res"
 },
 "door_knob": {
@@ -271,7 +271,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/door_knob.res"
 },
 "door_knob2": {
@@ -279,7 +279,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/door_knob2.res"
 },
 "door_knob3": {
@@ -287,7 +287,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/door_knob3.res"
 },
 "door_knob4": {
@@ -295,7 +295,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/door_knob4.res"
 },
 "pivoting_frame": {
@@ -303,7 +303,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/pivoting_frame.res"
 },
 "pivoting_handle": {
@@ -311,7 +311,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/pivoting_handle.res"
 },
 "pivoting_panel": {
@@ -319,7 +319,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/pivoting_panel.res"
 },
 "puerta_entrada": {
@@ -327,7 +327,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/puerta_entrada.res"
 },
 "techo_sotano": {
@@ -335,7 +335,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/techo_sotano.res"
 },
 "vigas_techo_sotano": {
@@ -343,7 +343,7 @@ _subresources={
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/path": "res://assets/3d/house/vigas_techo_sotano.res"
 }
 }
