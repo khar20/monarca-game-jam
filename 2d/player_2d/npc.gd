@@ -34,7 +34,7 @@ func _on_dialogue_started(dialogue) -> void:
 		player_2d.set_physics_process(false)
 	
 func _on_dialogue_ended(dialogue) -> void:
+	await get_tree().create_timer(0.2).timeout
 	is_dialogue_active = false
-	# Desbloquear el movimiento del jugador
 	if player_2d:
 		player_2d.set_physics_process(true)
