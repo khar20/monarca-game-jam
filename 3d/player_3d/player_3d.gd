@@ -19,6 +19,12 @@ var state = States.MOVE
 func _ready() -> void:
 	# initial mouse mode
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Wwise.register_game_obj(self, self.name)
+	Wwise.register_listener(self)
+	Wwise.load_bank("MiniGameSoundBank")
+	Wwise.load_bank("New_SoundBank")
+	Wwise.set_switch("Fs_Material_Switch", "Carpet", self)
+	
 
 # state changer
 func set_state(new_state: States) -> void:
@@ -72,6 +78,7 @@ func _move_state(delta: float) -> void:
 	if direction:
 		velocity.x = lerp(velocity.x, direction.x * SPEED, ACCELERATION)
 		velocity.z = lerp(velocity.z, direction.z * SPEED, ACCELERATION)
+		Wwise.post_event("Play_Player_Fs", self)
 	else:
 		velocity.x = lerp(velocity.x, 0.0, FRICTION)
 		velocity.z = lerp(velocity.z, 0.0, FRICTION)
