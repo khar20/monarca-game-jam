@@ -6,10 +6,13 @@ const dialogo_ninio = preload("res://2d/dialogos2D/ninio.dialogue")
 
 var is_player_2d_close = false
 var is_dialogue_active = false
+var player_2d: CharacterBody2D = null
 
 func _ready() -> void:
 	DialogueManager.dialogue_started.connect(_on_dialogue_started)
 	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
+	# Buscar el jugador en la escena
+	player_2d = get_node("../Player2D") if has_node("../Player2D") else null
 
 func _process(delta: float) -> void:
 	if is_player_2d_close and Input.is_action_just_pressed("ui_accept") and not is_dialogue_active:
@@ -26,6 +29,12 @@ func _on_area_exited(area: Area2D) -> void:
 	
 func _on_dialogue_started(dialogue) -> void:
 	is_dialogue_active = true
+	# Bloquear el movimiento del jugador
+	if player_2d:
+		player_2d.set_physics_process(false)
 	
 func _on_dialogue_ended(dialogue) -> void:
 	is_dialogue_active = false
+	# Desbloquear el movimiento del jugador
+	if player_2d:
+		player_2d.set_physics_process(true)
