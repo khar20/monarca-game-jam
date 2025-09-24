@@ -1,8 +1,9 @@
-[gd_scene load_steps=48 format=4 uid="uid://ddkpfpjcnfnt5"]
+[gd_scene load_steps=49 format=4 uid="uid://ddkpfpjcnfnt5"]
 
 [ext_resource type="Script" uid="uid://c27uxxycdwjgb" path="res://2d/scene_2d/scene_2d.gd" id="1_vf2r8"]
 [ext_resource type="Texture2D" uid="uid://cm8atwga7o5a2" path="res://assets/2d/Tiles/Transparent/tile_0271.png" id="2_5hxkn"]
 [ext_resource type="Texture2D" uid="uid://c7fv744cl2a70" path="res://assets/2d/Imagenes/negro.webp" id="2_tjmi5"]
+[ext_resource type="PackedScene" uid="uid://bpq1fpogk2aqq" path="res://2d/player_2d/npc.tscn" id="3_8b3m1"]
 [ext_resource type="Texture2D" uid="uid://dpqlxdrkflmsl" path="res://assets/2d/Tiles/Default/tile_0018.png" id="3_16c48"]
 [ext_resource type="Texture2D" uid="uid://cx82snk2nvfjy" path="res://assets/2d/Tiles/Transparent/tile_0272.png" id="3_32rfo"]
 [ext_resource type="Texture2D" uid="uid://c6cp4svi7chsy" path="res://assets/2d/Tiles/Transparent/tile_0063.png" id="3_idjms"]
@@ -149,9 +150,12 @@ shader_parameter/distortion_intensity = 0.003
 script = ExtResource("1_vf2r8")
 
 [node name="Negro" type="Sprite2D" parent="."]
-position = Vector2(1386.5, 284)
+position = Vector2(1454, 358)
 scale = Vector2(12.5509, 4.32969)
 texture = ExtResource("2_tjmi5")
+
+[node name="NPC" parent="." instance=ExtResource("3_8b3m1")]
+position = Vector2(2887, 536)
 
 [node name="FrenteInvi" type="TileMapLayer" parent="."]
 visible = false
