@@ -25,7 +25,7 @@
    "GenerateMetadataJSON": "true",
    "GenerateAllBanksMetadata": "false",
    "GeneratePerBankMetadata": "true",
-   "UseSoundBankNames": "true",
+   "UseSoundBankNames": "false",
    "AllowExceedingMaxSize": "false",
    "MaxAttenuationInfo": "true",
    "EstimatedDurationInfo": "true",
@@ -33,6 +33,6 @@
    "PrintObjectPath": "true",
    "PrintObjectColor": "true"
   },
-  "FileHash": "{3A87D90A-52A9-94DD-202D-133C31374910}"
+  "FileHash": "{417CC41A-6D9A-1520-04ED-6F74FBE17F93}"
  }
 }
