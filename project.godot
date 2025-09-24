@@ -57,6 +57,10 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 
+[dialogue_manager]
+
+runtime/balloon_path="res://2d/dialogos_ballons/balloon.tscn"
+
 [display]
 
 window/stretch/mode="viewport"

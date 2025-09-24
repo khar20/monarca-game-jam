@@ -2,11 +2,18 @@ extends Area2D
 
 @onready var exclamation_mark = $ExclamationMark
 
+const dialogo_ninio = preload("res://2d/dialogos2D/ninio.dialogue")
+
 var is_player_2d_close = false
+var is_dialogue_active = false
+
+func _ready() -> void:
+	DialogueManager.dialogue_started.connect(_on_dialogue_started)
+	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
 
 func _process(delta: float) -> void:
-	if is_player_2d_close and Input.is_action_just_pressed("ui_accept"):
-		print("Conversar")
+	if is_player_2d_close and Input.is_action_just_pressed("ui_accept") and not is_dialogue_active:
+		DialogueManager.show_dialogue_balloon(dialogo_ninio, "start")
 
 func _on_area_entered(area: Area2D) -> void:
 	exclamation_mark.visible = true
@@ -16,3 +23,9 @@ func _on_area_entered(area: Area2D) -> void:
 func _on_area_exited(area: Area2D) -> void:
 	exclamation_mark.visible = false
 	is_player_2d_close = false
+	
+func _on_dialogue_started(dialogue) -> void:
+	is_dialogue_active = true
+	
+func _on_dialogue_ended(dialogue) -> void:
+	is_dialogue_active = false
