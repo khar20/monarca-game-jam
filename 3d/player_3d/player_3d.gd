@@ -80,12 +80,12 @@ func _move_state(delta: float) -> void:
 	var input_dir: Vector2 = Input.get_vector("left", "right", "forward", "backward")
 	var direction: Vector3 = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 
-	var current_speed = SPEED
+	var current_speed: float = SPEED
 	if is_on_floor():
-		var floor_normal = get_floor_normal()
-		var floor_angle = rad_to_deg(acos(floor_normal.dot(Vector3.UP)))
+		var floor_normal: Vector3 = get_floor_normal()
+		var floor_angle: float = rad_to_deg(acos(floor_normal.dot(Vector3.UP)))
 		if floor_angle > 0.1: # Check if on a slope
-			var is_moving_downhill = direction.dot(floor_normal) > 0
+			var is_moving_downhill: float = direction.dot(floor_normal) > 0
 			if is_moving_downhill:
 				current_speed *= SLOPE_SPEED_MULTIPLIER
 
