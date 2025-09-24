@@ -1,10 +1,11 @@
-[gd_scene load_steps=45 format=4 uid="uid://ddkpfpjcnfnt5"]
+[gd_scene load_steps=48 format=4 uid="uid://ddkpfpjcnfnt5"]
 
 [ext_resource type="Script" uid="uid://c27uxxycdwjgb" path="res://2d/scene_2d/scene_2d.gd" id="1_vf2r8"]
 [ext_resource type="Texture2D" uid="uid://cm8atwga7o5a2" path="res://assets/2d/Tiles/Transparent/tile_0271.png" id="2_5hxkn"]
 [ext_resource type="Texture2D" uid="uid://c7fv744cl2a70" path="res://assets/2d/Imagenes/negro.webp" id="2_tjmi5"]
 [ext_resource type="Texture2D" uid="uid://dpqlxdrkflmsl" path="res://assets/2d/Tiles/Default/tile_0018.png" id="3_16c48"]
 [ext_resource type="Texture2D" uid="uid://cx82snk2nvfjy" path="res://assets/2d/Tiles/Transparent/tile_0272.png" id="3_32rfo"]
+[ext_resource type="Texture2D" uid="uid://c6cp4svi7chsy" path="res://assets/2d/Tiles/Transparent/tile_0063.png" id="3_idjms"]
 [ext_resource type="Texture2D" uid="uid://bd4e7h0gjqvn2" path="res://assets/2d/Tiles/Default/tile_0016.png" id="4_e1rd3"]
 [ext_resource type="Texture2D" uid="uid://bs1gvhgct4pff" path="res://assets/2d/Tiles/Transparent/tile_0270.png" id="4_vf2r8"]
 [ext_resource type="Texture2D" uid="uid://bcigunjp55gii" path="res://assets/2d/Tiles/Transparent/tile_0039.png" id="5_e1rd3"]
@@ -24,6 +25,15 @@
 [ext_resource type="Texture2D" uid="uid://ht0i3yfuhbil" path="res://assets/2d/Tiles/Transparent/tile_0323.png" id="12_vfsvy"]
 [ext_resource type="PackedScene" uid="uid://1r0eve8n3kdg" path="res://instances/coins/coin.tscn" id="16_o6pts"]
 [ext_resource type="Texture2D" uid="uid://c434vwtj07s23" path="res://assets/2d/Imagenes/ciudad.svg" id="21_ka17y"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8k08p"]
+texture = ExtResource("3_idjms")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_1hl4w"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_8k08p")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o6pts"]
 texture = ExtResource("4_e1rd3")
@@ -142,6 +152,12 @@ script = ExtResource("1_vf2r8")
 position = Vector2(1386.5, 284)
 scale = Vector2(12.5509, 4.32969)
 texture = ExtResource("2_tjmi5")
+
+[node name="FrenteInvi" type="TileMapLayer" parent="."]
+visible = false
+texture_filter = 1
+tile_map_data = PackedByteArray("AAC6ACUAAAAAAAAAAAC7ACUAAAAAAAAAAAC8ACUAAAAAAAAAAAC9ACUAAAAAAAAAAAC+ACUAAAAAAAAAAAC/ACUAAAAAAAAAAADAACUAAAAAAAAAAADBACUAAAAAAAAAAADCACUAAAAAAAAAAADDACUAAAAAAAAAAADEACUAAAAAAAAAAADFACUAAAAAAAAAAADGACUAAAAAAAAAAADHACUAAAAAAAAAAADIACUAAAAAAAAAAADJACUAAAAAAAAAAADKACUAAAAAAAAAAADLACUAAAAAAAAAAADMACUAAAAAAAAAAADNACUAAAAAAAAAAADOACUAAAAAAAAAAADPACUAAAAAAAAAAADQACUAAAAAAAAAAADRACUAAAAAAAAAAADSACUAAAAAAAAAAADTACUAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_1hl4w")
 
 [node name="Frente" type="TileMapLayer" parent="."]
 texture_filter = 1
