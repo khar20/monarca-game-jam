@@ -110,3 +110,4 @@ dialogic_default_action={
 [wwise]
 
 common_user_settings/root_output_path="res://GeneratedSoundBanks"
+project_settings/windows_platform_info="res://Wwise/resources/Windows.tres"
