@@ -31,7 +31,6 @@ func set_state(new_state: States) -> void:
 		States.MOVE:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		States.PLAYING:
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			velocity = Vector3.ZERO
 
 
