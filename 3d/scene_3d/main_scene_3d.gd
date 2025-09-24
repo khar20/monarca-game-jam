@@ -5,7 +5,7 @@ extends Node3D
 
 var is_playing_2d_game: bool = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("interact"):
 		is_playing_2d_game = !is_playing_2d_game
 		

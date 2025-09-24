@@ -1,20 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://bx3jfb3b0hg8"]
+[gd_scene load_steps=10 format=3 uid="uid://bx3jfb3b0hg8"]
 
 [ext_resource type="PackedScene" uid="uid://cyavf44qh6q81" path="res://3d/player_3d/player_3d.tscn" id="1_6iw8k"]
 [ext_resource type="Script" uid="uid://b11uunq5f2not" path="res://3d/scene_3d/main_scene_3d.gd" id="1_cib75"]
-[ext_resource type="PackedScene" uid="uid://cjdj4tno4in3b" path="res://assets/3d/room.fbx" id="2_symxd"]
 [ext_resource type="PackedScene" uid="uid://7qq3vuoceatc" path="res://2d/main_menu_2d/menu_2d.tscn" id="4_frvd2"]
+[ext_resource type="PackedScene" uid="uid://c1ibidf7bvprn" path="res://3d/house/house_base.tscn" id="4_lwsbg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_und3l"]
 resource_local_to_scene = true
 size = Vector3(60, 2, 60)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_frvd2"]
-albedo_color = Color(0.2, 0, 0, 1)
-
 [sub_resource type="BoxMesh" id="BoxMesh_w2twt"]
 resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_frvd2")
 size = Vector3(60, 2, 60)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_he7i5"]
@@ -42,13 +38,11 @@ mesh = SubResource("BoxMesh_w2twt")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 9, 0)
 
 [node name="Player" parent="." instance=ExtResource("1_6iw8k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-
-[node name="room" parent="." instance=ExtResource("2_symxd")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.239432, -0.901819, -0.359716, 0, 0.370493, -0.928835, 0.970913, 0.222393, 0.0887077, 5.43986, 1.78471, 0.852553)
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91068e-15, 5.43986, 5.78471, 1.85255)
 mesh = SubResource("PlaneMesh_he7i5")
 surface_material_override/0 = SubResource("StandardMaterial3D_5cml7")
 
@@ -59,3 +53,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_5cml7")
 [node name="MoveMarker3D" type="Marker3D" parent="SubViewport"]
 
 [node name="CameraMarker3D" type="Marker3D" parent="SubViewport"]
+
+[node name="house_base" parent="." instance=ExtResource("4_lwsbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 1)

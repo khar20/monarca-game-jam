@@ -2,7 +2,7 @@
 extends CharacterBody3D
 
 # properties
-const SPEED: float = 3.0
+const SPEED: float = 4.0
 const JUMP_VELOCITY: float = 4.5
 const SENS: float = 0.001
 const ACCELERATION: float = 0.1
@@ -79,7 +79,7 @@ func _move_state(delta: float) -> void:
 
 	move_and_slide()
 
-func _playing_state(delta: float) -> void:
+func _playing_state(_delta: float) -> void:
 	velocity.x = lerp(velocity.x, 0.0, FRICTION)
 	velocity.z = lerp(velocity.z, 0.0, FRICTION)
 	move_and_slide()

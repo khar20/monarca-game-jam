@@ -3,8 +3,11 @@
 [ext_resource type="Script" uid="uid://bm6p6xyy3ax4t" path="res://3d/player_3d/player_3d.gd" id="1_8afob"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_dovo2"]
+height = 1.8
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8vuu"]
+radius = 0.3
+height = 1.8
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ximml"]
 radius = 1.0
@@ -25,3 +28,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("CylinderShape3D_ximml")
+
+[node name="AkListener3D" type="AkListener3D" parent="."]
+
+[node name="AkEvent3D" type="AkEvent3D" parent="."]
