@@ -1,0 +1,21 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "3931482305",
+    "Type": "User",
+    "GUID": "{97DBD8A9-FE21-4F41-9F19-C9A251B8ADA6}",
+    "Language": "SFX",
+    "Hash": "{006F47BE-90DE-AD5F-9694-B1FCF439E1B0}",
+    "ObjectPath": "\\SoundBanks\\MinigameWorkUnit\\MiniGameSoundBank",
+    "ShortName": "MiniGameSoundBank",
+    "Path": "3931482305.bnk"
+   }
+  ],
+  "FileHash": "{65C04334-923E-B160-5FAB-9AF295A67B11}"
+ }
+}
