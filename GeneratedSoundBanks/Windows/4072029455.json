@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{8BF9454F-2205-46F1-9CD8-7F8B1296E3E8}",
     "Language": "SFX",
-    "Hash": "{4AA75109-FFAC-4C2B-9930-C653CA316C76}",
+    "Hash": "{756D8D2B-9582-D74A-B92D-A762955463FD}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\New_SoundBank",
     "ShortName": "New_SoundBank",
     "Path": "4072029455.bnk",
@@ -128,6 +128,14 @@
       "CachePath": "36/{363D217C-9D36-84EA-DF1C-5A5CA34E2C7C}.wem"
      },
      {
+      "Id": "381988598",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sfx_Fs_Gravel_05.wav",
+      "CachePath": "88/{88D40D43-3D11-0ABC-B924-4E7F320FE6F7}.wem"
+     },
+     {
       "Id": "383490609",
       "Language": "SFX",
       "Streaming": "false",
@@ -200,6 +208,22 @@
       "CachePath": "5D/{5DC6BC34-B636-D4D6-6D90-BAC6C8634EEE}.wem"
      },
      {
+      "Id": "473899975",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sfx_Fs_Gravel_03.wav",
+      "CachePath": "12/{128EB20A-3159-F8EC-ED63-7F18FDE90129}.wem"
+     },
+     {
+      "Id": "480448666",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sfx_Fs_Gravel_01.wav",
+      "CachePath": "F8/{F893A03D-52F2-D263-6A12-5EABE1049AF5}.wem"
+     },
+     {
       "Id": "483921262",
       "Language": "SFX",
       "Streaming": "false",
@@ -248,6 +272,14 @@
       "CachePath": "A2/{A2DA0D01-CF6D-42B5-7BD8-C9F4C80E62B1}.wem"
      },
      {
+      "Id": "607982813",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sfx_Fs_Gravel_07.wav",
+      "CachePath": "4C/{4C5FE5DC-DA09-A998-B002-8E4C6479EFC8}.wem"
+     },
+     {
       "Id": "640611998",
       "Language": "SFX",
       "Streaming": "false",
@@ -262,6 +294,14 @@
       "Location": "Memory",
       "ShortName": "Sfx_Amb_RoomTone_Bedroom.wav",
       "CachePath": "46/{461033FC-2D0C-8772-6B42-BE100E394BBC}.wem"
+     },
+     {
+      "Id": "674963638",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sfx_Fs_Gravel_02.wav",
+      "CachePath": "5A/{5A59E68F-ACEB-2AE8-E736-1A08E87D6ECD}.wem"
      },
      {
       "Id": "687429532",
@@ -310,6 +350,14 @@
       "Location": "Memory",
       "ShortName": "Sfx_Fs_Wood_04.wav",
       "CachePath": "42/{4251E0C4-65CB-D0BA-F251-BA5C00CE7AE0}.wem"
+     },
+     {
+      "Id": "789984334",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sfx_Fs_Gravel_04.wav",
+      "CachePath": "A4/{A49F349B-5490-A508-57B8-8BC81A3A8411}.wem"
      },
      {
       "Id": "824738710",
@@ -392,6 +440,14 @@
       "CachePath": "19/{19E96F63-DC30-E4C7-8F1F-C42F555DAFC5}.wem"
      },
      {
+      "Id": "900744129",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sfx_Fs_Gravel_06.wav",
+      "CachePath": "96/{96DB48DE-480C-0B32-8AA8-D90C6C4C71D4}.wem"
+     },
+     {
       "Id": "920316529",
       "Language": "SFX",
       "Streaming": "false",
@@ -416,6 +472,14 @@
       "CachePath": "7C/{7C5A4DDC-D06B-69C1-DB84-3C7DF1537DA0}.wem"
      },
      {
+      "Id": "966060634",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sfx_Fs_Gravel_09.wav",
+      "CachePath": "D2/{D29ACA37-0FD4-1F50-A42B-C846CECA8889}.wem"
+     },
+     {
       "Id": "971486147",
       "Language": "SFX",
       "Streaming": "false",
@@ -438,6 +502,14 @@
       "Location": "Memory",
       "ShortName": "Sfx_Fs_Carpet_04.wav",
       "CachePath": "45/{4554537F-ACE4-EEB7-1E6F-B978D030B7A5}.wem"
+     },
+     {
+      "Id": "986601554",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sfx_Fs_Gravel_08.wav",
+      "CachePath": "B1/{B163D767-0DDC-AEFF-F9DB-A5619CAE4A1E}.wem"
      },
      {
       "Id": "992683032",
@@ -997,14 +1069,6 @@
        {
         "Id": "992683032"
        }
-      ],
-      "AuxBusRefs": [
-       {
-        "Id": "2933838247",
-        "Name": "SmallRoom",
-        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SmallRoom",
-        "GUID": "{FC942C2E-DE2F-4EC0-9EBC-E5A88C48563E}"
-       }
       ]
      },
      {
@@ -1016,14 +1080,6 @@
       "DurationType": "OneShot",
       "DurationMin": "0.34578887",
       "DurationMax": "1.1681079",
-      "AuxBusRefs": [
-       {
-        "Id": "2933838247",
-        "Name": "SmallRoom",
-        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SmallRoom",
-        "GUID": "{FC942C2E-DE2F-4EC0-9EBC-E5A88C48563E}"
-       }
-      ],
       "SwitchContainers": [
        {
         "SwitchValue": {
@@ -1113,6 +1169,44 @@
          },
          {
           "Id": "971486147"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "806885475",
+         "Id": "2185786256",
+         "GUID": "{EEF93EE6-39E9-46FC-A29A-7BF4C8485DB8}",
+         "Color": "9"
+        },
+        "MediaRefs": [
+         {
+          "Id": "381988598"
+         },
+         {
+          "Id": "473899975"
+         },
+         {
+          "Id": "480448666"
+         },
+         {
+          "Id": "607982813"
+         },
+         {
+          "Id": "674963638"
+         },
+         {
+          "Id": "789984334"
+         },
+         {
+          "Id": "900744129"
+         },
+         {
+          "Id": "966060634"
+         },
+         {
+          "Id": "986601554"
          }
         ]
        }
@@ -1314,6 +1408,13 @@
         "Color": "9"
        },
        {
+        "Id": "2185786256",
+        "Name": "Gravel",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Fs_Material_Switch\\Gravel",
+        "GUID": "{EEF93EE6-39E9-46FC-A29A-7BF4C8485DB8}",
+        "Color": "9"
+       },
+       {
         "Id": "2412606308",
         "Name": "Carpet",
         "ObjectPath": "\\Switches\\Default Work Unit\\Fs_Material_Switch\\Carpet",
@@ -1376,6 +1477,6 @@
     ]
    }
   ],
-  "FileHash": "{D84918AA-1A05-35F0-0AB8-12C0454BC32E}"
+  "FileHash": "{E82EF302-C6F5-5776-5BB0-3A866765B4B2}"
  }
 }
