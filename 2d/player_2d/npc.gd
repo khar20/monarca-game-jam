@@ -42,3 +42,42 @@ func _on_dialogue_ended(dialogue) -> void:
 	is_dialogue_active = false
 	if player_2d:
 		player_2d.set_physics_process(true)
+	
+	# Mover el NPC después del diálogo
+	move_npc_after_dialogue()
+
+func move_npc_after_dialogue() -> void:
+	# Crear un tween para el movimiento suave
+	var tween = create_tween()
+	
+	# Posición actual del NPC
+	var current_position = global_position
+	
+	# Calcular nueva posición: cuadros a la derecha (100 píxeles) y hacia abajo (350 píxeles)
+	var target_position = current_position + Vector2(100, 350)
+	
+	# Mover primero a la derecha, luego hacia abajo
+	tween.tween_property(self, "global_position", current_position + Vector2(100, 0), 1.0)
+	tween.tween_property(self, "global_position", target_position, 1.0)
+	
+	# Cuando termine el movimiento, cambiar la visibilidad de los nodos
+	tween.tween_callback(change_scene_visibility)
+
+func change_scene_visibility() -> void:
+	# Obtener referencia a la escena principal
+	var main_scene = get_parent()
+	
+	# Cambiar visibilidad de la pared (StaticBody2D)
+	var pared = main_scene.get_node("pared")
+	if pared:
+		pared.visible = false
+		# Desactivar la colisión de CollisionPared
+		var collision_pared = pared.get_node("CollisionPared")
+		if collision_pared:
+			collision_pared.disabled = true
+		
+	
+	# Cambiar visibilidad de FrenteInvi (TileMapLayer)
+	var frente_invi = main_scene.get_node("FrenteInvi")
+	if frente_invi:
+		frente_invi.visible = true
