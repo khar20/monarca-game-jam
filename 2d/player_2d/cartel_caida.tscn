@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpgp44opbbueu"]
+
+[ext_resource type="Script" uid="uid://da4maxq5di60f" path="res://2d/player_2d/cartel_caida.gd" id="1_vjx7s"]
+[ext_resource type="Texture2D" uid="uid://dsfiksg6dvek" path="res://assets/2d/Tiles/Transparent/tile_0077.png" id="2_oe8om"]
+[ext_resource type="Texture2D" uid="uid://5e33iirs5hwq" path="res://assets/2d/Tiles/Transparent/tile_0001.png" id="3_w2ljd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57c2y"]
+size = Vector2(60, 66.5)
+
+[node name="Cartel_Caida" type="Area2D"]
+script = ExtResource("1_vjx7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(29, 19.25)
+scale = Vector2(3.625, 4.03125)
+texture = ExtResource("2_oe8om")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(29, 19.25)
+shape = SubResource("RectangleShape2D_57c2y")
+
+[node name="ExclamationMark" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(29, -29)
+scale = Vector2(3.23437, 3.48438)
+texture = ExtResource("3_w2ljd")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

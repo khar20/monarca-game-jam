@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://chxoadn1ib3wa"]
+[gd_scene load_steps=5 format=3 uid="uid://q1cual71nuqc"]
 
 [ext_resource type="Script" uid="uid://315hl3a6fu5e" path="res://2d/player_2d/cartel.gd" id="1_3o0oa"]
 [ext_resource type="Texture2D" uid="uid://dsfiksg6dvek" path="res://assets/2d/Tiles/Transparent/tile_0077.png" id="1_ivcqu"]
