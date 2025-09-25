@@ -1,11 +1,11 @@
 extends Area2D
 
-@onready var exclamation_mark = $ExclamationMark
+@onready var exclamation_mark: Sprite2D = $ExclamationMark
 
 const dialogo_ninio = preload("res://2d/dialogos2D/ninio.dialogue")
 
-var is_player_2d_close = false
-var is_dialogue_active = false
+var is_player_2d_close: bool = false
+var is_dialogue_active: bool = false
 var player_2d: CharacterBody2D = null
 
 func _ready() -> void:
@@ -25,8 +25,7 @@ func _input(event: InputEvent) -> void:
 func _on_area_entered(area: Area2D) -> void:
 	exclamation_mark.visible = true
 	is_player_2d_close = true
-
-
+	
 func _on_area_exited(area: Area2D) -> void:
 	exclamation_mark.visible = false
 	is_player_2d_close = false
@@ -48,13 +47,13 @@ func _on_dialogue_ended(dialogue) -> void:
 
 func move_npc_after_dialogue() -> void:
 	# Crear un tween para el movimiento suave
-	var tween = create_tween()
+	var tween: Tween = create_tween()
 	
 	# Posición actual del NPC
-	var current_position = global_position
+	var current_position: Vector2 = global_position
 	
 	# Calcular nueva posición: cuadros a la derecha (100 píxeles) y hacia abajo (350 píxeles)
-	var target_position = current_position + Vector2(100, 350)
+	var target_position: Vector2 = current_position + Vector2(100, 350)
 	
 	# Mover primero a la derecha, luego hacia abajo
 	tween.tween_property(self, "global_position", current_position + Vector2(100, 0), 1.0)
@@ -65,19 +64,18 @@ func move_npc_after_dialogue() -> void:
 
 func change_scene_visibility() -> void:
 	# Obtener referencia a la escena principal
-	var main_scene = get_parent()
+	var main_scene: Node = get_parent()
 	
 	# Cambiar visibilidad de la pared (StaticBody2D)
-	var pared = main_scene.get_node("pared")
+	var pared: Node = main_scene.get_node("pared")
 	if pared:
 		pared.visible = false
 		# Desactivar la colisión de CollisionPared
-		var collision_pared = pared.get_node("CollisionPared")
+		var collision_pared: Node = pared.get_node("CollisionPared")
 		if collision_pared:
-			collision_pared.disabled = true
-		
+			collision_pared.disabled = true		
 	
 	# Cambiar visibilidad de FrenteInvi (TileMapLayer)
-	var frente_invi = main_scene.get_node("FrenteInvi")
+	var frente_invi: Node = main_scene.get_node("FrenteInvi")
 	if frente_invi:
 		frente_invi.visible = true

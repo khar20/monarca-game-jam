@@ -111,9 +111,9 @@ func _playing_state(_delta: float) -> void:
 
 func _interact() -> void:
 	if interaction_ray.is_colliding():
-		var collider: Object = interaction_ray.get_collider()
-		if collider.has_method("interact"):
-			collider.call("interact")
+		var collider = interaction_ray.get_collider()
+		if collider.has_method("start_game"):
+			collider.call("start_game", self)
 
 func _on_footstep_timer_timeout() -> void:
 	Wwise.post_event_id(AK.EVENTS.PLAY_PLAYER_FS, self)

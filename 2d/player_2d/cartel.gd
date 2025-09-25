@@ -1,11 +1,11 @@
 extends Area2D
 
-@onready var exclamation_mark = $ExclamationMark
+@onready var exclamation_mark: Sprite2D = $ExclamationMark
 
-const dialogo_ninio = preload("res://2d/dialogos2D/cartel1.dialogue")
+const kid_dialog = preload("res://2d/dialogos2D/cartel1.dialogue")
 
-var is_player_2d_close = false
-var is_dialogue_active = false
+var is_player_2d_close: bool = false
+var is_dialogue_active: bool = false
 var player_2d: CharacterBody2D = null
 
 func _ready() -> void:
@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and event.keycode == KEY_ENTER:
 		if is_player_2d_close and not is_dialogue_active:
-			DialogueManager.show_dialogue_balloon(dialogo_ninio, "start")
+			DialogueManager.show_dialogue_balloon(kid_dialog, "start")
 
 func _on_area_entered(area: Area2D) -> void:
 	exclamation_mark.visible = true

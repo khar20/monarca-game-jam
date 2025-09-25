@@ -1,7 +1,7 @@
 extends Control
 
-@onready var texture_rect = $TextureRect2
-@onready var background = $TextureRect
+@onready var texture_rect: TextureRect = $TextureRect2
+@onready var background: TextureRect = $TextureRect
 
 var crash_timer: float = 0.0
 var glitch_timer: float = 0.0
@@ -9,7 +9,7 @@ var is_crashing: bool = false
 var crash_intensity: float = 0.0
 
 # Colores espeluznantes para el efecto de crasheo
-var horror_colors = [
+var horror_colors: Array = [
 	Color.RED,
 	Color(0.8, 0.0, 0.0, 1.0),  # Rojo oscuro
 	Color(0.2, 0.0, 0.0, 1.0),  # Rojo muy oscuro
@@ -49,7 +49,7 @@ func start_crash_effect() -> void:
 
 func update_shader_effects() -> void:
 	if texture_rect and texture_rect.material:
-		var material = texture_rect.material as ShaderMaterial
+		var material: ShaderMaterial = texture_rect.material as ShaderMaterial
 		if material:
 			# Aumentar la intensidad del ruido y distorsión
 			material.set_shader_parameter("noise_intensity", 0.02 + crash_intensity * 0.3)
@@ -66,25 +66,25 @@ func apply_glitch_effects() -> void:
 	
 	# Distorsión de posición
 	if randf() < 0.05 + crash_intensity * 0.1:
-		var glitch_offset = Vector2(
+		var glitch_offset: Vector2 = Vector2(
 			randf_range(-10, 10) * crash_intensity,
 			randf_range(-10, 10) * crash_intensity
 		)
 		texture_rect.position = glitch_offset
 		
 		# Volver a la posición normal después de un momento
-		var tween = create_tween()
+		var tween: Tween = create_tween()
 		tween.tween_property(texture_rect, "position", Vector2.ZERO, 0.1)
 	
 	# Escalado aleatorio para simular "freezing"
 	if randf() < 0.03 + crash_intensity * 0.05:
-		var glitch_scale = Vector2(
+		var glitch_scale: Vector2 = Vector2(
 			randf_range(0.95, 1.05),
 			randf_range(0.95, 1.05)
 		)
 		texture_rect.scale = glitch_scale
 		
-		var tween = create_tween()
+		var tween: Tween = create_tween()
 		tween.tween_property(texture_rect, "scale", Vector2.ONE, 0.2)
 
 func apply_horror_colors() -> void:
@@ -94,7 +94,7 @@ func apply_horror_colors() -> void:
 		background.modulate = horror_color
 		
 		# Volver al color normal gradualmente
-		var tween = create_tween()
+		var tween: Tween = create_tween()
 		tween.tween_property(background, "modulate", Color.WHITE, randf_range(0.5, 2.0))
 	
 	# Efecto de "sangrado" de color
@@ -106,7 +106,7 @@ func apply_horror_colors() -> void:
 			1.0
 		)
 		
-		var tween = create_tween()
+		var tween: Tween = create_tween()
 		tween.tween_property(texture_rect, "modulate", Color.WHITE, 1.0)
 
 func create_lag_spikes() -> void:
@@ -125,12 +125,12 @@ func create_lag_spikes() -> void:
 
 func create_post_freeze_effect() -> void:
 	# Efecto visual después de un "freeze"
-	var flash = ColorRect.new()
+	var flash: ColorRect = ColorRect.new()
 	flash.color = Color(1.0, 0.0, 0.0, 0.3)
 	flash.size = get_viewport().get_visible_rect().size
 	add_child(flash)
 	
-	var tween = create_tween()
+	var tween: Tween = create_tween()
 	tween.tween_property(flash, "modulate:a", 0.0, 0.3)
 	tween.tween_callback(flash.queue_free)
 

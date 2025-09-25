@@ -90,7 +90,7 @@ func update_animations(direction: float) -> void:
 func update_counter_display() -> void:
 	if counter_label:
 		# Obtener el contador desde el scene principal
-		var scene_2d = get_node("../")
+		var scene_2d: Node = get_node("../")
 		if scene_2d and scene_2d.has_method("get_coin_count"):
 			counter_label.text = "x " + str(scene_2d.get_coin_count())
 		else:

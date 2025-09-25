@@ -4,7 +4,7 @@ extends Node2D
 @onready var menu_final_area: Area2D = $MenuFinal
 #@onready var crt_shader: ColorRect = $CanvasLayer/TextureRect
 @onready var count_label: Label = $Control/Label
-var coin_count = 0
+var coin_count: int = 0
 
 func _ready() -> void:
 	update_display()
