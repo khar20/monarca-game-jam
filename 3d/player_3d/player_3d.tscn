@@ -17,6 +17,7 @@ floor_max_angle = 1.0472
 script = ExtResource("1_8afob")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+cast_shadow = 0
 mesh = SubResource("CapsuleMesh_dovo2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -24,6 +25,8 @@ shape = SubResource("CapsuleShape3D_u8vuu")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="InteractionRay" type="RayCast3D" parent="Camera3D"]
 
 [node name="Area3D" type="Area3D" parent="."]
 

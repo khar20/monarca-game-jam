@@ -1,44 +1,46 @@
 # player.gd
 extends CharacterBody3D
 
-# properties
+# Constants
 const SPEED: float = 1.0
 const JUMP_VELOCITY: float = 4.5
-const SENS: float = 0.001
-const ACCELERATION: float = 0.5
-const FRICTION: float = 0.5
-const FOOTSTEP_INTERVAL: float = 0.8
-const SLOPE_SPEED_MULTIPLIER: float = 0.7
+const SENSITIVITY: float = 0.002
+const ACCELERATION: float = 0.25
+const FRICTION: float = 0.1
+const FOOTSTEP_INTERVAL: float = 0.5
+const SLOPE_SPEED_MULTIPLIER: float = 0.8
 
-var current_fs_material
-
-# states
+# States
 enum States { MOVE, PLAYING }
-
-# default initial state
 var state = States.MOVE
 
+# OnReady variables
 @onready var camera: Camera3D = $Camera3D
 @onready var footstep_timer: Timer = $FootstepTimer
+@onready var interaction_ray: RayCast3D = $Camera3D/InteractionRay
+
+# Private variables
+var _current_fs_material
 
 func _ready() -> void:
-	# initial mouse mode
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	_initialize_wwise()
+	_setup_footstep_timer()
+
+func _initialize_wwise() -> void:
 	Wwise.register_game_obj(self, self.name)
 	Wwise.register_listener(self)
 	Wwise.load_bank_id(AK.BANKS.NEW_SOUNDBANK)
 	Wwise.set_switch_id(AK.SWITCHES.FS_MATERIAL_SWITCH.GROUP, AK.SWITCHES.FS_MATERIAL_SWITCH.SWITCH.TILE, self)
 	Wwise.set_switch_id(AK.SWITCHES.ROOMTONE_SWITCH.GROUP, AK.SWITCHES.ROOMTONE_SWITCH.SWITCH.LIVING, self)
-	current_fs_material = AK.SWITCHES.FS_MATERIAL_SWITCH.SWITCH.TILE
-	
-	# footstep setup
+	_current_fs_material = AK.SWITCHES.FS_MATERIAL_SWITCH.SWITCH.TILE
+
+func _setup_footstep_timer() -> void:
 	footstep_timer.wait_time = FOOTSTEP_INTERVAL
 	footstep_timer.one_shot = false
-	footstep_timer.connect("timeout", _on_FootstepTimer_timeout)
+	#footstep_timer.connect("timeout", _on_footstep_timer_timeout)
 
-# state changer
 func set_state(new_state: States) -> void:
-	# if already in new state dont change
 	if state == new_state:
 		return
 
@@ -50,18 +52,18 @@ func set_state(new_state: States) -> void:
 			velocity = Vector3.ZERO
 			footstep_timer.stop()
 
-
-# input handler
 func _unhandled_input(event: InputEvent) -> void:
 	if state != States.MOVE:
 		return
 
 	if event is InputEventMouseMotion:
-		rotate_y(-event.relative.x * SENS)
-		camera.rotate_x(-event.relative.y * SENS)
+		rotate_y(-event.relative.x * SENSITIVITY)
+		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 
-# states router
+	if Input.is_action_just_pressed("interact"):
+		_interact()
+
 func _physics_process(delta: float) -> void:
 	match state:
 		States.MOVE:
@@ -69,35 +71,32 @@ func _physics_process(delta: float) -> void:
 		States.PLAYING:
 			_playing_state(delta)
 
-# states logic
 func _move_state(delta: float) -> void:
-	# gravity
+	# Gravity
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity.y += get_gravity().y * delta
 		footstep_timer.stop()
 
-	# jump
+	# Jump
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# directional input
+	# Movement
 	var input_dir: Vector2 = Input.get_vector("left", "right", "forward", "backward")
 	var direction: Vector3 = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-
+	
 	var current_speed: float = SPEED
 	if is_on_floor():
 		var floor_normal: Vector3 = get_floor_normal()
 		var floor_angle: float = rad_to_deg(acos(floor_normal.dot(Vector3.UP)))
-		if floor_angle > 0.1: # Check if on a slope
-			var is_moving_downhill: float = direction.dot(floor_normal) > 0
-			if is_moving_downhill:
+		if floor_angle > 0.1:
+			if direction.dot(floor_normal) > 0:
 				current_speed *= SLOPE_SPEED_MULTIPLIER
 
-	# movement
-	if direction and is_on_floor():
+	if direction:
 		velocity.x = lerp(velocity.x, direction.x * current_speed, ACCELERATION)
 		velocity.z = lerp(velocity.z, direction.z * current_speed, ACCELERATION)
-		if footstep_timer.is_stopped():
+		if is_on_floor() and footstep_timer.is_stopped():
 			footstep_timer.start()
 	else:
 		velocity.x = lerp(velocity.x, 0.0, FRICTION)
@@ -107,29 +106,28 @@ func _move_state(delta: float) -> void:
 	move_and_slide()
 
 func _playing_state(_delta: float) -> void:
-	velocity.x = lerp(velocity.x, 0.0, FRICTION)
-	velocity.z = lerp(velocity.z, 0.0, FRICTION)
+	velocity = velocity.lerp(Vector3.ZERO, FRICTION)
 	move_and_slide()
 
-func _on_FootstepTimer_timeout() -> void:
+func _interact() -> void:
+	if interaction_ray.is_colliding():
+		var collider: Object = interaction_ray.get_collider()
+		if collider.has_method("interact"):
+			collider.call("interact")
+
+func _on_footstep_timer_timeout() -> void:
 	Wwise.post_event_id(AK.EVENTS.PLAY_PLAYER_FS, self)
 
-
-func _on_wood_body_entered(body: Node3D) -> void:
-	if body is not CharacterBody3D:
-		return
-		
-	if current_fs_material != AK.SWITCHES.FS_MATERIAL_SWITCH.SWITCH.WOOD:
-		print("wood")
-		Wwise.set_switch_id(AK.SWITCHES.FS_MATERIAL_SWITCH.GROUP, AK.SWITCHES.FS_MATERIAL_SWITCH.SWITCH.WOOD, self)
-		current_fs_material = AK.SWITCHES.FS_MATERIAL_SWITCH.SWITCH.WOOD
-
-
-func _on_tile_body_entered(body: Node3D) -> void:
-	if body is not CharacterBody3D:
+func _on_body_entered(body: Node3D, material_switch) -> void:
+	if body != self:
 		return
 	
-	if current_fs_material != AK.SWITCHES.FS_MATERIAL_SWITCH.SWITCH.TILE:
-		print("tile")
-		Wwise.set_switch_id(AK.SWITCHES.FS_MATERIAL_SWITCH.GROUP, AK.SWITCHES.FS_MATERIAL_SWITCH.SWITCH.TILE, self)
-		current_fs_material = AK.SWITCHES.FS_MATERIAL_SWITCH.SWITCH.TILE
+	if _current_fs_material != material_switch:
+		Wwise.set_switch_id(AK.SWITCHES.FS_MATERIAL_SWITCH.GROUP, material_switch, self)
+		_current_fs_material = material_switch
+
+func _on_wood_body_entered(body: Node3D) -> void:
+	_on_body_entered(body, AK.SWITCHES.FS_MATERIAL_SWITCH.SWITCH.WOOD)
+
+func _on_tile_body_entered(body: Node3D) -> void:
+	_on_body_entered(body, AK.SWITCHES.FS_MATERIAL_SWITCH.SWITCH.TILE)
