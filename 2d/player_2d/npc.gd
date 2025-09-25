@@ -53,7 +53,7 @@ func move_npc_after_dialogue() -> void:
 	# Posición actual del NPC
 	var current_position = global_position
 	
-	# Calcular nueva posición: 4 cuadros a la derecha (64 píxeles) y 5 hacia abajo (80 píxeles)
+	# Calcular nueva posición: cuadros a la derecha (100 píxeles) y hacia abajo (350 píxeles)
 	var target_position = current_position + Vector2(100, 350)
 	
 	# Mover primero a la derecha, luego hacia abajo
@@ -71,6 +71,11 @@ func change_scene_visibility() -> void:
 	var pared = main_scene.get_node("pared")
 	if pared:
 		pared.visible = false
+		# Desactivar la colisión de CollisionPared
+		var collision_pared = pared.get_node("CollisionPared")
+		if collision_pared:
+			collision_pared.disabled = true
+		
 	
 	# Cambiar visibilidad de FrenteInvi (TileMapLayer)
 	var frente_invi = main_scene.get_node("FrenteInvi")
