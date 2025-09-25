@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{8BF9454F-2205-46F1-9CD8-7F8B1296E3E8}",
     "Language": "SFX",
-    "Hash": "{756D8D2B-9582-D74A-B92D-A762955463FD}",
+    "Hash": "{DD4F665B-A505-FB31-4FEF-A05018885239}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\New_SoundBank",
     "ShortName": "New_SoundBank",
     "Path": "4072029455.bnk",
@@ -38,6 +38,14 @@
       "Location": "Memory",
       "ShortName": "Sfx_Fire_Ignition.wav",
       "CachePath": "5B/{5B6A2136-28C7-235D-ABBC-F226EB936E1E}.wem"
+     },
+     {
+      "Id": "42467079",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Hallucinations_Lvl3.wav",
+      "CachePath": "F2/{F29BD955-8CDA-04FA-C3A9-CD34240E1E09}.wem"
      },
      {
       "Id": "70527204",
@@ -80,6 +88,14 @@
       "CachePath": "4D/{4D7A2627-EFA0-9EB5-B43C-3B3EF9D5A5DD}.wem"
      },
      {
+      "Id": "152738127",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Mx_DeathMusic.wav",
+      "CachePath": "4B/{4B415044-7CAA-1566-8E97-F8C6AD116777}.wem"
+     },
+     {
       "Id": "249388012",
       "Language": "SFX",
       "Streaming": "false",
@@ -94,6 +110,22 @@
       "Location": "Memory",
       "ShortName": "Sfx_Fridgedoor_Close_02.wav",
       "CachePath": "EA/{EAC45DB2-DC04-035B-A292-D4CB608C2DD4}.wem"
+     },
+     {
+      "Id": "276378622",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sfx_HandWalk.wav",
+      "CachePath": "B4/{B43F5DA5-D9A1-E2F5-7DD5-8B98F031A794}.wem"
+     },
+     {
+      "Id": "283469559",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Hallucinations_Lvl4.wav",
+      "CachePath": "6B/{6B839363-53E9-7931-E8F6-B887157C7F50}.wem"
      },
      {
       "Id": "310337373",
@@ -224,6 +256,14 @@
       "CachePath": "F8/{F893A03D-52F2-D263-6A12-5EABE1049AF5}.wem"
      },
      {
+      "Id": "481015485",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Hallucinations_Lvl1.wav",
+      "CachePath": "90/{906F7A57-0F24-5359-866D-D1BD84EB154A}.wem"
+     },
+     {
       "Id": "483921262",
       "Language": "SFX",
       "Streaming": "false",
@@ -245,7 +285,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Sfx_Computer_Lp.wav",
-      "CachePath": "72/{7201FF55-8ED9-EB31-7135-946D9C043C8B}.wem"
+      "CachePath": "04/{047EE0C8-BBAA-19EE-5265-033944142B3F}.wem"
      },
      {
       "Id": "520575613",
@@ -270,6 +310,14 @@
       "Location": "Memory",
       "ShortName": "Sfx_Fs_Carpet_07.wav",
       "CachePath": "A2/{A2DA0D01-CF6D-42B5-7BD8-C9F4C80E62B1}.wem"
+     },
+     {
+      "Id": "567323019",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sfx_Hallucination_Bang_Right.wav",
+      "CachePath": "F0/{F08683E6-8001-4B7C-012C-7A3031E99697}.wem"
      },
      {
       "Id": "607982813",
@@ -352,12 +400,28 @@
       "CachePath": "42/{4251E0C4-65CB-D0BA-F251-BA5C00CE7AE0}.wem"
      },
      {
+      "Id": "744152542",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Hallucinations_Lvl5_Perspective.wav",
+      "CachePath": "37/{37CC7837-E203-810F-16DF-DDF04042E1BB}.wem"
+     },
+     {
       "Id": "789984334",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Sfx_Fs_Gravel_04.wav",
       "CachePath": "A4/{A49F349B-5490-A508-57B8-8BC81A3A8411}.wem"
+     },
+     {
+      "Id": "812921429",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Hallucinations_Lvl6.wav",
+      "CachePath": "05/{059B8C3D-423E-E32F-F2FD-CA3B52265606}.wem"
      },
      {
       "Id": "824738710",
@@ -406,6 +470,14 @@
       "Location": "Memory",
       "ShortName": "Sfx_Fs_Tile_02.wav",
       "CachePath": "53/{53C06AA8-A178-A48E-4036-FF59EA3046BD}.wem"
+     },
+     {
+      "Id": "844713100",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Hallucinations_Lvl2.wav",
+      "CachePath": "44/{44E38609-5CC6-8807-79D3-DC8A0B20B6C9}.wem"
      },
      {
       "Id": "845431122",
@@ -525,7 +597,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Sfx_Computer_On.wav",
-      "CachePath": "42/{4243E5E0-6239-C42C-D021-55321318D35F}.wem"
+      "CachePath": "81/{81777F73-66BD-DE4D-7B2B-A46257D577DA}.wem"
      },
      {
       "Id": "1027126650",
@@ -649,6 +721,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Enviroment\\Dorm\\Clock\\Play_Clok_Lp",
       "GUID": "{9ED31E5C-A7A9-439D-B38B-02D793BE36D6}",
       "Color": "4",
+      "MaxAttenuation": "100",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
@@ -662,6 +735,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Enviroment\\Dorm\\Computer\\Play_ComputerDevMssg",
       "GUID": "{683167A2-8732-4CED-ACA3-DD4F6CE53B59}",
       "Color": "4",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.34735417",
       "DurationMax": "5.3651667",
@@ -698,6 +772,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Enviroment\\Dorm\\Computer\\Play_ComputerGlitchJumpscare",
       "GUID": "{D18DFFF1-52C7-4781-AA3E-723E07685A67}",
       "Color": "4",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.5148542",
       "DurationMax": "0.5148542",
@@ -713,6 +788,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Enviroment\\Dorm\\Computer\\Play_ComputerLoop",
       "GUID": "{3BCB0E58-C28C-448E-94AC-62A31DB7DDB4}",
       "Color": "4",
+      "MaxAttenuation": "100",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
@@ -726,6 +802,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Enviroment\\Dorm\\Computer\\Play_ComputerOFF",
       "GUID": "{8ED3548D-B1F0-41B8-97C5-024216FA8B92}",
       "Color": "4",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "15.411604",
       "DurationMax": "15.411604",
@@ -741,6 +818,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Enviroment\\Dorm\\Computer\\Play_ComputerON",
       "GUID": "{8439A040-95DD-46DB-8F12-8EA165195EDD}",
       "Color": "4",
+      "MaxAttenuation": "100",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
@@ -863,48 +941,19 @@
       ]
      },
      {
-      "Id": "4197138700",
-      "Name": "Play_Hallucination_04",
-      "ObjectPath": "\\Events\\Default Work Unit\\Player\\Hallucinations\\Play_Hallucination_04",
-      "GUID": "{45BE12CE-A71C-4765-8308-C5F57DDB79DD}",
-      "Color": "12",
-      "MaxAttenuation": "0",
-      "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
-     },
-     {
-      "Id": "4197138701",
-      "Name": "Play_Hallucination_05",
-      "ObjectPath": "\\Events\\Default Work Unit\\Player\\Hallucinations\\Play_Hallucination_05",
-      "GUID": "{4150C869-4B24-4414-BCFB-2A00AECCABD7}",
-      "Color": "12",
-      "MaxAttenuation": "0",
-      "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
-     },
-     {
-      "Id": "4197138702",
-      "Name": "Play_Hallucination_06",
-      "ObjectPath": "\\Events\\Default Work Unit\\Player\\Hallucinations\\Play_Hallucination_06",
-      "GUID": "{616F3752-26EE-46D9-B346-ED4E38A1FE12}",
-      "Color": "12",
-      "MaxAttenuation": "0",
-      "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
-     },
-     {
-      "Id": "4197138703",
-      "Name": "Play_Hallucination_07",
-      "ObjectPath": "\\Events\\Default Work Unit\\Player\\Hallucinations\\Play_Hallucination_07",
+      "Id": "617089567",
+      "Name": "Play_Hallucination_DoorHit",
+      "ObjectPath": "\\Events\\Default Work Unit\\Player\\Hallucinations\\Play_Hallucination_DoorHit",
       "GUID": "{B8614835-D01A-47F2-89E3-BEE870271B2C}",
       "Color": "12",
-      "MaxAttenuation": "0",
       "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationMin": "0.7515",
+      "DurationMax": "0.7515",
+      "MediaRefs": [
+       {
+        "Id": "567323019"
+       }
+      ]
      },
      {
       "Id": "1711796878",
@@ -955,6 +1004,113 @@
        },
        {
         "Id": "892128583"
+       }
+      ]
+     },
+     {
+      "Id": "736796743",
+      "Name": "Play_Hallucination_LVL1",
+      "ObjectPath": "\\Events\\Default Work Unit\\Player\\Hallucinations\\Play_Hallucination_LVL1",
+      "GUID": "{45BE12CE-A71C-4765-8308-C5F57DDB79DD}",
+      "Color": "12",
+      "DurationType": "OneShot",
+      "DurationMin": "5.9733334",
+      "DurationMax": "5.9733334",
+      "MediaRefs": [
+       {
+        "Id": "481015485"
+       }
+      ]
+     },
+     {
+      "Id": "736796740",
+      "Name": "Play_Hallucination_LVL2",
+      "ObjectPath": "\\Events\\Default Work Unit\\Player\\Hallucinations\\Play_Hallucination_LVL2",
+      "GUID": "{4150C869-4B24-4414-BCFB-2A00AECCABD7}",
+      "Color": "12",
+      "DurationType": "OneShot",
+      "DurationMin": "1.8819584",
+      "DurationMax": "1.8819584",
+      "MediaRefs": [
+       {
+        "Id": "844713100"
+       }
+      ]
+     },
+     {
+      "Id": "736796741",
+      "Name": "Play_Hallucination_LVL3",
+      "ObjectPath": "\\Events\\Default Work Unit\\Player\\Hallucinations\\Play_Hallucination_LVL3",
+      "GUID": "{616F3752-26EE-46D9-B346-ED4E38A1FE12}",
+      "Color": "12",
+      "DurationType": "OneShot",
+      "DurationMin": "9.815646",
+      "DurationMax": "9.815646",
+      "MediaRefs": [
+       {
+        "Id": "42467079"
+       }
+      ]
+     },
+     {
+      "Id": "736796738",
+      "Name": "Play_Hallucination_LVL4",
+      "ObjectPath": "\\Events\\Default Work Unit\\Player\\Hallucinations\\Play_Hallucination_LVL4",
+      "GUID": "{07D92CAF-DD88-44CD-9A1A-7FF7E55DAAF1}",
+      "Color": "12",
+      "DurationType": "OneShot",
+      "DurationMin": "8.682062",
+      "DurationMax": "8.682062",
+      "MediaRefs": [
+       {
+        "Id": "283469559"
+       }
+      ]
+     },
+     {
+      "Id": "736796739",
+      "Name": "Play_Hallucination_LVL5",
+      "ObjectPath": "\\Events\\Default Work Unit\\Player\\Hallucinations\\Play_Hallucination_LVL5",
+      "GUID": "{C9FE5DAE-D38A-401B-858E-D1279FA5FC98}",
+      "Color": "12",
+      "DurationType": "OneShot",
+      "DurationMin": "4.451479",
+      "DurationMax": "4.451479",
+      "MediaRefs": [
+       {
+        "Id": "744152542"
+       },
+       {
+        "Id": "812921429"
+       }
+      ]
+     },
+     {
+      "Id": "1181751874",
+      "Name": "Play_HandWalk",
+      "ObjectPath": "\\Events\\Default Work Unit\\Npc\\Play_HandWalk",
+      "GUID": "{17A6754E-441B-4BA0-808E-C9B2B7B01412}",
+      "Color": "4",
+      "MaxAttenuation": "104.99999",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "276378622"
+       }
+      ]
+     },
+     {
+      "Id": "3509780585",
+      "Name": "Play_HandWalk_GameOver",
+      "ObjectPath": "\\Events\\Default Work Unit\\Npc\\Play_HandWalk_GameOver",
+      "GUID": "{04DADAAB-A1AE-430F-B5CB-B81BCF1E5D65}",
+      "Color": "4",
+      "DurationType": "OneShot",
+      "DurationMin": "4.905721",
+      "DurationMax": "4.905721",
+      "MediaRefs": [
+       {
+        "Id": "152738127"
        }
       ]
      },
@@ -1477,6 +1633,6 @@
     ]
    }
   ],
-  "FileHash": "{E82EF302-C6F5-5776-5BB0-3A866765B4B2}"
+  "FileHash": "{952D11D8-BE49-CF92-D5F5-B1BD520BBEA6}"
  }
 }
