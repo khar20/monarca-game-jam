@@ -8,9 +8,11 @@ var is_on_ladder: bool = false
 var ladder_tilemap: TileMapLayer
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var counter_label: Label = $Camera2D/CanvasLayer/CounterUI/CounterLabel
 
 func _ready() -> void:
 	ladder_tilemap = get_node("../Frente")
+	update_counter_display()
 
 func _physics_process(delta: float) -> void:
 	check_ladder_collision()
@@ -84,3 +86,12 @@ func update_animations(direction: float) -> void:
 		animated_sprite.play("run")
 	else:
 		animated_sprite.play("default")
+
+func update_counter_display() -> void:
+	if counter_label:
+		# Obtener el contador desde el scene principal
+		var scene_2d = get_node("../")
+		if scene_2d and scene_2d.has_method("get_coin_count"):
+			counter_label.text = "x " + str(scene_2d.get_coin_count())
+		else:
+			counter_label.text = "x 0"

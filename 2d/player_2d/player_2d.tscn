@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c3o0b833m36eh"]
+[gd_scene load_steps=30 format=3 uid="uid://c3o0b833m36eh"]
 
 [ext_resource type="Script" uid="uid://dbunvkoi4ubdc" path="res://2d/player_2d/player_2d.gd" id="1_3rvpv"]
 [ext_resource type="Texture2D" uid="uid://dd6xwya4jcoaq" path="res://assets/2d/player2d/NoOutline/120x80_PNGSheets/_Run.png" id="1_ourca"]
@@ -174,6 +174,11 @@ animations = [{
 "speed": 14.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_counter"]
+font_size = 18
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_3rvpv"]
 radius = 90.05
 
@@ -194,6 +199,23 @@ zoom = Vector2(1.2, 1.2)
 position_smoothing_speed = 10.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+
+[node name="CounterUI" type="Control" parent="Camera2D/CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 200.0
+offset_bottom = 50.0
+
+[node name="CounterLabel" type="Label" parent="Camera2D/CanvasLayer/CounterUI"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 150.0
+offset_bottom = 40.0
+text = "x 0"
+label_settings = SubResource("LabelSettings_counter")
 
 [node name="AreaDetector" type="Area2D" parent="."]
 
