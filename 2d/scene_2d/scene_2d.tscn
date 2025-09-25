@@ -204,7 +204,7 @@ scale = Vector2(0.455932, 0.345215)
 texture = ExtResource("21_ka17y")
 
 [node name="Player2D" parent="." instance=ExtResource("6_aiw3g")]
-position = Vector2(69, 417)
+position = Vector2(-78, 500)
 metadata/_edit_group_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
