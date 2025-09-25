@@ -1,8 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://bx3jfb3b0hg8"]
+[gd_scene load_steps=13 format=3 uid="uid://bx3jfb3b0hg8"]
 
 [ext_resource type="PackedScene" uid="uid://cyavf44qh6q81" path="res://3d/player_3d/player_3d.tscn" id="1_6iw8k"]
 [ext_resource type="Script" uid="uid://b11uunq5f2not" path="res://3d/scene_3d/main_scene_3d.gd" id="1_cib75"]
-[ext_resource type="PackedScene" uid="uid://7qq3vuoceatc" path="res://2d/main_menu_2d/menu_2d.tscn" id="4_frvd2"]
+[ext_resource type="PackedScene" uid="uid://cebsnyd7hma51" path="res://instances/computer/computer.tscn" id="5_n0d4b"]
 [ext_resource type="PackedScene" uid="uid://7m7cvwograei" path="res://3d/house/house.tscn" id="5_nw8o1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_und3l"]
@@ -21,16 +21,6 @@ size = Vector3(10, 2, 10)
 resource_local_to_scene = true
 size = Vector3(10, 2, 10)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_he7i5"]
-size = Vector2(0.4, 0.3)
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_mdw2q"]
-viewport_path = NodePath("SubViewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5cml7"]
-resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_mdw2q")
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_nw8o1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n0d4b"]
@@ -45,6 +35,7 @@ script = ExtResource("1_cib75")
 [node name="Floor" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 shape = SubResource("BoxShape3D_und3l")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
@@ -64,71 +55,57 @@ mesh = SubResource("BoxMesh_nw8o1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 6, 2)
 metadata/_edit_group_ = true
 
-[node name="ComputerScreen" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 5.5, 2)
+[node name="House" parent="." instance=ExtResource("5_nw8o1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ComputerScreen"]
-transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91068e-15, 0, 0, 0)
-mesh = SubResource("PlaneMesh_he7i5")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_5cml7")
+[node name="Computer" parent="House" instance=ExtResource("5_n0d4b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.5, 2)
 
-[node name="MoveMarker3D" type="Marker3D" parent="ComputerScreen"]
-transform = Transform3D(1, 0, 8.35189e-23, 0, 1, -3.59989e-21, 8.35185e-23, 0, 1, -0.3, 0, 0)
+[node name="Lights" type="Node3D" parent="House"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
 
-[node name="CameraMarker3D" type="Marker3D" parent="ComputerScreen"]
-transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91068e-15, 0, 0, 0)
-
-[node name="SubViewport" type="SubViewport" parent="."]
-
-[node name="Menu" parent="SubViewport" instance=ExtResource("4_frvd2")]
-
-[node name="Lights" type="Node3D" parent="."]
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Lights"]
+[node name="OmniLight3D" type="OmniLight3D" parent="House/Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 6.7, 2)
 shadow_enabled = true
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="Lights"]
+[node name="OmniLight3D2" type="OmniLight3D" parent="House/Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 6.7, 3)
 shadow_enabled = true
 
-[node name="OmniLight3D3" type="OmniLight3D" parent="Lights"]
+[node name="OmniLight3D3" type="OmniLight3D" parent="House/Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 6.7, -2)
 shadow_enabled = true
 omni_shadow_mode = 0
 
-[node name="OmniLight3D4" type="OmniLight3D" parent="Lights"]
+[node name="OmniLight3D4" type="OmniLight3D" parent="House/Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 shadow_enabled = true
 
-[node name="FootstepTriggers" type="Node3D" parent="."]
+[node name="FootstepTriggers" type="Node3D" parent="House"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
 
-[node name="Wood" type="Area3D" parent="FootstepTriggers"]
+[node name="Wood" type="Area3D" parent="House/FootstepTriggers"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FootstepTriggers/Wood"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="House/FootstepTriggers/Wood"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.5, 1)
 shape = SubResource("BoxShape3D_nw8o1")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="FootstepTriggers/Wood"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="House/FootstepTriggers/Wood"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6, 4, 2.2)
 shape = SubResource("BoxShape3D_n0d4b")
 
-[node name="Tile" type="Area3D" parent="FootstepTriggers"]
+[node name="Tile" type="Area3D" parent="House/FootstepTriggers"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FootstepTriggers/Tile"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="House/FootstepTriggers/Tile"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.5, 0)
 shape = SubResource("BoxShape3D_nwvah")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="FootstepTriggers/Tile"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="House/FootstepTriggers/Tile"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6, 4, 2.2)
 shape = SubResource("BoxShape3D_0728y")
-
-[node name="House" parent="." instance=ExtResource("5_nw8o1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.173648, -0.984808, 0, 0.984808, 0.173648, 0, 0, 0)
 
-[connection signal="body_entered" from="FootstepTriggers/Wood" to="Player" method="_on_wood_body_entered"]
-[connection signal="body_entered" from="FootstepTriggers/Tile" to="Player" method="_on_tile_body_entered"]
+[connection signal="body_entered" from="House/FootstepTriggers/Wood" to="Player" method="_on_wood_body_entered"]
+[connection signal="body_entered" from="House/FootstepTriggers/Tile" to="Player" method="_on_tile_body_entered"]

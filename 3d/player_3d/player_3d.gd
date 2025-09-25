@@ -49,6 +49,7 @@ func set_state(new_state: States) -> void:
 		States.MOVE:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		States.PLAYING:
+			print("playing")
 			velocity = Vector3.ZERO
 			footstep_timer.stop()
 
@@ -111,6 +112,7 @@ func _playing_state(_delta: float) -> void:
 
 func _interact() -> void:
 	if interaction_ray.is_colliding():
+		print("a")
 		var collider = interaction_ray.get_collider()
 		if collider.has_method("start_game"):
 			collider.call("start_game", self)
