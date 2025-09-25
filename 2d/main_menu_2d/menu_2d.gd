@@ -12,7 +12,7 @@ var terror_position: Vector2 = Vector2(800, 50)
 var simbolos_position: Vector2 = Vector2(50, 400)
 
 func _on_jugar_pressed() -> void:
-	get_tree().change_scene_to_file("res://2d/main_scene/main_scene.tscn")
+	get_tree().change_scene_to_file("res://2d/scene_2d/scene_2d.tscn")
 
 func _on_configuracion_pressed() -> void:
 	#Ocultar el botón y mostrar la imagen

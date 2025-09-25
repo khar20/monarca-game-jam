@@ -6,11 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://csj2ysm6viwvu" path="res://assets/2d/Imagenes/simbolos_menu.svg" id="4_simbolos_menu"]
 [ext_resource type="Shader" uid="uid://dkm5yab2l76qp" path="res://shaders/crt_shader.gdshader" id="5_8kone"]
 
-[sub_resource type="Gradient" id="Gradient_uhp2f"]
+[sub_resource type="Gradient" id="Gradient_t22ev"]
 colors = PackedColorArray(0, 0, 0, 1, 0.0840567, 0.0142973, 0.0131769, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_twqau"]
-gradient = SubResource("Gradient_uhp2f")
+gradient = SubResource("Gradient_t22ev")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2"]
 bg_color = Color(0.15, 0.03, 0.03, 1)
