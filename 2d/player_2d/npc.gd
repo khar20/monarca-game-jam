@@ -53,9 +53,26 @@ func move_npc_after_dialogue() -> void:
 	# Posición actual del NPC
 	var current_position = global_position
 	
-	# Calcular nueva posición: cuadros a la derecha (100 píxeles) y hacia abajo (350 píxeles)
+	# Calcular nueva posición: 4 cuadros a la derecha (64 píxeles) y 5 hacia abajo (80 píxeles)
 	var target_position = current_position + Vector2(100, 350)
 	
 	# Mover primero a la derecha, luego hacia abajo
 	tween.tween_property(self, "global_position", current_position + Vector2(100, 0), 1.0)
 	tween.tween_property(self, "global_position", target_position, 1.0)
+	
+	# Cuando termine el movimiento, cambiar la visibilidad de los nodos
+	tween.tween_callback(change_scene_visibility)
+
+func change_scene_visibility() -> void:
+	# Obtener referencia a la escena principal
+	var main_scene = get_parent()
+	
+	# Cambiar visibilidad de la pared (StaticBody2D)
+	var pared = main_scene.get_node("pared")
+	if pared:
+		pared.visible = false
+	
+	# Cambiar visibilidad de FrenteInvi (TileMapLayer)
+	var frente_invi = main_scene.get_node("FrenteInvi")
+	if frente_invi:
+		frente_invi.visible = true
