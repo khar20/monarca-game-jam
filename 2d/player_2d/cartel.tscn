@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://chxoadn1ib3wa"]
+[gd_scene load_steps=5 format=3 uid="uid://chxoadn1ib3wa"]
 
+[ext_resource type="Script" uid="uid://315hl3a6fu5e" path="res://2d/player_2d/cartel.gd" id="1_3o0oa"]
 [ext_resource type="Texture2D" uid="uid://dsfiksg6dvek" path="res://assets/2d/Tiles/Transparent/tile_0077.png" id="1_ivcqu"]
-[ext_resource type="Texture2D" uid="uid://5e33iirs5hwq" path="res://assets/2d/Tiles/Transparent/tile_0001.png" id="2_3o0oa"]
+[ext_resource type="Texture2D" uid="uid://beqne7jux54ji" path="res://assets/2d/Imagenes/enter.png" id="2_ivcqu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sofw0"]
 size = Vector2(60, 66.5)
 
 [node name="Cartel" type="Area2D"]
+script = ExtResource("1_3o0oa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -19,7 +21,11 @@ position = Vector2(29, 19.25)
 shape = SubResource("RectangleShape2D_sofw0")
 
 [node name="ExclamationMark" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 1
-position = Vector2(29, -34)
-scale = Vector2(3.23437, 3.48438)
-texture = ExtResource("2_3o0oa")
+position = Vector2(34, -34)
+scale = Vector2(0.258047, 0.211797)
+texture = ExtResource("2_ivcqu")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
