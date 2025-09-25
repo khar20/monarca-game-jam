@@ -23,9 +23,8 @@ script = ExtResource("1_k548s")
 shape = SubResource("BoxShape3D_vr4xu")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91068e-15, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 mesh = SubResource("PlaneMesh_he7i5")
-skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_5cml7")
 
 [node name="MoveMarker3D" type="Marker3D" parent="."]
@@ -37,3 +36,6 @@ transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -
 [node name="SubViewport" type="SubViewport" parent="."]
 
 [node name="Menu" parent="SubViewport" instance=ExtResource("2_5pu4m")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
