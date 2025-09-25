@@ -1,5 +1,7 @@
 extends Control
 
+# Añade la referencia al botón de Jugar, asumiendo una estructura similar
+@onready var jugar_button: Button = $VBoxContainer/Jugar
 @onready var configuracion_button: Button = $VBoxContainer/ConfiguracionContainer/Configuracion
 @onready var salir_button: Button = $VBoxContainer/SalirContainer/Salir
 @onready var configuracion_rota: TextureRect = $VBoxContainer/ConfiguracionContainer/ConfiguracionRota
@@ -11,11 +13,22 @@ extends Control
 var terror_position: Vector2 = Vector2(800, 50)
 var simbolos_position: Vector2 = Vector2(50, 400)
 
+func _ready() -> void:
+	# 1. Desactivar la interacción del ratón en todos los botones.
+	# Esto evita que se puedan clickear o que cambien de apariencia con el cursor.
+	#jugar_button.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	configuracion_button.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	salir_button.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	
+	# 2. Establecer el foco inicial en el botón de "Jugar".
+	# Esto hace que el primer botón esté "seleccionado" al empezar.
+	jugar_button.grab_focus()
+
 func _on_jugar_pressed() -> void:
 	get_tree().change_scene_to_file("res://2d/scene_2d/scene_2d.tscn")
 
 func _on_configuracion_pressed() -> void:
-	#Ocultar el botón y mostrar la imagen
+	# Ocultar el botón y mostrar la imagen
 	configuracion_button.visible = false
 	configuracion_rota.visible = true
 	
@@ -23,11 +36,11 @@ func _on_configuracion_pressed() -> void:
 	show_terror_svg()
 
 func _on_salir_pressed() -> void:
-	#Ocultar el botón y mostrar la imagen
+	# Ocultar el botón y mostrar la imagen
 	salir_button.visible = false
 	salir_roto.visible = true
 	
-	#Invertir la imagen
+	# Invertir la imagen
 	salir_roto.flip_h = true
 	
 	# Mostrar el SVG de símbolos en la esquina inferior izquierda
@@ -68,5 +81,3 @@ func show_simbolos_svg() -> void:
 	tween.parallel().tween_property(simbolos_svg, "modulate:a", 1.0, 0.5)
 	# Añadir un ligero efecto de rotación durante la aparición
 	tween.parallel().tween_property(simbolos_svg, "rotation_degrees", random_rotation + randf_range(-5.0, 5.0), 0.5)
-	
-	

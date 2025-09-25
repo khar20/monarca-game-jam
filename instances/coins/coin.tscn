@@ -16,6 +16,7 @@ texture = ExtResource("2_lmfey")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_2e12n")
+disabled = true
 debug_color = Color(0.596407, 0.51141, 0.521205, 0.42)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -2,7 +2,7 @@ extends Area2D
 
 @onready var exclamation_mark: Sprite2D = $ExclamationMark
 
-const dialogo_ninio = preload("res://2d/dialogos2D/ninio.dialogue")
+const dialogo_ninio = preload("res://dialogues_2d/npc.dialogue")
 
 var is_player_2d_close: bool = false
 var is_dialogue_active: bool = false

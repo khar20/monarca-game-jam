@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Monarca Game Jam (4.4)"
-run/main_scene="uid://ddkpfpjcnfnt5"
+run/main_scene="uid://7qq3vuoceatc"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
 [autoload]
@@ -57,7 +57,7 @@ text/autopauses={}
 
 [dialogue_manager]
 
-runtime/balloon_path="res://2d/dialogos_ballons/balloon.tscn"
+runtime/balloon_path="res://2d/dialogue_container/balloon.tscn"
 
 [display]
 
@@ -111,7 +111,7 @@ dialogic_default_action={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://2d/dialogos2D/ninio.dialogue", "res://2d/dialogos2D/cartel1.dialogue", "res://2d/dialogos2D/cartel2.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogues_2d/sign1.dialogue", "res://dialogues_2d/npc.dialogue", "res://dialogues_2d/sign2.dialogue")
 
 [rendering]
 
