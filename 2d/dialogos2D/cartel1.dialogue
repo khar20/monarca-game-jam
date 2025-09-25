@@ -3,7 +3,7 @@ Cartel: Hola, bienvenido a ¡PrismaTown!.
 ~ preguntas
 Cartel: ¿Tienes alguna pregunta?.
 - ¿Las monedas para que sirven?
-	Cartel: Averigualo por tu cuenta,¡pero no pierdas ninguna!
+	Cartel: Averigualo por tu cuenta, ¡pero no pierdas ninguna!
 	=> preguntas
 - ¿Puedo interactuar?
 	Cartel: Sí, puedes interactuar con los npc presionando "Enter"

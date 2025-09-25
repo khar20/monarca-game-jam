@@ -15,8 +15,12 @@ func _ready() -> void:
 	player_2d = get_node("../Player2D") if has_node("../Player2D") else null
 
 func _process(delta: float) -> void:
-	if is_player_2d_close and Input.is_action_just_pressed("ui_accept") and not is_dialogue_active:
-		DialogueManager.show_dialogue_balloon(dialogo_ninio, "start")
+	pass
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed and event.keycode == KEY_ENTER:
+		if is_player_2d_close and not is_dialogue_active:
+			DialogueManager.show_dialogue_balloon(dialogo_ninio, "start")
 
 func _on_area_entered(area: Area2D) -> void:
 	exclamation_mark.visible = true
