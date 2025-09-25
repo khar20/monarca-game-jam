@@ -53,9 +53,9 @@ func move_npc_after_dialogue() -> void:
 	# Posición actual del NPC
 	var current_position = global_position
 	
-	# Calcular nueva posición: 4 cuadros a la derecha (64 píxeles) y 5 hacia abajo (80 píxeles)
-	var target_position = current_position + Vector2(64, 80)
+	# Calcular nueva posición: cuadros a la derecha (100 píxeles) y hacia abajo (350 píxeles)
+	var target_position = current_position + Vector2(100, 350)
 	
 	# Mover primero a la derecha, luego hacia abajo
-	tween.tween_property(self, "global_position", current_position + Vector2(64, 0), 1.0)
+	tween.tween_property(self, "global_position", current_position + Vector2(100, 0), 1.0)
 	tween.tween_property(self, "global_position", target_position, 1.0)
