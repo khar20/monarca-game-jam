@@ -42,3 +42,20 @@ func _on_dialogue_ended(dialogue) -> void:
 	is_dialogue_active = false
 	if player_2d:
 		player_2d.set_physics_process(true)
+	
+	# Mover el NPC después del diálogo
+	move_npc_after_dialogue()
+
+func move_npc_after_dialogue() -> void:
+	# Crear un tween para el movimiento suave
+	var tween = create_tween()
+	
+	# Posición actual del NPC
+	var current_position = global_position
+	
+	# Calcular nueva posición: 4 cuadros a la derecha (64 píxeles) y 5 hacia abajo (80 píxeles)
+	var target_position = current_position + Vector2(64, 80)
+	
+	# Mover primero a la derecha, luego hacia abajo
+	tween.tween_property(self, "global_position", current_position + Vector2(64, 0), 1.0)
+	tween.tween_property(self, "global_position", target_position, 1.0)
