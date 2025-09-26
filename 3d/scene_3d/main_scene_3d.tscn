@@ -118,5 +118,6 @@ subviewport = NodePath("../../../SubViewport")
 transform = Transform3D(1, 0, 0, 0, 0.975554, 0.219761, 0, -0.219761, 0.975554, 0, 12.3861, 0)
 
 [node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(1000, 512)
 
 [node name="Menu" parent="SubViewport" instance=ExtResource("5_n0d4b")]

@@ -160,9 +160,6 @@ position = Vector2(1477, 384)
 scale = Vector2(12.5509, 4.32969)
 texture = ExtResource("2_tjmi5")
 
-[node name="NPC" parent="." instance=ExtResource("3_8b3m1")]
-position = Vector2(2887, 536)
-
 [node name="FrenteInvi" type="TileMapLayer" parent="."]
 visible = false
 texture_filter = 1
@@ -178,6 +175,7 @@ tile_set = SubResource("TileSet_t8d54")
 
 [node name="Coin" parent="Coins" instance=ExtResource("16_o6pts")]
 position = Vector2(213, 494)
+scale = Vector2(0.9994, 1.04061)
 
 [node name="Coin2" parent="Coins" instance=ExtResource("16_o6pts")]
 position = Vector2(136, 512)
@@ -211,6 +209,10 @@ texture = ExtResource("21_ka17y")
 
 [node name="Player2D" parent="." instance=ExtResource("6_aiw3g")]
 position = Vector2(-76, 426)
+metadata/_edit_group_ = true
+
+[node name="NPC" parent="." instance=ExtResource("3_8b3m1")]
+position = Vector2(2887, 567)
 metadata/_edit_group_ = true
 
 [node name="pared" type="StaticBody2D" parent="."]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bssy3fyr4bdfl"]
 
 [ext_resource type="Shader" uid="uid://dkm5yab2l76qp" path="res://shaders/crt_shader.gdshader" id="1_evvi5"]
-[ext_resource type="Script" uid="uid://ciablkwpy62b" path="res://2d/main_menu_2d/menu_final.gd" id="2_menu_final"]
+[ext_resource type="Script" uid="uid://ciablkwpy62b" path="res://2d/end_scene_2d/menu_final.gd" id="2_menu_final"]
 
 [sub_resource type="Gradient" id="Gradient_uhp2f"]
 colors = PackedColorArray(0, 0, 0, 1, 0.0840567, 0.0142973, 0.0131769, 1)
