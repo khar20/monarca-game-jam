@@ -1,86 +1,99 @@
 # computer.gd
-# This script should be attached to the root Node3D of your computer/arcade cabinet.
-extends StaticBody3D
+# Attach to the root Node3D of the computer.
+extends Node3D
 
-# --- Assign these in the Godot Editor ---
-
-## The SubViewport node that contains your 2D game.
+# --- Exports ---
 @export var subviewport: SubViewport
 
-## How long the transition for the player and camera should take.
-@export var transition_time: float = 1.0
+# --- OnReady Variables ---
+@onready var interactable: Interactable = $InteractableComponent
+@onready var interaction_point: Node3D = $InteractionPoint
+@onready var mesh: MeshInstance3D = $StaticBody3D/MeshInstance3D
 
-
-# --- Node references, automatically found at runtime ---
-
-## The visual mesh of the computer. Assumes it's a direct child.
-@onready var mesh: MeshInstance3D = $MeshInstance3D
-
-## The target for the player's camera. Assumes it's a direct child.
-@onready var screen_camera: Camera3D = $ScreenCamera
-
-## The target for the player's body. Assumes it's a direct child.
-@onready var stand_position: Marker3D = $StandPosition
-
+# --- Private Variables ---
+var _original_player_transform: Transform3D
+var _is_active: bool = false
 
 func _ready() -> void:
-	# --- Setup for the Viewport Screen ---
-	# This section correctly sets up the screen material at runtime.
+	# --- Validation ---
 	if not subviewport:
-		push_error("No SubViewport assigned to this Computer instance.")
+		push_error("Computer Error: No SubViewport has been assigned in the Inspector.")
+		return
+	if not interactable:
+		push_error("Computer Error: No child node of type 'Interactable' was found.")
+		return
+	if not interaction_point:
+		push_error("Computer Error: No child node named 'InteractionPoint' was found.")
 		return
 
+	# --- Material Setup for the Screen ---
 	var material: Material = mesh.get_active_material(0)
-	if not material:
-		push_error("The MeshInstance3D has no material to apply the screen to.")
+	if material:
+		var unique_material: StandardMaterial3D = material.duplicate() as StandardMaterial3D
+		var viewport_texture: ViewportTexture = subviewport.get_texture()
+		unique_material.albedo_texture = viewport_texture
+		mesh.material_override = unique_material
+	else:
+		push_warning("Computer Warning: The mesh has no material on slot 0 to apply the screen texture to.")
+
+	subviewport.child_entered_tree.connect(_on_subviewport_child_entered)
+	
+	# This will trigger the connection for the initial scene (the menu) at startup.
+	if subviewport.get_child_count() > 0:
+		_on_subviewport_child_entered(subviewport.get_child(0))
+	
+	# --- Initial State ---
+	add_to_group("computer_interaction")
+	interactable.interacted.connect(_on_interacted)
+
+# --- Interaction Logic ---
+
+func _on_interacted(player) -> void:
+	if _is_active:
 		return
-	
-	# 1. Duplicate the material to make it unique for this instance.
-	#    This is CRITICAL to prevent all computers from sharing the same screen.
-	var unique_material: StandardMaterial3D = material.duplicate() as StandardMaterial3D
-	
-	# 2. Get the live texture from the SubViewport.
-	var viewport_texture: ViewportTexture = subviewport.get_texture()
-	
-	# 3. Set the viewport texture as the albedo (base color) texture.
-	unique_material.albedo_texture = viewport_texture
-	
-	# 4. Apply this unique, updated material to the mesh.
-	mesh.material_override = unique_material
-	# --- End of Screen Setup ---
+	_is_active = true
 
-	# Ensure the 2D game input is disabled from the start.
-	subviewport.set_process_input(false)
-	subviewport.set_process_unhandled_input(false)
+	_original_player_transform = player.global_transform
 	
-	# Add this node to a group so the player's raycast can identify it easily.
-	add_to_group("interactable")
-
-
-# This function is called directly by the player's raycast when they press "interact".
-func start_interaction(player: CharacterBody3D) -> void:
-	# 1. Activate the 2D game's input processing.
-	subviewport.set_process_input(true)
-	subviewport.set_process_unhandled_input(true)
+	# Move the player into position.
+	player.tween_body_to_transform(interaction_point.global_transform, 1.0)
 	
-	# 2. Create a dictionary with all the instructions for the player.
-	var interaction_data: Dictionary = {
-		# Where the player's body should move to.
-		"target_player_transform": stand_position.global_transform,
-		# Where the player's camera should move to.
-		"target_camera_transform": screen_camera.global_transform,
-		# How long the transition should take.
-		"transition_time": transition_time,
-		# What the mouse mode should be (visible for UI interaction).
-		"mouse_mode": Input.MOUSE_MODE_VISIBLE
-	}
-	
-	# 3. Call the player's function to begin the transition, passing along the instructions
-	#    and a reference to this computer node (self).
-	player.enter_interaction(interaction_data, self)
+	# Tell the player to start forwarding input to our subviewport.
+	player.begin_subviewport_interaction(subviewport)
 
-# This function is called by the player when they press "ui_cancel" (Escape).
-func end_interaction(_player: CharacterBody3D) -> void:
-	# Deactivate the 2D game's input processing.
-	subviewport.set_process_input(false)
-	subviewport.set_process_unhandled_input(false)
+func end_interaction(player) -> void:
+	if not _is_active:
+		return
+	_is_active = false
+	
+	# Tell the player to stop forwarding input.
+	player.end_subviewport_interaction()
+
+	# Move the player back to where they were.
+	player.tween_body_to_transform(_original_player_transform, 1.0)
+
+# --- NEW: This function connects signals from the scene inside the viewport ---
+func _on_subviewport_child_entered(child_node: Node) -> void:
+	# Check if the new scene has the signal we're looking for.
+	if child_node.has_signal("scene_change_requested"):
+		# Connect this computer's _on_scene_change_requested function to that signal.
+		# The .connect() call will now persist until that child_node is freed.
+		child_node.scene_change_requested.connect(_on_scene_change_requested)
+
+# --- NEW: This function executes the scene change ---
+func _on_scene_change_requested(scene_path: String) -> void:
+	# 1. Free the current scene inside the viewport.
+	if subviewport.get_child_count() > 0:
+		var current_scene: Node = subviewport.get_child(0)
+		current_scene.queue_free()
+
+	# 2. Load the new scene resource from the path provided by the signal.
+	var new_scene_packed: PackedScene = load(scene_path)
+	if new_scene_packed:
+		# 3. Instantiate the new scene.
+		var new_scene_instance: Node = new_scene_packed.instantiate()
+		
+		# 4. Add the new instance as a child of the SubViewport.
+		#    This will trigger `_on_subviewport_child_entered` again for the new scene,
+		#    setting up its signals if it has any (like a "back to menu" signal).
+		subviewport.add_child(new_scene_instance)

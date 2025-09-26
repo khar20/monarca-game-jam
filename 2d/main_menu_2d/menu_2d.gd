@@ -1,6 +1,7 @@
 extends Control
 
 # Añade la referencia al botón de Jugar, asumiendo una estructura similar
+signal scene_change_requested(scene_path: String)
 
 #@onready var configuracion_rota: TextureRect = $VBoxContainer/ConfiguracionContainer/ConfiguracionRota
 #@onready var salir_roto: TextureRect = $VBoxContainer/SalirContainer/SalirRoto
@@ -11,6 +12,8 @@ extends Control
 @onready var play_button: Button = $VBoxContainer/PlayButton
 @onready var options_button: Button = $VBoxContainer/OptionsButton
 @onready var exit_button: Button = $VBoxContainer/ExitButton
+
+
 
 # image pos
 #var terror_position: Vector2 = Vector2(800, 50)
@@ -37,6 +40,11 @@ func _on_configuracion_pressed() -> void:
 	
 	# Mostrar el SVG de terror en la esquina superior derecha
 	#show_terror_svg()
+	
+func _on_start_button_pressed() -> void:
+	# When the button is pressed, emit the signal.
+	# Provide the path to the 2D game scene you want to load next.
+	scene_change_requested.emit("res://2d/scene_2d/scene_2d.tscn")
 
 func _on_salir_pressed() -> void:
 	# Ocultar el botón y mostrar la imagen

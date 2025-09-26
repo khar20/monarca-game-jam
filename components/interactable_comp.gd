@@ -7,13 +7,13 @@ signal interacted(interactor)
 
 @export var prompt_message: String = "Interact"
 
-func _on_body_entered(body):
+func _on_body_entered(body) -> void:
 	if body.is_in_group("player"):
 		focused.emit(body)
 
-func _on_body_exited(body):
+func _on_body_exited(body) -> void:
 	if body.is_in_group("player"):
 		unfocused.emit(body)
 
-func do_interact(interactor):
+func do_interact(interactor) -> void:
 	interacted.emit(interactor)

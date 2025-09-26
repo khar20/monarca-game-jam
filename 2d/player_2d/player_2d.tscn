@@ -179,8 +179,7 @@ font_size = 18
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_3rvpv"]
-radius = 90.05
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3rvpv"]
 
 [node name="Player2D" type="CharacterBody2D"]
 script = ExtResource("1_3rvpv")
@@ -220,5 +219,5 @@ label_settings = SubResource("LabelSettings_counter")
 [node name="AreaDetector" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector"]
-shape = SubResource("CircleShape2D_3rvpv")
+shape = SubResource("RectangleShape2D_3rvpv")
 debug_color = Color(0.474105, 0.576656, 0.350436, 0.42)

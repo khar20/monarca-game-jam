@@ -28,6 +28,8 @@ fov = 100.0
 target_position = Vector3(0, 0, -0.5)
 collide_with_areas = true
 
+[node name="HoldPoint" type="Node3D" parent="Camera3D"]
+
 [node name="AkListener3D" type="AkListener3D" parent="."]
 
 [node name="AkEvent3D" type="AkEvent3D" parent="."]
