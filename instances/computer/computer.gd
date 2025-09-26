@@ -1,34 +1,46 @@
-# arcade_cabinet.gd
-extends Area3D
+# computer.gd
+# This script should be attached to the root Node3D of your computer/arcade cabinet.
+extends StaticBody3D
 
-# This signal tells the main 3D scene that a player wants to interact.
-signal interaction_requested(player_3d, arcade_cabinet)
-# This signal tells the main 3D scene that the 2D game has ended.
-signal interaction_ended(arcade_cabinet)
+# --- Assign these in the Godot Editor ---
 
-## Assign the SubViewport node that contains your 2D game here.
+## The SubViewport node that contains your 2D game.
 @export var subviewport: SubViewport
 
+## How long the transition for the player and camera should take.
+@export var transition_time: float = 1.0
+
+
+# --- Node references, automatically found at runtime ---
+
+## The visual mesh of the computer. Assumes it's a direct child.
 @onready var mesh: MeshInstance3D = $MeshInstance3D
+
+## The target for the player's camera. Assumes it's a direct child.
+@onready var screen_camera: Camera3D = $ScreenCamera
+
+## The target for the player's body. Assumes it's a direct child.
+@onready var stand_position: Marker3D = $StandPosition
+
 
 func _ready() -> void:
 	# --- Setup for the Viewport Screen ---
+	# This section correctly sets up the screen material at runtime.
 	if not subviewport:
-		print("ERROR: No SubViewport assigned to this ArcadeCabinet instance.")
+		push_error("No SubViewport assigned to this Computer instance.")
 		return
 
-	# Get the active material from the mesh (surface 0).
-	var material = mesh.get_active_material(0)
+	var material: Material = mesh.get_active_material(0)
 	if not material:
-		print("ERROR: The MeshInstance3D has no material to apply the screen to.")
+		push_error("The MeshInstance3D has no material to apply the screen to.")
 		return
 	
 	# 1. Duplicate the material to make it unique for this instance.
-	#    This is CRITICAL to prevent all arcade cabinets from sharing the same screen.
-	var unique_material = material.duplicate() as StandardMaterial3D
+	#    This is CRITICAL to prevent all computers from sharing the same screen.
+	var unique_material: StandardMaterial3D = material.duplicate() as StandardMaterial3D
 	
 	# 2. Get the live texture from the SubViewport.
-	var viewport_texture = subviewport.get_texture()
+	var viewport_texture: ViewportTexture = subviewport.get_texture()
 	
 	# 3. Set the viewport texture as the albedo (base color) texture.
 	unique_material.albedo_texture = viewport_texture
@@ -37,35 +49,38 @@ func _ready() -> void:
 	mesh.material_override = unique_material
 	# --- End of Screen Setup ---
 
-	# Ensure the 2D game is initially disabled.
-	set_game_active(false)
+	# Ensure the 2D game input is disabled from the start.
+	subviewport.set_process_input(false)
+	subviewport.set_process_unhandled_input(false)
 	
-	# This line assumes a node called 'Player2D' is inside your SubViewport scene.
-	# You will need to connect a signal from your 2D game to trigger this.
-	# For example: subviewport.get_node("Player2D").exited_game.connect(_on_player_2d_exited_game)
+	# Add this node to a group so the player's raycast can identify it easily.
+	add_to_group("interactable")
 
 
-# This function can be called by an external object, like a player's raycast.
-func interact(player_3d: CharacterBody3D) -> void:
-	# Emit the signal to let a controller scene handle the logic.
-	interaction_requested.emit(player_3d, self)
-
-# The main scene controller will call this to activate/deactivate the 2D game.
-func set_game_active(is_active: bool) -> void:
-	# Pass input events to the 2D game only when it's active.
-	subviewport.set_process_input(is_active)
-	subviewport.set_process_unhandled_input(is_active)
+# This function is called directly by the player's raycast when they press "interact".
+func start_interaction(player: CharacterBody3D) -> void:
+	# 1. Activate the 2D game's input processing.
+	subviewport.set_process_input(true)
+	subviewport.set_process_unhandled_input(true)
 	
-	# If your 2D game has physics, you might also want to toggle its process.
-	# This requires getting the nodes inside the viewport.
-	# Example:
-	# var player_2d = subviewport.get_node_or_null("Player2D")
-	# if player_2d:
-	#	 player_2d.set_physics_process(is_active)
+	# 2. Create a dictionary with all the instructions for the player.
+	var interaction_data: Dictionary = {
+		# Where the player's body should move to.
+		"target_player_transform": stand_position.global_transform,
+		# Where the player's camera should move to.
+		"target_camera_transform": screen_camera.global_transform,
+		# How long the transition should take.
+		"transition_time": transition_time,
+		# What the mouse mode should be (visible for UI interaction).
+		"mouse_mode": Input.MOUSE_MODE_VISIBLE
+	}
+	
+	# 3. Call the player's function to begin the transition, passing along the instructions
+	#    and a reference to this computer node (self).
+	player.enter_interaction(interaction_data, self)
 
-
-# This function should be connected to a signal from your 2D game.
-# For example, when the 2D player presses "quit" or the game ends.
-func _on_player_2d_exited_game() -> void:
-	# The 2D game wants to quit. Tell the main scene controller.
-	interaction_ended.emit(self)
+# This function is called by the player when they press "ui_cancel" (Escape).
+func end_interaction(_player: CharacterBody3D) -> void:
+	# Deactivate the 2D game's input processing.
+	subviewport.set_process_input(false)
+	subviewport.set_process_unhandled_input(false)

@@ -11,7 +11,7 @@ const FOOTSTEP_INTERVAL: float = 0.5
 const SLOPE_SPEED_MULTIPLIER: float = 0.8
 
 # Sprint
-const SPRINT_SPEED_MULTIPLIER: float = 2.0
+const SPRINT_SPEED_MULTIPLIER: float = 3.0
 const SPRINT_PRESS_TIME_WINDOW: float = 0.3
 const MIN_PRESSES_TO_SPRINT: int = 2
 
@@ -26,13 +26,15 @@ var freelook_camera_local_transform: Transform3D # <-- FIX: Store original camer
 var camera_lerp_speed: float = 2.0
 var camera_lerp_t: float = 0.0
 
+var focused_interactable: Interactable
+
 # OnReady variables
 @onready var camera: Camera3D = $Camera3D
 @onready var footstep_timer: Timer = $FootstepTimer
 @onready var interaction_ray: RayCast3D = $Camera3D/InteractionRay
 
 # Private variables
-var _current_fs_material
+var _current_fs_material: int
 var _sprint_press_count: int = 0
 var _last_sprint_press_time: float = 0.0
 var _is_sprinting: bool = false
@@ -184,9 +186,9 @@ func set_state(new_state: State) -> void:
 			velocity = Vector3.ZERO
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE) # You may want the mouse visible to interact with the 2D game
 			
-			var computer = interaction_ray.get_collider()
+			var computer: Object = interaction_ray.get_collider()
 			if computer and computer.is_in_group("computer"):
-				var screen_camera = computer.get_node("Camera3D") # Assumes computer has a camera named "Camera3D"
+				var screen_camera: Node = computer.get_node("Camera3D") # Assumes computer has a camera named "Camera3D"
 				initial_camera_transform = camera.global_transform
 				target_camera_transform = screen_camera.global_transform
 				camera_lerp_t = 0
@@ -201,12 +203,17 @@ func check_interact() -> void:
 		
 	var collider: Object = interaction_ray.get_collider()
 	
-	if collider.is_in_group("computer"):
+	if collider is Interactable and collider != focused_interactable:
+		if focused_interactable:
+			focused_interactable.unfocused.emit(self)
+			
+		focused_interactable = collider
+		focused_interactable.focused.emit(self)
 		set_state(State.INTERACTING)
-
-
-	
-
+		
+	elif focused_interactable:
+		focused_interactable.unfocused.emit(self)
+		focused_interactable = null
 
 func _playing_state(_delta: float) -> void:
 	velocity = velocity.lerp(Vector3.ZERO, FRICTION)
@@ -217,7 +224,7 @@ func _playing_state(_delta: float) -> void:
 func _on_footstep_timer_timeout() -> void:
 	Wwise.post_event_id(AK.EVENTS.PLAY_PLAYER_FS, self)
 
-func _on_body_entered(body: Node3D, material_switch) -> void:
+func _on_body_entered(body: Node3D, material_switch: int) -> void:
 	if body != self:
 		return
 	

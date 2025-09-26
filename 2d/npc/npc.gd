@@ -2,7 +2,7 @@ extends Area2D
 
 @onready var exclamation_mark: Sprite2D = $ExclamationMark
 
-const dialogo_ninio = preload("res://dialogues_2d/npc.dialogue")
+const dialogo_ninio = preload("res://dialogues/npc.dialogue")
 
 var is_player_2d_close: bool = false
 var is_dialogue_active: bool = false
@@ -36,7 +36,7 @@ func _on_dialogue_started(dialogue) -> void:
 	if player_2d:
 		player_2d.set_physics_process(false)
 	
-func _on_dialogue_ended(dialogue) -> void:
+func _on_dialogue_ended(dialogue: DialogueResource) -> void:
 	await get_tree().create_timer(0.2).timeout
 	is_dialogue_active = false
 	if player_2d:

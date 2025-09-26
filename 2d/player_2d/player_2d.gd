@@ -4,6 +4,10 @@ const SPEED: float = 300.0
 const JUMP_VELOCITY: float = -400.0
 const LADDER_SPEED: float = 200.0
 
+# Add a multiplier to control how much the jump is shortened.
+# A value of 0.5 will cut the upward velocity in half when the jump button is released.
+const SHORT_JUMP_VELOCITY_MULTIPLIER: float = 0.5
+
 var is_on_ladder: bool = false
 var ladder_tilemap: TileMapLayer
 
@@ -29,10 +33,15 @@ func _physics_process(delta: float) -> void:
 	
 func handle_normal_movement(delta: float) -> void:
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity.y += get_gravity().y * delta
 
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+
+	# If the jump button is released while the character is moving upwards,
+	# reduce the upward velocity to perform a shorter jump.
+	if Input.is_action_just_released("jump") and velocity.y < 0:
+		velocity.y *= SHORT_JUMP_VELOCITY_MULTIPLIER
 
 	var direction: float = Input.get_axis("left", "right")
 	if direction:
