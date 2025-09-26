@@ -12,6 +12,7 @@ extends Node3D
 
 # --- Private Variables ---
 var _original_player_transform: Transform3D
+var _original_player_position: Vector3
 var _is_active: bool = false
 
 func _ready() -> void:
@@ -48,18 +49,25 @@ func _ready() -> void:
 
 # --- Interaction Logic ---
 
-func _on_interacted(player) -> void:
+func _on_interacted(player: CharacterBody3D) -> void:
 	if _is_active:
 		return
 	_is_active = true
 
 	_original_player_transform = player.global_transform
+	_original_player_position = player.global_position
 	
 	# Move the player into position.
-	player.tween_body_to_transform(interaction_point.global_transform, 1.0)
+	print(player.global_position)
+	#player.tween_body_to_transform(interaction_point.global_transform, 1.0)
+	#player.tween_camera_to_look_at(mesh.global_position, 1)
+	player.tween_body_and_camera_look_at(interaction_point.global_transform, mesh.global_position, 1)
+	print(player.global_position)
+	#player.tween_body_to_position(interaction_point.global_position, 1.0)
 	
 	# Tell the player to start forwarding input to our subviewport.
 	player.begin_subviewport_interaction(subviewport)
+	print(player.global_position)
 
 func end_interaction(player) -> void:
 	if not _is_active:
@@ -70,7 +78,8 @@ func end_interaction(player) -> void:
 	player.end_subviewport_interaction()
 
 	# Move the player back to where they were.
-	player.tween_body_to_transform(_original_player_transform, 1.0)
+	#player.tween_body_to_transform(_original_player_transform, 1.0)
+	player.tween_body_to_position(_original_player_transform, 1.0)
 
 # --- NEW: This function connects signals from the scene inside the viewport ---
 func _on_subviewport_child_entered(child_node: Node) -> void:

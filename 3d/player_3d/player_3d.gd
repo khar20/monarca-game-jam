@@ -20,6 +20,7 @@ const MIN_PRESSES_TO_SPRINT: int = 2
 @onready var interaction_ray: RayCast3D = $Camera3D/InteractionRay
 @onready var hold_point: Node3D = $Camera3D/HoldPoint
 @onready var footstep_timer: Timer = $FootstepTimer
+@onready var collision_shape: CollisionShape3D = $CollisionShape3D
 
 # --- Public Variables ---
 var focused_interactable: Interactable
@@ -31,6 +32,8 @@ var _current_fs_material: int
 var _sprint_press_count: int = 0
 var _last_sprint_press_time: float = 0.0
 var _is_sprinting: bool = false
+
+var tween_in_progress: bool = false
 
 var _active_subviewport: SubViewport = null
 
@@ -78,10 +81,13 @@ func _input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	_update_focused_interactable()
 	
+	if tween_in_progress:
+		return
+	
 	if not _controls_enabled:
 		# If controls are disabled, kill velocity and do nothing else.
-		velocity = velocity.lerp(Vector3.ZERO, FRICTION)
-		move_and_slide()
+		#velocity = velocity.lerp(Vector3.ZERO, FRICTION)
+		#move_and_slide()
 		return
 		
 	# --- Movement Logic (only runs if controls are enabled) ---
@@ -143,20 +149,114 @@ func tween_camera_to_transform(target_transform: Transform3D, duration: float) -
 	var tween: Tween = create_tween()
 	tween.set_trans(Tween.TRANS_SINE)
 	tween.set_ease(Tween.EASE_IN_OUT)
+	#tween.tween_property(camera, "global_transform", target_transform, duration)
 	tween.tween_property(camera, "global_transform", target_transform, duration)
 	
-func tween_body_to_transform(target_transform: Transform3D, duration: float) -> void:
+# Place this function in your player_3d.gd script
+
+func tween_camera_to_look_at(target_point: Vector3, duration: float) -> void:
+	# This function smoothly rotates the camera to look at a world-space point
+	# without changing the camera's position.
+	
+	# 1. Create the final transform we want to reach.
+	#    The .looking_at() method creates a copy of the transform that is
+	#    rotated to point towards the target_point. We use Vector3.UP as a reference
+	#    to keep the camera from rolling sideways.
+	var final_transform = camera.global_transform.looking_at(target_point, Vector3.UP)
+	
+	# 2. Create and configure the tween.
+	var tween: Tween = create_tween()
+	tween.set_trans(Tween.TRANS_SINE)
+	tween.set_ease(Tween.EASE_IN_OUT)
+	
+	# 3. Tween the entire "global_transform" property.
+	#    Godot will handle the complex rotation interpolation for you.
+	tween.tween_property(camera, "global_transform", final_transform, duration)
+	
+func tween_body_to_transform(target_transform: Transform3D, camera_target: Transform3D, duration: float) -> void:
 	# This function tweens the entire CharacterBody3D, which is better for
 	# interactions that require the player to be in a specific spot.
+	tween_in_progress = true
+	velocity.y = 0
+	collision_shape.disabled = true
+	
 	var tween: Tween = create_tween()
 	tween.set_trans(Tween.TRANS_SINE)
 	tween.set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(self, "global_transform", target_transform, duration)
+	
+	#tween_camera_to_look_at(camera_target, duration)
+	await tween.finished
+	tween_in_progress = false
+	
+# Add this function to your player_3d.gd script.
+
+func tween_body_and_camera_look_at(body_target_transform: Transform3D, camera_look_at_point: Vector3, duration: float) -> void:
+	# This function smoothly moves the player body to a target transform while
+	# simultaneously rotating the camera to look at a specific world point.
+	
+	if tween_in_progress:
+		return
+		
+	tween_in_progress = true
+	collision_shape.disabled = true
+	velocity.y = 0
+	
+	# --- 1. Calculate the Camera's Final Transform ---
+	# We need to figure out where the camera will be AND how it will be rotated
+	# at the end of the movement.
+	
+	# First, find the camera's final position. This is the body's target position
+	# plus the camera's local offset from the body.
+	var final_camera_position = body_target_transform.origin + (body_target_transform.basis * camera.transform.origin)
+	
+	# Now, create a temporary transform at that final position.
+	var final_camera_transform = Transform3D(Basis(), final_camera_position)
+	
+	# Finally, rotate this transform to look at the target point.
+	final_camera_transform = final_camera_transform.looking_at(camera_look_at_point, Vector3.UP)
+
+	# --- 2. Create and Run Tweens in Parallel ---
+	
+	# Tween for the player's body
+	var body_tween: Tween = create_tween()
+	body_tween.set_parallel() # Ensures tweens added to this run at the same time
+	body_tween.set_trans(Tween.TRANS_SINE)
+	body_tween.set_ease(Tween.EASE_IN_OUT)
+	body_tween.tween_property(self, "global_transform", body_target_transform, duration)
+	
+	# Tween for the camera
+	# By adding it to the same parallel tween, it will run alongside the body's movement.
+	body_tween.tween_property(camera, "global_transform", final_camera_transform, duration)
+	
+	# --- 3. Wait for the movement to finish and clean up ---
+	await body_tween.finished
+	
+	collision_shape.disabled = false
+	tween_in_progress = false
+	
+func tween_body_to_position(target_position: Vector3, duration: float) -> void:
+	# This function tweens the entire CharacterBody3D, which is better for
+	# interactions that require the player to be in a specific spot.
+	tween_in_progress = true
+	velocity.y = 0
+	collision_shape.disabled = true
+	
+	var tween: Tween = create_tween()
+	tween.set_trans(Tween.TRANS_SINE)
+	tween.set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(self, "global_position", target_position, duration)
+	#global_position = target_position
+	await tween.finished
+	
+	#velocity.y = 9.8
+	#collision_shape.disabled = false
+	tween_in_progress = false
 
 func begin_subviewport_interaction(viewport: SubViewport) -> void:
 	set_controls_enabled(false) # Disable player movement
 	_active_subviewport = viewport
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE) # Show the mouse for the 2D game
+	#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE) # Show the mouse for the 2D game
 
 func end_subviewport_interaction() -> void:
 	_active_subviewport = null

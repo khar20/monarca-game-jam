@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bm6p6xyy3ax4t" path="res://3d/player_3d/player_3d.gd" id="1_8afob"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_dovo2"]
+radius = 0.4
 height = 1.8
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8vuu"]
@@ -14,7 +15,6 @@ floor_max_angle = 1.0472
 script = ExtResource("1_8afob")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-cast_shadow = 0
 mesh = SubResource("CapsuleMesh_dovo2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -25,7 +25,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 fov = 100.0
 
 [node name="InteractionRay" type="RayCast3D" parent="Camera3D"]
-target_position = Vector3(0, 0, -0.5)
+target_position = Vector3(0, 0, -1)
 collide_with_areas = true
 
 [node name="HoldPoint" type="Node3D" parent="Camera3D"]

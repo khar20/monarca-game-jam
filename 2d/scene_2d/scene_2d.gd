@@ -1,5 +1,7 @@
 extends Node2D
 
+signal scene_change_requested(scene_path: String)
+
 @onready var player_2d: CharacterBody2D = $Player2D
 @onready var menu_final_area: Area2D = $MenuFinal
 #@onready var crt_shader: ColorRect = $CanvasLayer/TextureRect
@@ -29,4 +31,4 @@ func _on_menu_final_body_entered(body: Node2D) -> void:
 	# Verificar si el cuerpo que entró es el jugador
 	if body == player_2d:
 		# Cambiar a la escena del menu final
-		get_tree().change_scene_to_file("res://2d/main_menu_2d/menu_final.tscn")
+		scene_change_requested.emit("res://2d/main_menu_2d/menu_final.tscn")

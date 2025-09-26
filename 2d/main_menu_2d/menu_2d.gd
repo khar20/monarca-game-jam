@@ -31,7 +31,9 @@ func _ready() -> void:
 	play_button.grab_focus()
 
 func _on_jugar_pressed() -> void:
-	get_tree().change_scene_to_file("res://2d/scene_2d/scene_2d.tscn")
+	scene_change_requested.emit("res://2d/scene_2d/scene_2d.tscn")
+	pass
+	#get_tree().change_scene_to_file("res://2d/scene_2d/scene_2d.tscn")
 
 func _on_configuracion_pressed() -> void:
 	# Ocultar el botón y mostrar la imagen
