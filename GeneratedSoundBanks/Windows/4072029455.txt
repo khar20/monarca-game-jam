@@ -3,13 +3,20 @@ Event	ID	Name			Wwise Object Path	Notes
 	508996243	Play_Lightbulb_Break			\Default Work Unit\Enviroment\Kitchen\Play_Lightbulb_Break	
 	537394880	Play_Clok_Lp			\Default Work Unit\Enviroment\Dorm\Clock\Play_Clok_Lp	
 	573936529	Play_Drawer_Close_Fast			\Default Work Unit\Enviroment\Kitchen\Drawer\Play_Drawer_Close_Fast	
+	617089567	Play_Hallucination_DoorHit			\Default Work Unit\Player\Hallucinations\Play_Hallucination_DoorHit	
 	736665549	Play_Drawer_Open_Slo			\Default Work Unit\Enviroment\Kitchen\Drawer\Play_Drawer_Open_Slo	
+	736796738	Play_Hallucination_LVL4			\Default Work Unit\Player\Hallucinations\Play_Hallucination_LVL4	
+	736796739	Play_Hallucination_LVL5			\Default Work Unit\Player\Hallucinations\Play_Hallucination_LVL5	
+	736796740	Play_Hallucination_LVL2			\Default Work Unit\Player\Hallucinations\Play_Hallucination_LVL2	
+	736796741	Play_Hallucination_LVL3			\Default Work Unit\Player\Hallucinations\Play_Hallucination_LVL3	
+	736796743	Play_Hallucination_LVL1			\Default Work Unit\Player\Hallucinations\Play_Hallucination_LVL1	
 	944747395	Play_ComputerLoop			\Default Work Unit\Enviroment\Dorm\Computer\Play_ComputerLoop	
 	956845016	Play_Fridge_Close			\Default Work Unit\Enviroment\Kitchen\Fridge\Play_Fridge_Close	
 	1027751980	New_Event_03			\Default Work Unit\Enviroment\Kitchen\Fridge\New_Event_03	
 	1027751981	New_Event_02			\Default Work Unit\Enviroment\Kitchen\Fridge\New_Event_02	
 	1027751982	New_Event_01			\Default Work Unit\Enviroment\Kitchen\Fridge\New_Event_01	
 	1109118952	Play_ComputerOFF			\Default Work Unit\Enviroment\Dorm\Computer\Play_ComputerOFF	
+	1181751874	Play_HandWalk			\Default Work Unit\Npc\Play_HandWalk	
 	1246219610	Play_Hallucination_Fire_OFF			\Default Work Unit\Player\Hallucinations\Fire\Play_Hallucination_Fire_OFF	
 	1249927922	Play_ComputerON			\Default Work Unit\Enviroment\Dorm\Computer\Play_ComputerON	
 	1365308841	Play_Drawer_Close_Slo			\Default Work Unit\Enviroment\Kitchen\Drawer\Play_Drawer_Close_Slo	
@@ -32,16 +39,13 @@ Event	ID	Name			Wwise Object Path	Notes
 	2983217371	Play_Stop_Hallucination_Drone			\Default Work Unit\Player\Hallucinations\Play_Stop_Hallucination_Drone	
 	3076523333	Play_Stop_Player_Breathing			\Default Work Unit\Player\Actions\Play_Stop_Player_Breathing	
 	3274517020	Play_Stop_RoomTone			\Default Work Unit\Enviroment\Play_Stop_RoomTone	
+	3509780585	Play_HandWalk_GameOver			\Default Work Unit\Npc\Play_HandWalk_GameOver	
 	3696424952	Play_Bathtub_Off			\Default Work Unit\Enviroment\Bathroom\Play_Bathtub_Off	
 	3707172077	Play_Drawer_Open_Fast			\Default Work Unit\Enviroment\Kitchen\Drawer\Play_Drawer_Open_Fast	
 	3860455926	Play_Pickup			\Default Work Unit\Player\Actions\PickUps\Play_Pickup	
 	3942043618	Play_ComputerGlitchJumpscare			\Default Work Unit\Enviroment\Dorm\Computer\Play_ComputerGlitchJumpscare	
 	4078825889	Play_Player_Fs			\Default Work Unit\Player\Actions\Play_Player_Fs	
 	4141381861	Play_Sink_On			\Default Work Unit\Enviroment\Bathroom\Play_Sink_On	
-	4197138700	Play_Hallucination_04			\Default Work Unit\Player\Hallucinations\Play_Hallucination_04	
-	4197138701	Play_Hallucination_05			\Default Work Unit\Player\Hallucinations\Play_Hallucination_05	
-	4197138702	Play_Hallucination_06			\Default Work Unit\Player\Hallucinations\Play_Hallucination_06	
-	4197138703	Play_Hallucination_07			\Default Work Unit\Player\Hallucinations\Play_Hallucination_07	
 
 Switch Group	ID	Name			Wwise Object Path	Notes
 	806885475	Fs_Material_Switch			\Default Work Unit\Fs_Material_Switch	
@@ -49,6 +53,7 @@ Switch Group	ID	Name			Wwise Object Path	Notes
 
 Switch	ID	Name	Switch Group			Notes
 	2058049674	Wood	Fs_Material_Switch			
+	2185786256	Gravel	Fs_Material_Switch			
 	2412606308	Carpet	Fs_Material_Switch			
 	2637588553	Tile	Fs_Material_Switch			
 	892771914	Living	RoomTone_Switch			
@@ -68,17 +73,22 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	2982336	Sfx_Amb_RoomTone_Bathroom	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\71\{712AFEB1-154A-DC2F-0879-D8DDF69AE5C5}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Roomtones\Sfx_Amb_RoomTone_Bathroom		2627128
 	22162622	Sfx_Computer_Messages_03	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\7E\{7EE24A8E-8DF8-1C6C-2017-9471AEB0058D}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\BedRoom\Computer\Sfx_Computer_Messages\Sfx_Computer_Messages_03		66788
 	33276330	Sfx_Fire_On	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\5B\{5B6A2136-28C7-235D-ABBC-F226EB936E1E}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\BedRoom\Fire\Sfx_Fire_On		1900956
+	42467079	Hallucinations_Lvl3	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\F2\{F29BD955-8CDA-04FA-C3A9-CD34240E1E09}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Hallucination\Hits\Hallucinations_Lvl3		1884700
 	70527204	Sfx_Fs_Carpet_02	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\E7\{E74D34F8-E321-30C2-168D-FB2F20CA828A}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Carpet\Sfx_Fs_Carpet_02		143964
 	83789221	Sfx_Breath_Loop_Lvl1	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\F7\{F70588EE-855E-A7E0-D673-8CECC5744255}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Breathing\Breath_Loops\Sfx_Breath_Loop_Lvl1		1520692
 	95913256	Sfx_Fs_Wood_06	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\A3\{A3FFAEA5-7202-5F9B-49DE-BE5C95587384}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Wood\Sfx_Fs_Wood_06		118004
 	108978955	Sfx_Clock_Jumpscare	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\AB\{AB37B185-A709-AD6A-350E-5DB84EEDE210}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\BedRoom\Clock\Sfx_Clock_Jumpscare		288096
 	143525675	Sfx_Fs_Tile_06	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\4D\{4D7A2627-EFA0-9EB5-B43C-3B3EF9D5A5DD}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Tile\Sfx_Fs_Tile_06		99984
+	152738127	Mx_DeathMusic	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\4B\{4B415044-7CAA-1566-8E97-F8C6AD116777}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\Mx_DeathMusic		941996
 	249388012	Sfx_Clock_Lp	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\86\{86FAD568-2EE0-95C8-1C99-9010EE8936E4}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\BedRoom\Clock\Sfx_Clock_Lp		2304096
 	270290710	Sfx_Fridgedoor_Close_02	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\EA\{EAC45DB2-DC04-035B-A292-D4CB608C2DD4}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Kitchen\Fridge\Sfx_Fridgedoor_Close\Sfx_Fridgedoor_Close_02		314976
+	276378622	Sfx_HandWalk	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\B4\{B43F5DA5-D9A1-E2F5-7DD5-8B98F031A794}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Npc\Sfx_HandWalk		697084
+	283469559	Hallucinations_Lvl4	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\6B\{6B839363-53E9-7931-E8F6-B887157C7F50}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Hallucination\Hits\Hallucinations_Lvl4		1667052
 	310337373	LightBulb_Break	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\1E\{1E84B67A-E58E-3AA4-90E4-FBDD328B1998}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Kitchen\Lightbulb\LightBulb_Break		177940
 	328539605	Sfx_Fs_Carpet_01	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\F8\{F8BAD475-B44A-841C-CD32-140D69F80CD7}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Carpet\Sfx_Fs_Carpet_01		92732
 	350255174	Sfx_Computer_Messages_07	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\2F\{2F23DC32-BA06-EEF4-047A-D36BEBBBFC09}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\BedRoom\Computer\Sfx_Computer_Messages\Sfx_Computer_Messages_07		260356
 	367477673	Sfx_Computer_Messages_01	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\36\{363D217C-9D36-84EA-DF1C-5A5CA34E2C7C}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\BedRoom\Computer\Sfx_Computer_Messages\Sfx_Computer_Messages_01		188872
+	381988598	Sfx_Fs_Gravel_05	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\88\{88D40D43-3D11-0ABC-B924-4E7F320FE6F7}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Gravel\Sfx_Fs_Gravel_05		107384
 	383490609	Sfx_Fire_Off	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\E1\{E111FFA1-D207-B657-2D00-A4EA163F52FB}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\BedRoom\Fire\Sfx_Fire_Off		349016
 	388257649	Drawer_Open_Fast	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\99\{99A72FA6-8AA7-030F-A61A-C51C3D75E0B8}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Kitchen\Drawers\Drawer_Open_Fast		138220
 	401686728	Sfx_Breath_Loop_Lvl4	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\EF\{EF623C03-9834-2392-DED1-D9B040BCC506}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Breathing\Breath_Loops\Sfx_Breath_Loop_Lvl4		719164
@@ -88,38 +98,51 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	435547143	Sfx_Fs_Carpet_06	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\93\{9363188D-23E8-2581-8DCD-4FF486AA044B}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Carpet\Sfx_Fs_Carpet_06		144616
 	437894390	Sfx_Computer_Messages_05	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\74\{7459BF45-65E2-ACB7-7768-C3A33D229F10}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\BedRoom\Computer\Sfx_Computer_Messages\Sfx_Computer_Messages_05		134680
 	453691064	Sfx_Amb_RoomTone_Kitchen	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\5D\{5DC6BC34-B636-D4D6-6D90-BAC6C8634EEE}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Roomtones\Sfx_Amb_RoomTone_Kitchen		2984404
+	473899975	Sfx_Fs_Gravel_03	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\12\{128EB20A-3159-F8EC-ED63-7F18FDE90129}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Gravel\Sfx_Fs_Gravel_03		101516
+	480448666	Sfx_Fs_Gravel_01	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\F8\{F893A03D-52F2-D263-6A12-5EABE1049AF5}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Gravel\Sfx_Fs_Gravel_01		94280
+	481015485	Hallucinations_Lvl1	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\90\{906F7A57-0F24-5359-866D-D1BD84EB154A}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Hallucination\Hits\Hallucinations_Lvl1		1146976
 	483921262	Sfx_Fs_Wood_07	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\43\{43A405C9-D62A-49CE-9F29-43653FE23112}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Wood\Sfx_Fs_Wood_07		126412
 	487161815	Sfx_FireLoop_MediumIntensity	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\98\{985C1644-4B8E-E767-74D0-EF17465645B6}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\BedRoom\Fire\FireInstances\Sfx_FireLoop_MediumIntensity		1734504
-	488011410	Sfx_Computer_Lp	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\72\{7201FF55-8ED9-EB31-7135-946D9C043C8B}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\BedRoom\Computer\Sfx_Computer_Lp		485620
+	488011410	Sfx_Computer_Lp	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\04\{047EE0C8-BBAA-19EE-5265-033944142B3F}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\BedRoom\Computer\Sfx_Computer_Lp		476924
 	520575613	Sfx_Fs_Tile_03	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\68\{68B6D429-EB14-41A8-573D-7DABFC473CBC}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Tile\Sfx_Fs_Tile_03		89180
 	537799874	Sfx_Breath_Loop_Lvl3	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\C0\{C03C7EB6-BB70-CF09-50E4-4F85B0C5C641}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Breathing\Breath_Loops\Sfx_Breath_Loop_Lvl3		1670496
 	565516776	Sfx_Fs_Carpet_07	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\A2\{A2DA0D01-CF6D-42B5-7BD8-C9F4C80E62B1}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Carpet\Sfx_Fs_Carpet_07		178104
+	567323019	Sfx_Hallucination_Bang_Right	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\F0\{F08683E6-8001-4B7C-012C-7A3031E99697}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Hallucination\Hits\Sfx_Hallucination_Bang_Right		144384
+	607982813	Sfx_Fs_Gravel_07	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\4C\{4C5FE5DC-DA09-A998-B002-8E4C6479EFC8}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Gravel\Sfx_Fs_Gravel_07		105828
 	640611998	Sfx_Fridgedoor_Close_01	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\CB\{CB857B6E-08CE-BF62-69C2-BED77872B91B}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Kitchen\Fridge\Sfx_Fridgedoor_Close\Sfx_Fridgedoor_Close_01		243936
 	673070776	Sfx_Amb_RoomTone_Bedroom	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\46\{461033FC-2D0C-8772-6B42-BE100E394BBC}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Roomtones\Sfx_Amb_RoomTone_Bedroom		5371336
+	674963638	Sfx_Fs_Gravel_02	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\5A\{5A59E68F-ACEB-2AE8-E736-1A08E87D6ECD}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Gravel\Sfx_Fs_Gravel_02		110860
 	687429532	Sfx_Fs_Wood_05	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\AB\{AB6DDA73-5831-3740-5226-320F32A57D43}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Wood\Sfx_Fs_Wood_05		120336
 	708437876	Sfx_Fs_Wood_02	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\C2\{C2D54BC6-F3A5-138F-B0CC-C6F11C363EF1}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Wood\Sfx_Fs_Wood_02		118652
 	722183660	Drawer_Close_Slo	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\21\{21F1AABA-7DFA-30E1-01B2-436ADC0E4830}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Kitchen\Drawers\Drawer_Close_Slo		207436
 	724429488	Sfx_Computer_Messages_08	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\DD\{DDDA9D3E-AAC8-D63B-6B32-1D915239113F}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\BedRoom\Computer\Sfx_Computer_Messages\Sfx_Computer_Messages_08		1030208
 	733750316	Sfx_Fridgedoor_Open_01	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\33\{33DD2686-FD81-07C8-53A7-6385A662B009}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Kitchen\Fridge\Sfx_Fridgedoor_Open\Sfx_Fridgedoor_Open_01		175680
 	741856046	Sfx_Fs_Wood_04	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\42\{4251E0C4-65CB-D0BA-F251-BA5C00CE7AE0}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Wood\Sfx_Fs_Wood_04		126152
+	744152542	Hallucinations_Lvl5_Perspective	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\37\{37CC7837-E203-810F-16DF-DDF04042E1BB}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Hallucination\Hits\Hallucinations_Lvl5_Perspective		854780
+	789984334	Sfx_Fs_Gravel_04	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\A4\{A49F349B-5490-A508-57B8-8BC81A3A8411}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Gravel\Sfx_Fs_Gravel_04		109320
+	812921429	Hallucinations_Lvl6	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\05\{059B8C3D-423E-E32F-F2FD-CA3B52265606}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Hallucination\Hits\Hallucinations_Lvl6		131844
 	824738710	Sfx_Fs_Carpet_05	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\2B\{2BCEFA72-CAE5-A65F-53D3-05BF61F2A7DD}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Carpet\Sfx_Fs_Carpet_05		162968
 	828561589	Sfx_Fs_Carpet_03	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\8E\{8E576014-7154-91DE-0D8C-3BD67BB52216}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Carpet\Sfx_Fs_Carpet_03		147436
 	829824230	Sfx_Fridgedoor_Open_02	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\6F\{6F83F4C8-DED4-5830-C5F3-35F8DC276D98}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Kitchen\Fridge\Sfx_Fridgedoor_Open\Sfx_Fridgedoor_Open_02		219712
 	834373013	Sfx_Fs_Wood_01	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\13\{13AED877-336D-4BE8-9092-7153E3F04933}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Wood\Sfx_Fs_Wood_01		132228
 	834704947	Sfx_Breath_Loop_Lvl5	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\BA\{BA3C028C-9074-C247-9537-1BF15A0F9A8B}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Breathing\Breath_Loops\Sfx_Breath_Loop_Lvl5		668256
 	839177631	Sfx_Fs_Tile_02	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\53\{53C06AA8-A178-A48E-4036-FF59EA3046BD}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Tile\Sfx_Fs_Tile_02		108392
-	845431122	Sfx_Horror_Drone_PH	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\A2\{A2A179DC-B44F-4827-DDC8-9C3D458D52A0}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Hallucination\Sfx_Horror_Drone_PH		13908312
+	844713100	Hallucinations_Lvl2	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\44\{44E38609-5CC6-8807-79D3-DC8A0B20B6C9}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Hallucination\Hits\Hallucinations_Lvl2		361432
+	845431122	Sfx_Horror_Drone_PH	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\A2\{A2A179DC-B44F-4827-DDC8-9C3D458D52A0}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\Sfx_Horror_Drone_PH		13908312
 	852352805	Sfx_Computer_Messages_04	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\FD\{FD6D826C-5AE2-31A1-6AD3-271B584CB269}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\BedRoom\Computer\Sfx_Computer_Messages\Sfx_Computer_Messages_04		76464
 	856959276	Sfx_Amb_RoomTone_Living	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\34\{34936A2D-9113-4447-893F-2346BE9E48A6}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Roomtones\Sfx_Amb_RoomTone_Living		3930132
 	892128583	Sfx_FireLoop_HighIntensity	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\19\{19E96F63-DC30-E4C7-8F1F-C42F555DAFC5}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\BedRoom\Fire\FireInstances\Sfx_FireLoop_HighIntensity		1262424
+	900744129	Sfx_Fs_Gravel_06	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\96\{96DB48DE-480C-0B32-8AA8-D90C6C4C71D4}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Gravel\Sfx_Fs_Gravel_06		100508
 	920316529	Sfx_Computer_Off	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\D1\{D177DE61-4FF1-7D62-3F66-F44229B08F62}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\BedRoom\Computer\Sfx_Computer_Off		2959124
 	930115421	Sfx_Fs_Tile_05	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\C5\{C52C9765-EEE8-276D-58FA-ACCBF333E1EE}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Tile\Sfx_Fs_Tile_05		83744
 	940758753	Sfx_Fs_Wood_03	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\7C\{7C5A4DDC-D06B-69C1-DB84-3C7DF1537DA0}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Wood\Sfx_Fs_Wood_03		125508
+	966060634	Sfx_Fs_Gravel_09	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\D2\{D29ACA37-0FD4-1F50-A42B-C846CECA8889}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Gravel\Sfx_Fs_Gravel_09		113392
 	971486147	Sfx_Fs_Tile_04	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\40\{40285D40-7A51-C73F-A6DA-B24F2491815A}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Tile\Sfx_Fs_Tile_04		87472
 	974071094	Sfx_Amb_RoomTone_Basement	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\FE\{FE8C0738-083C-B9C7-BE15-03BF4E25FB4D}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Roomtones\Sfx_Amb_RoomTone_Basement		281232
 	979613778	Sfx_Fs_Carpet_04	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\45\{4554537F-ACE4-EEB7-1E6F-B978D030B7A5}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Carpet\Sfx_Fs_Carpet_04		144940
+	986601554	Sfx_Fs_Gravel_08	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\B1\{B163D767-0DDC-AEFF-F9DB-A5619CAE4A1E}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Gravel\Sfx_Fs_Gravel_08		106992
 	992683032	Sfx_Breath_Loop_Lvl2	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\2D\{2DF4BA81-02F7-04F6-205C-6893B847CC18}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Breathing\Breath_Loops\Sfx_Breath_Loop_Lvl2		1986508
-	996250460	Sfx_Computer_On	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\42\{4243E5E0-6239-C42C-D021-55321318D35F}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\BedRoom\Computer\Sfx_Computer_On		664884
+	996250460	Sfx_Computer_On	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\81\{81777F73-66BD-DE4D-7B2B-A46257D577DA}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\BedRoom\Computer\Sfx_Computer_On		480904
 	1027126650	Sfx_Computer_Messages_02	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\D5\{D542A8A4-957E-DF98-CB76-297DC8964FD8}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\BedRoom\Computer\Sfx_Computer_Messages\Sfx_Computer_Messages_02		391900
 	1029896806	Sfx_Computer_Error	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\BF\{BFD05715-C55C-E17D-8E00-44B20422771F}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\BedRoom\Computer\Sfx_Computer_Error		98948
 	1033083033	Drawer_Close_Fast	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\07\{0792D866-EA9A-6A73-4A55-4990EDEBB892}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Kitchen\Drawers\Drawer_Close_Fast		164876

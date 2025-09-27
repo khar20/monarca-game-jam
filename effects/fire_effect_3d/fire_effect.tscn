@@ -15,7 +15,7 @@ shader_parameter/DissolveTexture = ExtResource("2_6q115")
 shader_parameter/DissolveAmount = 0.5
 
 [sub_resource type="Gradient" id="Gradient_rq2oo"]
-offsets = PackedFloat32Array(0, 0.8, 1)
+offsets = PackedFloat32Array(0, 0.5, 1)
 colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0)
 metadata/_snap_enabled = true
 
@@ -84,8 +84,6 @@ color_ramp = SubResource("GradientTexture1D_rq2oo")
 
 [node name="FireEffect" type="Node3D"]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 6.88538)
 
@@ -114,3 +112,4 @@ process_material = SubResource("ParticleProcessMaterial_gishc")
 draw_pass_1 = SubResource("QuadMesh_xstqc")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+visible = false
