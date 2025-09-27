@@ -1,0 +1,39 @@
+Event	ID	Name			Wwise Object Path	Notes
+	148573804	mPlay_Music			\MinigameWorkUnit\Music\mPlay_Music	
+	616084239	mPlay_Jump			\MinigameWorkUnit\Ingame\Player\mPlay_Jump	
+	1066214543	mPlay_Death			\MinigameWorkUnit\Ingame\SuicidalKid\mPlay_Death	
+	1225764861	mPlay_Dive			\MinigameWorkUnit\Ingame\SuicidalKid\mPlay_Dive	
+	1624049407	mPlay_Stop_DialogText			\MinigameWorkUnit\Ingame\SuicidalKid\mPlay_Stop_DialogText	
+	1904008944	mPlay_Stop_Nervous			\MinigameWorkUnit\Ingame\SuicidalKid\mPlay_Stop_Nervous	
+	2088078577	mPlay_StartScreen			\MinigameWorkUnit\MainMenu\mPlay_StartScreen	
+	2244977799	mPlay_HauntedMusic			\MinigameWorkUnit\Music\mPlay_HauntedMusic	
+	2675335439	mPlay_Errorglith			\MinigameWorkUnit\MainMenu\mPlay_Errorglith	
+	2898951214	mPlay_DialogText			\MinigameWorkUnit\Ingame\SuicidalKid\mPlay_DialogText	
+	2934331860	mPlay_MenuHover			\MinigameWorkUnit\MainMenu\mPlay_MenuHover	
+	3077173818	mPlay_Fs			\MinigameWorkUnit\Ingame\Player\mPlay_Fs	
+	3115007292	mPlay_JumpLand			\MinigameWorkUnit\Ingame\Player\mPlay_JumpLand	
+	3403326943	mPlay_Popup			\MinigameWorkUnit\MainMenu\mPlay_Popup	
+	3687858069	Play_CoinPickup			\MinigameWorkUnit\Ingame\Player\Play_CoinPickup	
+	3773763510	mPlay_Menuconfirm			\MinigameWorkUnit\MainMenu\mPlay_Menuconfirm	
+	4108847679	mPlay_Nervous			\MinigameWorkUnit\Ingame\SuicidalKid\mPlay_Nervous	
+	4263298088	mPlay_Glitch			\MinigameWorkUnit\Music\mPlay_Glitch	
+
+Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
+	487698745	Silence	Wwise Silence		\Actor-Mixer Hierarchy\MinigameWorkUnit\MainMenu\MenuError\New Silence\Silence	
+	905657271	Silence	Wwise Silence		\Actor-Mixer Hierarchy\MinigameWorkUnit\MainMenu\ConfirmMenu\New Silence\Silence	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	182598037	Sfx_mg_CoinPickup	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\F1\{F13CB822-13D0-87CD-25B2-55D6F22756C1}.wem		\Actor-Mixer Hierarchy\MinigameWorkUnit\Sfx\Sfx_mg_CoinPickup		84668
+	205765216	Sfx_mg_Footstep_02	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\2A\{2AD0206E-B5BB-B1DC-0BD3-F0D1CF744526}.wem		\Actor-Mixer Hierarchy\MinigameWorkUnit\Sfx\Fs_SeqContainer\Sfx_mg_Footstep_02		23136
+	207704044	Sfx_mg_text_Lp	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\95\{955840D0-830A-33BD-458B-27446B3EDB10}.wem		\Actor-Mixer Hierarchy\MinigameWorkUnit\Sfx\Sfx_mg_text_Lp		17072
+	274865662	Glitch	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\06\{0693C05A-764F-29E7-E7EC-A08C4456C825}.wem		\Actor-Mixer Hierarchy\MinigameWorkUnit\Music\Glitch		395032
+	306870184	Sfx_mg_Nervous	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\35\{355E1F82-1C02-C170-98F9-65A79553E5C2}.wem		\Actor-Mixer Hierarchy\MinigameWorkUnit\Sfx\Sfx_mg_Nervous		62908
+	358958938	Music_02	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\5F\{5F35156C-E1EA-E81B-EDDD-06A245C7F864}.wem		\Actor-Mixer Hierarchy\MinigameWorkUnit\Music\Music_02		4423776
+	419647074	Sfx_menu_Hover	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\12\{1225AC73-2FD2-727C-FF6E-0305A7388769}.wem		\Actor-Mixer Hierarchy\MinigameWorkUnit\MainMenu\Sfx_menu_Hover		17072
+	425569092	Sfx_mg_JumpStart	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\93\{9384DD94-1B0D-EB5C-7E03-8686CBC015C2}.wem		\Actor-Mixer Hierarchy\MinigameWorkUnit\Sfx\Sfx_mg_JumpStart		184652
+	458452007	Sfx_mg_Death	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\5D\{5D0BFBFB-4F38-9F58-DC40-63D051350A94}.wem		\Actor-Mixer Hierarchy\MinigameWorkUnit\Sfx\Sfx_mg_Death		321176
+	573106042	Sfx_mg_Confirm_A	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\D4\{D46478C1-7B52-7E00-F6B3-FFADC50D6339}.wem		\Actor-Mixer Hierarchy\MinigameWorkUnit\MainMenu\ConfirmMenu\Sfx_mg_Confirm_A		13940
+	873699903	Sfx_mg_JumpLand	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\1C\{1CAAB412-1AC8-E167-7AFC-2D9787974FD4}.wem		\Actor-Mixer Hierarchy\MinigameWorkUnit\Sfx\Sfx_mg_JumpLand		18464
+	873732166	Sfx_mg_Dive	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\E7\{E745FC59-739E-3083-B4B8-A7E4B1D00C2F}.wem		\Actor-Mixer Hierarchy\MinigameWorkUnit\Sfx\Sfx_mg_Dive		422304
+	891589386	Music_01	C:\Users\DANIEL\Documents\WwiseProjects\MonarcaGameJamWwiseMaster\.cache\01\{012CC602-62AC-5E3A-A8FA-22572162F9E9}.wem		\Actor-Mixer Hierarchy\MinigameWorkUnit\Music\Music_01		4423776
+
