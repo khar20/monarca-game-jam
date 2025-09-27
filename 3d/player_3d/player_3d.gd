@@ -1,4 +1,3 @@
-# player.gd
 extends CharacterBody3D
 
 # --- Constants ---
@@ -254,6 +253,7 @@ func tween_body_to_position(target_position: Vector3, duration: float) -> void:
 	tween_in_progress = false
 
 func begin_subviewport_interaction(viewport: SubViewport) -> void:
+	pass
 	set_controls_enabled(false) # Disable player movement
 	_active_subviewport = viewport
 	#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE) # Show the mouse for the 2D game
@@ -261,7 +261,7 @@ func begin_subviewport_interaction(viewport: SubViewport) -> void:
 func end_subviewport_interaction() -> void:
 	_active_subviewport = null
 	set_controls_enabled(true) # Re-enable player movement
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) # Capture the mouse for freelook
+	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) # Capture the mouse for freelook
 
 func pick_up_object(obj: Node3D) -> void:
 	if held_object:
@@ -312,6 +312,9 @@ func _update_focused_interactable() -> void:
 		
 		if focused_interactable:
 			focused_interactable.emit_signal("focused", self)
+
+func _on_footstep_timer_timeout() -> void:
+	Wwise.post_event_id(AK.EVENTS.PLAY_PLAYER_FS, self)
 	
 #region setup
 

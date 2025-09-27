@@ -179,8 +179,8 @@ font_size = 18
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_3rvpv"]
-radius = 105.043
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3rvpv"]
+size = Vector2(136, 49)
 
 [node name="Player2D" type="CharacterBody2D"]
 script = ExtResource("1_3rvpv")
@@ -201,6 +201,7 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+visible = false
 
 [node name="CounterUI" type="Control" parent="Camera2D/CanvasLayer"]
 layout_mode = 3
@@ -220,6 +221,8 @@ label_settings = SubResource("LabelSettings_counter")
 [node name="AreaDetector" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector"]
-position = Vector2(3, 7)
-shape = SubResource("CircleShape2D_3rvpv")
+position = Vector2(0, 20)
+shape = SubResource("RectangleShape2D_3rvpv")
 debug_color = Color(0.474105, 0.576656, 0.350436, 0.42)
+
+[node name="FootstepTimer" type="Timer" parent="."]

@@ -5,14 +5,13 @@ signal coin_collected
 
 @onready var player_2d: CharacterBody2D = $Player2D
 @onready var menu_final_area: Area2D = $MenuFinal
-#@onready var crt_shader: ColorRect = $CanvasLayer/TextureRect
 @onready var count_label: Label = $Control/Label
 
 var coin_count: int = 0
 
 func _ready() -> void:
 	update_display()
-	# Conectar la señal de colisión del MenuFinal
+	
 	if menu_final_area:
 		menu_final_area.body_entered.connect(_on_menu_final_body_entered)
 	
@@ -20,6 +19,9 @@ func _ready() -> void:
 	
 	# Conectar la señal scene_change_requested para manejar cambios de escena
 	scene_change_requested.connect(_on_scene_change_requested)
+	
+	Wwise.load_bank_id(AK.BANKS.MINIGAMESOUNDBANK)
+	Wwise.post_event_id(AK.EVENTS.MPLAY_MUSIC, self)
 
 func update_display() -> void:
 	count_label.text = "x " + str(coin_count)

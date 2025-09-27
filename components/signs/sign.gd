@@ -1,6 +1,5 @@
 extends Area2D
 
-## The dialogue resource to play when the player interacts with this area.
 @export var dialogue: Resource
 
 @onready var exclamation_mark: Sprite2D = $ExclamationMark
@@ -18,20 +17,18 @@ func _input(event: InputEvent) -> void:
 		return
 
 	# interact input
-	if event.is_action_just_pressed("interact"):
+	if event.is_action_pressed("interact"):
 		if player_2d and not is_dialogue_active:
 			DialogueManager.show_dialogue_balloon(dialogue, "start")
 
 func _on_area_entered(area: Area2D) -> void:
-	if area.is_in_group("player"):
-		player_2d = area.owner as CharacterBody2D
-		if player_2d:
-			exclamation_mark.visible = true
+	player_2d = area.owner as CharacterBody2D
+	if player_2d:
+		exclamation_mark.visible = true
 
 func _on_area_exited(area: Area2D) -> void:
-	if area.is_in_group("player"):
-		exclamation_mark.visible = false
-		player_2d = null
+	exclamation_mark.visible = false
+	player_2d = null
 	
 func _on_dialogue_started(started_dialogue) -> void:
 	is_dialogue_active = true

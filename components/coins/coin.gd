@@ -20,4 +20,5 @@ func _process(delta: float) -> void:
 	
 func _on_body_entered(_body: Node2D) -> void:
 	coin_collected.emit()
+	Wwise.post_event_id(AK.EVENTS.PLAY_COINPICKUP, self)
 	queue_free()
