@@ -17,6 +17,9 @@ func _ready() -> void:
 		menu_final_area.body_entered.connect(_on_menu_final_body_entered)
 	
 	coin_collected.connect(_on_coin_coin_collected)
+	
+	# Conectar la señal scene_change_requested para manejar cambios de escena
+	scene_change_requested.connect(_on_scene_change_requested)
 
 func update_display() -> void:
 	count_label.text = "x " + str(coin_count)
@@ -36,3 +39,7 @@ func _on_menu_final_body_entered(body: Node2D) -> void:
 	if body == player_2d:
 		# Cambiar a la escena del menu final
 		scene_change_requested.emit("res://2d/end_scene_2d/menu_final.tscn")
+
+func _on_scene_change_requested(scene_path: String) -> void:
+	# Manejar el cambio de escena
+	get_tree().change_scene_to_file(scene_path)

@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{8BF9454F-2205-46F1-9CD8-7F8B1296E3E8}",
     "Language": "SFX",
-    "Hash": "{DD4F665B-A505-FB31-4FEF-A05018885239}",
+    "Hash": "{3062A002-F920-2329-71DB-9B0C6DF40C8C}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\New_SoundBank",
     "ShortName": "New_SoundBank",
     "Path": "4072029455.bnk",
@@ -93,7 +93,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Mx_DeathMusic.wav",
-      "CachePath": "4B/{4B415044-7CAA-1566-8E97-F8C6AD116777}.wem"
+      "CachePath": "FE/{FE7FEB64-8A02-6FA6-C828-5B48CF58559A}.wem"
      },
      {
       "Id": "249388012",
@@ -421,7 +421,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Hallucinations_Lvl6.wav",
-      "CachePath": "05/{059B8C3D-423E-E32F-F2FD-CA3B52265606}.wem"
+      "CachePath": "73/{733C2A92-B1F5-684C-6A6D-FB5D98B60FC2}.wem"
      },
      {
       "Id": "824738710",
@@ -597,7 +597,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Sfx_Computer_On.wav",
-      "CachePath": "81/{81777F73-66BD-DE4D-7B2B-A46257D577DA}.wem"
+      "CachePath": "E0/{E0606B42-D356-617C-D37D-31A7D0C3A158}.wem"
      },
      {
       "Id": "1027126650",
@@ -1633,6 +1633,6 @@
     ]
    }
   ],
-  "FileHash": "{952D11D8-BE49-CF92-D5F5-B1BD520BBEA6}"
+  "FileHash": "{E0AB81B3-39E2-E7BE-BF83-A33B8FF2F19C}"
  }
 }

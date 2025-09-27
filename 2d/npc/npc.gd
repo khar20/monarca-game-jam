@@ -12,7 +12,9 @@ func _ready() -> void:
 	DialogueManager.dialogue_started.connect(_on_dialogue_started)
 	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
 	# Buscar el jugador en la escena
-	player_2d = get_node("../Player2D") if has_node("../Player2D") else null
+	player_2d = get_node("../player_2d") if has_node("../player_2d") else null
+	# Ocultar el icono de exclamación al inicio
+	exclamation_mark.visible = false
 
 func _process(delta: float) -> void:
 	pass

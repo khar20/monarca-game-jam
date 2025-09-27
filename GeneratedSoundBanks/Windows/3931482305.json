@@ -10,12 +10,402 @@
     "Type": "User",
     "GUID": "{97DBD8A9-FE21-4F41-9F19-C9A251B8ADA6}",
     "Language": "SFX",
-    "Hash": "{006F47BE-90DE-AD5F-9694-B1FCF439E1B0}",
+    "Hash": "{8762092A-6AE9-2299-074E-50EC08F0083C}",
     "ObjectPath": "\\SoundBanks\\MinigameWorkUnit\\MiniGameSoundBank",
     "ShortName": "MiniGameSoundBank",
-    "Path": "3931482305.bnk"
+    "Path": "3931482305.bnk",
+    "Media": [
+     {
+      "Id": "182598037",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sfx_mg_CoinPickup.wav",
+      "CachePath": "F1/{F13CB822-13D0-87CD-25B2-55D6F22756C1}.wem"
+     },
+     {
+      "Id": "205765216",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "MonarcaGJ_Minigame.wav",
+      "CachePath": "2A/{2AD0206E-B5BB-B1DC-0BD3-F0D1CF744526}.wem"
+     },
+     {
+      "Id": "207704044",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sfx_mg_text_Lp.wav",
+      "CachePath": "95/{955840D0-830A-33BD-458B-27446B3EDB10}.wem"
+     },
+     {
+      "Id": "274865662",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Glitch.wav",
+      "CachePath": "06/{0693C05A-764F-29E7-E7EC-A08C4456C825}.wem"
+     },
+     {
+      "Id": "306870184",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sfx_mg_Nervous.wav",
+      "CachePath": "35/{355E1F82-1C02-C170-98F9-65A79553E5C2}.wem"
+     },
+     {
+      "Id": "358958938",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Music_02.wav",
+      "CachePath": "5F/{5F35156C-E1EA-E81B-EDDD-06A245C7F864}.wem"
+     },
+     {
+      "Id": "419647074",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sfx_mg_text_Lp.wav",
+      "CachePath": "12/{1225AC73-2FD2-727C-FF6E-0305A7388769}.wem"
+     },
+     {
+      "Id": "425569092",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "MonarcaGJ_Minigame_01.wav",
+      "CachePath": "93/{9384DD94-1B0D-EB5C-7E03-8686CBC015C2}.wem"
+     },
+     {
+      "Id": "458452007",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sfx_mg_Death.wav",
+      "CachePath": "5D/{5D0BFBFB-4F38-9F58-DC40-63D051350A94}.wem"
+     },
+     {
+      "Id": "573106042",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sfx_mg_Nervous.wav",
+      "CachePath": "D4/{D46478C1-7B52-7E00-F6B3-FFADC50D6339}.wem"
+     },
+     {
+      "Id": "873699903",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "MonarcaGJ_Minigame_02.wav",
+      "CachePath": "1C/{1CAAB412-1AC8-E167-7AFC-2D9787974FD4}.wem"
+     },
+     {
+      "Id": "873732166",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sfx_mg_Dive.wav",
+      "CachePath": "E7/{E745FC59-739E-3083-B4B8-A7E4B1D00C2F}.wem"
+     },
+     {
+      "Id": "891589386",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Music_01.wav",
+      "CachePath": "01/{012CC602-62AC-5E3A-A8FA-22572162F9E9}.wem"
+     }
+    ],
+    "Plugins": {
+     "Custom": [
+      {
+       "Id": "487698745",
+       "Name": "Silence",
+       "ObjectPath": "\\Actor-Mixer Hierarchy\\MinigameWorkUnit\\MainMenu\\MenuError\\New Silence\\Silence",
+       "GUID": "{2531DC00-F536-4D31-81A2-4D58A3C4DF6C}",
+       "Color": "1",
+       "LibName": "Wwise Silence",
+       "LibId": "6619138"
+      },
+      {
+       "Id": "905657271",
+       "Name": "Silence",
+       "ObjectPath": "\\Actor-Mixer Hierarchy\\MinigameWorkUnit\\MainMenu\\ConfirmMenu\\New Silence\\Silence",
+       "GUID": "{FC1243C7-68B5-4851-A5DD-DED9B341BCC8}",
+       "Color": "1",
+       "LibName": "Wwise Silence",
+       "LibId": "6619138"
+      }
+     ]
+    },
+    "Events": [
+     {
+      "Id": "1066214543",
+      "Name": "mPlay_Death",
+      "ObjectPath": "\\Events\\MinigameWorkUnit\\Ingame\\SuicidalKid\\mPlay_Death",
+      "GUID": "{B397F773-54AB-480D-A821-265008987EA7}",
+      "Color": "1",
+      "DurationType": "OneShot",
+      "DurationMin": "1.6722782",
+      "DurationMax": "1.6722782",
+      "MediaRefs": [
+       {
+        "Id": "458452007"
+       }
+      ]
+     },
+     {
+      "Id": "2898951214",
+      "Name": "mPlay_DialogText",
+      "ObjectPath": "\\Events\\MinigameWorkUnit\\Ingame\\SuicidalKid\\mPlay_DialogText",
+      "GUID": "{4471CF05-DFDB-48B9-8A18-F1D387C0174C}",
+      "Color": "1",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "207704044"
+       }
+      ]
+     },
+     {
+      "Id": "1225764861",
+      "Name": "mPlay_Dive",
+      "ObjectPath": "\\Events\\MinigameWorkUnit\\Ingame\\SuicidalKid\\mPlay_Dive",
+      "GUID": "{EB5CA4EE-17E9-46BC-85B5-497D413D77BA}",
+      "Color": "1",
+      "DurationType": "OneShot",
+      "DurationMin": "2.1990082",
+      "DurationMax": "2.1990082",
+      "MediaRefs": [
+       {
+        "Id": "873732166"
+       }
+      ]
+     },
+     {
+      "Id": "2675335439",
+      "Name": "mPlay_Errorglith",
+      "ObjectPath": "\\Events\\MinigameWorkUnit\\MainMenu\\mPlay_Errorglith",
+      "GUID": "{3C56E0BE-5616-4690-A603-9AF2679AF937}",
+      "Color": "1",
+      "DurationType": "OneShot",
+      "DurationMin": "0.17868596",
+      "DurationMax": "0.17868596",
+      "MediaRefs": [
+       {
+        "Id": "573106042"
+       }
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "487698745"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "3077173818",
+      "Name": "mPlay_Fs",
+      "ObjectPath": "\\Events\\MinigameWorkUnit\\Ingame\\Player\\mPlay_Fs",
+      "GUID": "{4A593D76-1D5F-4A2E-A0B0-BEE3E97D6C3D}",
+      "Color": "1",
+      "DurationType": "OneShot",
+      "DurationMin": "0.1056799",
+      "DurationMax": "0.12",
+      "MediaRefs": [
+       {
+        "Id": "205765216"
+       }
+      ]
+     },
+     {
+      "Id": "4263298088",
+      "Name": "mPlay_Glitch",
+      "ObjectPath": "\\Events\\MinigameWorkUnit\\Music\\mPlay_Glitch",
+      "GUID": "{2183060C-A2C8-4F7E-BB57-2FEC1BC1FA9D}",
+      "Color": "1",
+      "DurationType": "OneShot",
+      "DurationMin": "2.2569585",
+      "DurationMax": "2.2569585",
+      "MediaRefs": [
+       {
+        "Id": "274865662"
+       }
+      ]
+     },
+     {
+      "Id": "2244977799",
+      "Name": "mPlay_HauntedMusic",
+      "ObjectPath": "\\Events\\MinigameWorkUnit\\Music\\mPlay_HauntedMusic",
+      "GUID": "{88395CF2-0F78-4C9F-83F7-03A50D35E5E0}",
+      "Color": "1",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "358958938"
+       }
+      ]
+     },
+     {
+      "Id": "616084239",
+      "Name": "mPlay_Jump",
+      "ObjectPath": "\\Events\\MinigameWorkUnit\\Ingame\\Player\\mPlay_Jump",
+      "GUID": "{E79E5AF5-69A5-4188-95FA-2C36EBFD3D99}",
+      "Color": "1",
+      "DurationType": "OneShot",
+      "DurationMin": "0.90728927",
+      "DurationMax": "1.0482392",
+      "MediaRefs": [
+       {
+        "Id": "425569092"
+       }
+      ]
+     },
+     {
+      "Id": "3115007292",
+      "Name": "mPlay_JumpLand",
+      "ObjectPath": "\\Events\\MinigameWorkUnit\\Ingame\\Player\\mPlay_JumpLand",
+      "GUID": "{8A300EC6-6249-4574-88D9-EDF067B6DC15}",
+      "Color": "1",
+      "DurationType": "OneShot",
+      "DurationMin": "0.07483973",
+      "DurationMax": "0.1222818",
+      "MediaRefs": [
+       {
+        "Id": "873699903"
+       }
+      ]
+     },
+     {
+      "Id": "3773763510",
+      "Name": "mPlay_Menuconfirm",
+      "ObjectPath": "\\Events\\MinigameWorkUnit\\MainMenu\\mPlay_Menuconfirm",
+      "GUID": "{DAE88DAF-DA6A-40F9-B2EA-1623D61EF540}",
+      "Color": "1",
+      "DurationType": "OneShot",
+      "DurationMin": "0.26774627",
+      "DurationMax": "0.26774627",
+      "MediaRefs": [
+       {
+        "Id": "573106042"
+       }
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "905657271"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "2934331860",
+      "Name": "mPlay_MenuHover",
+      "ObjectPath": "\\Events\\MinigameWorkUnit\\MainMenu\\mPlay_MenuHover",
+      "GUID": "{3BF6C6ED-5201-4CF1-AA32-3B843FD6DC49}",
+      "Color": "1",
+      "DurationType": "OneShot",
+      "DurationMin": "0.08841698",
+      "DurationMax": "0.08841698",
+      "MediaRefs": [
+       {
+        "Id": "419647074"
+       }
+      ]
+     },
+     {
+      "Id": "148573804",
+      "Name": "mPlay_Music",
+      "ObjectPath": "\\Events\\MinigameWorkUnit\\Music\\mPlay_Music",
+      "GUID": "{731214B0-1427-4221-ADD2-CE157B35F493}",
+      "Color": "1",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "891589386"
+       }
+      ]
+     },
+     {
+      "Id": "4108847679",
+      "Name": "mPlay_Nervous",
+      "ObjectPath": "\\Events\\MinigameWorkUnit\\Ingame\\SuicidalKid\\mPlay_Nervous",
+      "GUID": "{BF6F03D9-B51C-4E76-A032-AAA99482DFEF}",
+      "Color": "1",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "306870184"
+       }
+      ]
+     },
+     {
+      "Id": "3403326943",
+      "Name": "mPlay_Popup",
+      "ObjectPath": "\\Events\\MinigameWorkUnit\\MainMenu\\mPlay_Popup",
+      "GUID": "{96A3A72F-FD25-46E1-92D3-17935A1F950F}",
+      "Color": "1",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "2088078577",
+      "Name": "mPlay_StartScreen",
+      "ObjectPath": "\\Events\\MinigameWorkUnit\\MainMenu\\mPlay_StartScreen",
+      "GUID": "{FE7DAB3A-B986-4C30-877A-39B57597D533}",
+      "Color": "1",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "1624049407",
+      "Name": "mPlay_Stop_DialogText",
+      "ObjectPath": "\\Events\\MinigameWorkUnit\\Ingame\\SuicidalKid\\mPlay_Stop_DialogText",
+      "GUID": "{20C135FB-680B-4E00-A052-B9ADC0FBFBF6}",
+      "Color": "1",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "1904008944",
+      "Name": "mPlay_Stop_Nervous",
+      "ObjectPath": "\\Events\\MinigameWorkUnit\\Ingame\\SuicidalKid\\mPlay_Stop_Nervous",
+      "GUID": "{449ABCBF-77E0-4F43-B0DE-AA456156FDA4}",
+      "Color": "1",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "3687858069",
+      "Name": "Play_CoinPickup",
+      "ObjectPath": "\\Events\\MinigameWorkUnit\\Ingame\\Player\\Play_CoinPickup",
+      "GUID": "{8A26A5A4-4563-4053-88A5-20BC1C52D4C0}",
+      "Color": "1",
+      "DurationType": "OneShot",
+      "DurationMin": "0.43041864",
+      "DurationMax": "0.43041864",
+      "MediaRefs": [
+       {
+        "Id": "182598037"
+       }
+      ]
+     }
+    ]
    }
   ],
-  "FileHash": "{65C04334-923E-B160-5FAB-9AF295A67B11}"
+  "FileHash": "{5A7C5DF8-4C6E-30C3-832F-BE91D0D4E49B}"
  }
 }
