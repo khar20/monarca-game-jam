@@ -162,7 +162,7 @@ func tween_camera_to_look_at(target_point: Vector3, duration: float) -> void:
 	#    The .looking_at() method creates a copy of the transform that is
 	#    rotated to point towards the target_point. We use Vector3.UP as a reference
 	#    to keep the camera from rolling sideways.
-	var final_transform = camera.global_transform.looking_at(target_point, Vector3.UP)
+	var final_transform: Transform3D = camera.global_transform.looking_at(target_point, Vector3.UP)
 	
 	# 2. Create and configure the tween.
 	var tween: Tween = create_tween()
@@ -173,7 +173,7 @@ func tween_camera_to_look_at(target_point: Vector3, duration: float) -> void:
 	#    Godot will handle the complex rotation interpolation for you.
 	tween.tween_property(camera, "global_transform", final_transform, duration)
 	
-func tween_body_to_transform(target_transform: Transform3D, camera_target: Transform3D, duration: float) -> void:
+func tween_body_to_transform(target_transform: Transform3D, duration: float) -> void:
 	# This function tweens the entire CharacterBody3D, which is better for
 	# interactions that require the player to be in a specific spot.
 	tween_in_progress = true
@@ -208,10 +208,10 @@ func tween_body_and_camera_look_at(body_target_transform: Transform3D, camera_lo
 	
 	# First, find the camera's final position. This is the body's target position
 	# plus the camera's local offset from the body.
-	var final_camera_position = body_target_transform.origin + (body_target_transform.basis * camera.transform.origin)
+	var final_camera_position: Vector3 = body_target_transform.origin + (body_target_transform.basis * camera.transform.origin)
 	
 	# Now, create a temporary transform at that final position.
-	var final_camera_transform = Transform3D(Basis(), final_camera_position)
+	var final_camera_transform: Transform3D = Transform3D(Basis(), final_camera_position)
 	
 	# Finally, rotate this transform to look at the target point.
 	final_camera_transform = final_camera_transform.looking_at(camera_look_at_point, Vector3.UP)
