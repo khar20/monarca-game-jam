@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=4 uid="uid://7m7cvwograei"]
 
-[ext_resource type="PackedScene" uid="uid://c4t38ktrhie2f" path="res://assets/3d/house.fbx" id="1_4of5x"]
+[ext_resource type="PackedScene" uid="uid://c4t38ktrhie2f" path="res://assets/models/house.fbx" id="1_4of5x"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vcl4o"]
 resource_name = "lambert6"
